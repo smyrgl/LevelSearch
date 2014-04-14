@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                        DESC
   s.license          = 'MIT'
   s.author           = { "John Tumminaro" => "john@tinylittlegears.com" }
-  s.homepage         = 'https://github.com/smyrgl/LevelSearch.git'
+  s.homepage         = 'https://github.com/smyrgl/LevelSearch'
   s.source           = { :git => "https://github.com/smyrgl/LevelSearch.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = '7.0'

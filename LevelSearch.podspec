@@ -2,10 +2,6 @@ Pod::Spec.new do |s|
   s.name             = "LevelSearch"
   s.version          = "0.1.0"
   s.summary          = "Full text search for Core Data based on LevelDB"
-  s.description      = <<-DESC
-                        Full text search engine for Core Data based on LevelDB.
-
-                       DESC
   s.license          = 'MIT'
   s.author           = { "John Tumminaro" => "john@tinylittlegears.com" }
   s.homepage         = 'https://github.com/smyrgl/LevelSearch'

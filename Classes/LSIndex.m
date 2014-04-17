@@ -137,6 +137,12 @@ static dispatch_queue_t level_search_query_queue() {
 
 #pragma mark - Setters
 
+- (void)setDefaultQueryContext:(NSManagedObjectContext *)defaultQueryContext
+{
+    NSParameterAssert(defaultQueryContext);
+    _defaultQueryContext = defaultQueryContext;
+}
+
 - (void)setCacheSizeInBytes:(NSUInteger)cacheSizeInBytes
 {
     _cacheSizeInBytes = cacheSizeInBytes;

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TTI-Jr-Ya0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe List Table View Controller - My Recipes-->
+        <scene sceneID="1hI-sY-FrP">
+            <objects>
+                <tableViewController id="xug-vE-wkX" customClass="LSRecipeListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Oi0-BA-zed">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="hqR-gD-wVq">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="xug-vE-wkX" id="7it-pL-bN0"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="kKg-B4-Fii">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kKg-B4-Fii" id="uIk-6O-BTA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xug-vE-wkX" id="FZg-fF-IO4"/>
+                            <outlet property="delegate" destination="xug-vE-wkX" id="kHy-pb-4Ok"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Recipes" id="MYZ-2y-IBy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qTG-sQ-DxY">
+                            <connections>
+                                <segue destination="V5B-iq-G5Y" kind="modal" identifier="" id="efg-hb-sUW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Ptq-BD-NDA" id="936-2E-hee"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSA-8X-kd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Ptq-BD-NDA">
+                    <connections>
+                        <outlet property="delegate" destination="xug-vE-wkX" id="fIx-NL-deV"/>
+                        <outlet property="searchBar" destination="hqR-gD-wVq" id="89Z-ry-cUv"/>
+                        <outlet property="searchContentsController" destination="xug-vE-wkX" id="8yO-Lz-7ix"/>
+                        <outlet property="searchResultsDataSource" destination="xug-vE-wkX" id="feV-M7-a1I"/>
+                        <outlet property="searchResultsDelegate" destination="xug-vE-wkX" id="6pC-lJ-E8D"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="343" y="189"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Hc-HM-CWT">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="V5B-iq-G5Y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c3K-Q9-iu4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8u1-CU-pib" kind="relationship" relationship="rootViewController" id="G8d-p8-BGD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qoc-lq-NDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="-685"/>
+        </scene>
+        <!--New Recipe View Controller - New Recipe-->
+        <scene sceneID="XBK-ax-HBE">
+            <objects>
+                <viewController id="8u1-CU-pib" customClass="LSNewRecipeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v9k-vl-an2"/>
+                        <viewControllerLayoutGuide type="bottom" id="dNj-DL-Vvu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="udK-od-SSY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-sp-2iP">
+                                <rect key="frame" x="20" y="124" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8u1-CU-pib" id="rPo-oe-TQg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1E-wf-HWk">
+                                <rect key="frame" x="20" y="175" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8u1-CU-pib" id="Aqc-Nb-gVj"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredients" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f1b-39-jwv">
+                                <rect key="frame" x="20" y="228" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8u1-CU-pib" id="0HZ-4r-toO"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Recipe" id="Wa0-3e-wLG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HNo-H1-lmg">
+                            <connections>
+                                <segue destination="Mfq-ug-buQ" kind="unwind" identifier="unwindToList" unwindAction="unwindToRecipeList:" id="DiZ-jP-ujo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nto-fc-ul5">
+                            <connections>
+                                <action selector="saveButtonClick:" destination="8u1-CU-pib" id="G6s-zg-0qW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionField" destination="x1E-wf-HWk" id="XbE-GM-kQu"/>
+                        <outlet property="ingredientsField" destination="f1b-39-jwv" id="1QI-NT-zXn"/>
+                        <outlet property="nameField" destination="ZeR-sp-2iP" id="YEW-ea-mMJ"/>
+                        <outlet property="saveButton" destination="Nto-fc-ul5" id="3Y4-qO-QRc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CqH-1U-jbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Mfq-ug-buQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="-685"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mpS-TW-a6d">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="TTI-Jr-Ya0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eiK-xT-YDQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xug-vE-wkX" kind="relationship" relationship="rootViewController" id="G5M-Ho-Dea"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxB-zQ-y0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191" y="189"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

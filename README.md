@@ -20,6 +20,16 @@ There are a few other solutions to this problem out there but they aren't perfec
 
 This is where LevelSearch comes into play.  It is designed with the goal of being dead simple to integrate while being very low touch (no objc/runtime or associated objects) while providing performance that can meet the needs of full text search for use cases as latency sensitive as auto-complete.  
 
+## Architecture
+
+LevelSearch as the name suggests is built on the [LevelDB](https://code.google.com/p/leveldb/) key/value database developed by Google under the BSD license.  It's a high performance key/value store like Redis but built for embedded client purposes like the Chrome browser which makes it really nice for this usecase.  For more info you can take a look at the Google documentation.
+
+What this means is that LevelSearch utilizes a LevelDB instance for each index which is file backed and handles its own persistence.  LevelSearch supports a single shared convenience index or multiple named indexes--its totally up to your use case as to how you want to most efficiently utilize it.
+
+Beyond the technology though LevelSearch is really easy to use because it manages all of the index changes for you using Core Data save notifications.  Once it starts watching a given `NSManagedObjectContext` the index will happily continue indexing and updating the index whenever changes are detected from Core Data.  This tight coupling makes Level Search really streamlined and the implementation is pretty lean at ~500 LOC (not counting the LevelDB library and Objective-C wrapper).
+
+It's also REALLY DAMN FAST, see the benchmarks below for more on that.
+
 ## Installation
 
 The easiest way is through [CocoaPods](http://cocoapods.org), to install just add the following to your Podfile:
@@ -69,11 +79,13 @@ Otherwise the query interface is identical between the sync and async queries, a
 
 ```
 
-The return from the query is an `NSSet` of objects from Core Data, you don't even need to perform your own `NSFetchRequest`s...the query takes care of all of that for you.  You will probably want to sort the results into an `NSArray` using an `NSSortDescriptor` before presenting it but that's pretty straightforward.
+The return from the query is an `NSSet` of objects from Core Data, you don't even need to perform your own `NSFetchRequest`...the query takes care of all of that for you.  You will probably want to sort the results into an `NSArray` using an `NSSortDescriptor` before presenting it but that's pretty straightforward.
 
 ## Example Project
 
 To run the example project; clone the repo, and run `pod install` from the root directory first.  There are two sample applications: one that demonstrates how to integrate the framework and another that is used for performance and integration testing.
+
+## Benchmarks
 
 ## Requirements
 

@@ -12,13 +12,6 @@ end
 target :LevelSearchTests do 
 	pod 'Objective-LevelDB'
 	pod 'MagicalRecord'
-    pod 'XCAsyncTestCase'
-	xcodeproj 'Tests/LevelSearchTests.xcodeproj'
-end
-
-target :LevelSearchTestApp do
-	pod 'Objective-LevelDB'
-	pod 'MagicalRecord'
-    pod 'SVProgressHUD'
+  pod 'XCAsyncTestCase'
 	xcodeproj 'Tests/LevelSearchTests.xcodeproj'
 end

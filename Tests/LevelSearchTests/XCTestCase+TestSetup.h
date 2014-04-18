@@ -15,4 +15,6 @@
 + (void)teardownTestCase;
 + (void)teardownTestClass;
 
+- (void)buildSampleIndex;
+
 @end

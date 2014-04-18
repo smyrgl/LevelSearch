@@ -38,23 +38,6 @@
     [super tearDown];
 }
 
-- (void)buildSampleIndex
-{
-    [Person buildRandomPeople:10];
-    
-    __weak typeof(self) weakSelf = self;
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:LSIndexingDidFinishNotification
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *note) {
-                                                      [weakSelf notify:XCTAsyncTestCaseStatusSucceeded];
-                                                  }];
-    
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
-    [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:2];
-}
-
 - (void)testSyncQuery
 {
     [self buildSampleIndex];

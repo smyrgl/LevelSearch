@@ -7,19 +7,16 @@ PODS:
     - Objective-LevelDB/leveldb
   - Objective-LevelDB/leveldb (2.0.7):
     - Objective-LevelDB/leveldb
-  - SVProgressHUD (1.0)
   - XCAsyncTestCase (0.0.1)
 
 DEPENDENCIES:
   - MagicalRecord
   - Objective-LevelDB
-  - SVProgressHUD
   - XCAsyncTestCase
 
 SPEC CHECKSUMS:
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   Objective-LevelDB: 8163d36d32e51b6d09ba7effad9e0e963ba44262
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   XCAsyncTestCase: 6e92e14f923ed5925d93bc80720ef0e81e1e896f
 
 COCOAPODS: 0.32.1

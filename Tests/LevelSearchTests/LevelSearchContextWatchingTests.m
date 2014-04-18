@@ -83,6 +83,77 @@
     XCTAssert(results, @"There must be results");
 }
 
+- (void)testDeleteEntity
+{
+    [self buildSampleIndex];
+    
+    // First verify the person is in the index
+    
+    Person *aPerson = [Person MR_findFirst];
+    NSString *personName = [aPerson.name copy];
+    
+    NSSet *results = [[LSIndex sharedIndex] queryWithString:personName];
+    XCTAssert(results, @"There must be a results set");
+    XCTAssert(results.count == 1, @"There must be a single result");
+    
+    // Now delete and make sure it is gone
+    
+    [aPerson MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
+    
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:LSIndexingDidFinishNotification
+                                                      object:nil
+                                                       queue:nil usingBlock:^(NSNotification *note) {
+                                                           [weakSelf notify:XCTAsyncTestCaseStatusSucceeded];
+                                                       }];
+    
+    [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:2];
+    
+    results = [[LSIndex sharedIndex] queryWithString:personName];
+    XCTAssert(results, @"There must be a results set");
+    XCTAssert(results.count == 0, @"The results set must be empty");
+}
+
+- (void)testUpdateEntity
+{
+    [self buildSampleIndex];
+    
+    // First verify the person is in the index
+    
+    // First verify the person is in the index
+    
+    Person *aPerson = [Person MR_findFirst];
+    NSString *personName = [aPerson.name copy];
+    NSString *newPersonName = @"Abominable Snowman";
+    
+    NSSet *results = [[LSIndex sharedIndex] queryWithString:personName];
+    XCTAssert(results, @"There must be a results set");
+    XCTAssert(results.count == 1, @"There must be a single result");
+    
+    // Now update the name and make sure the person can be found under the new name but not the old name
+    
+    aPerson.name = newPersonName;
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
+    
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:LSIndexingDidFinishNotification
+                                                      object:nil
+                                                       queue:nil usingBlock:^(NSNotification *note) {
+                                                           [weakSelf notify:XCTAsyncTestCaseStatusSucceeded];
+                                                       }];
+    
+    [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:2];
+    
+    NSSet *oldNameResults = [[LSIndex sharedIndex] queryWithString:personName];
+    XCTAssert(oldNameResults, @"There must be a results set");
+    XCTAssert(oldNameResults.count == 0, @"There must be zero results under the old query name");
+    
+    NSSet *newNameResults = [[LSIndex sharedIndex] queryWithString:newPersonName];
+    XCTAssert(newNameResults, @"There must be a results set");
+    XCTAssert(newNameResults.count == 1, @"There must be a single result");
+}
+
 - (void)testStopWatchingContext
 {
     NSManagedObjectContext *newContext = [NSManagedObjectContext MR_contextWithStoreCoordinator:[NSPersistentStoreCoordinator MR_defaultStoreCoordinator]];

@@ -9,26 +9,44 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-/**
- `LSIndex` is the primary class to manage your search index.  Each `LSIndex` instance represents a unique index with a matching LevelDB file so you can create many indexes or use the single shared index depending on your use case.
- 
- ## NSCoding Support
- 
- This class does not support `NSCoding` as it is not necessary to save your indexes directly.  When you request an index by name you will get back the matching disk index if it was previously created or a new LevelDB file will be created if none exist.  So you only need to persist the name of the index and then request it by name each time.
- 
- */
-
 typedef void (^LSIndexQueryResultsBlock)(NSSet *results);
 typedef void (^LSIndexEntitiesCompletionBlock)();
 
+/**
+	`LSIndexQueryOptions` provides a bitmask of options for customizing the search query.
+*/
+
 typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
+	/**
+		Treats spaces in the query string as a logical AND.
+	*/
     LSIndexQueryOptionsDefault                 = 0,
+  /**
+  	Treats spaces in the query string as a logical OR.
+  */
     LSIndexQueryOptionsSpaceMeansOR            = 1 << 0
 };
 
 @protocol LSIndexDelegate;
 
+/**
+ `LSIndex` is the primary class to manage your search index.  Each `LSIndex` instance represents a unique index with a matching LevelDB file so you can create many indexes or use the single shared index depending on your use case.
+
+ ## Synchronous vs. Asynchronous Queries
+
+ Although there are synchronous query methods provided, they really should only be used it very select situations such as when you want to manage your own query queue or during unit testing and should generally not be run from the main thread.  Although the performance impact may not be noticable with smaller indexes, when you are doing auto-complete queries as the user types a blocking search query called from the main thread will lead to a terrible user experience.  The async queries are much better for the vast majority of use cases and they are dispatched on a serial queue so your queries will always be FIFO.
+ 
+ ## NSCoding
+ 
+ This class does not support `NSCoding` as it is not necessary to save your indexes directly.  When you request an index by name you will get back the matching disk index if it was previously created or a new LevelDB file will be created if none exist.  So you only need to persist the name of the index and then request it by name each time.
+ 
+ */
+
 @interface LSIndex : NSObject
+
+///------------------------
+/// @name Configuration
+///-------------------------
 
 /**
  The name of the index.
@@ -65,16 +83,21 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
 @property (nonatomic, weak) NSManagedObjectContext *defaultQueryContext;
 
 /**
+ Optional delegate which is informed when the indexer starts and stops indexing.
+ */
+
+@property (nonatomic, weak) id<LSIndexDelegate>delegate;
+
+ ///------------
+/// @name Status
+///-------------
+
+/**
  Whether the index is currently performing indexing or not.
  */
 
 @property (nonatomic, assign, readonly, getter=isIndexing) BOOL indexing;
 
-/**
- Optional delegate which is informed when the indexer starts and stops indexing.
- */
-
-@property (nonatomic, weak) id<LSIndexDelegate>delegate;
 
 ///---------------------
 /// @name Initialization
@@ -135,6 +158,7 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
  Manually indexes a set of `NSManagedObjects` and calls a completion block when finished.  This is useful for re-building indexes or adding indexing to an existing store.
  
  @param entities An `NSSet` containing the `NSManagedObjects` you wish to index.
+ @param completion An optional completion block which has no return and takes no arguments.
  
  @warning You must call `addIndexingToEntity` before using this method or else it will not index the objects provided.
  */
@@ -144,12 +168,6 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
 ///--------------------------
 /// @name Synchronous Queries
 ///--------------------------
-
-/**
- ## Notes
- 
- Although synchronous methods are provided, it is HIGHLY recommended that you use the async methods for most use cases.  Although search tends to be very fast it is not a good idea to build an auto-complete search which uses the synchronous calls as it will cause noticable typing lag.  The sync queries are useful for unit tests and specialized cases where you might want to manage your own query dispatch queues but they should not be called on the main thread unless you know full well what you are doing.
- */
 
 /**
  Performs query with the provided string.
@@ -193,18 +211,11 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
 ///---------------------------
 
 /**
- ## Notes
- 
- Async queries are performed against a serial dispatch queue so you will always get FIFO behavior appropriate for use in things like auto-complete.
- */
-
-/**
  Performs a query in the background with the provided string.
  
  @param qString String with the query you wish to perform.
  @param results A block object executed when the query finished.  It has no return value and takes a single argument: a query response set containing the objects found during the query.
  
- @see LSIndexQueryResultsBlock
  */
 
 - (void)queryInBackgroundWithString:(NSString *)qString withResults:(LSIndexQueryResultsBlock)results;
@@ -216,7 +227,6 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
  @param options Options for the search.
  @param results A block object executed when the query finished.  It has no return value and takes a single argument: a query response set containing the objects found during the query.
  
- @see LSIndexQueryResultsBlock
  @see LSIndexQueryOptions
  */
 
@@ -230,7 +240,6 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
  @param context Context you wish to search against.
  @param results A block object executed when the query finished.  It has no return value and takes a single argument: a query response set containing the objects found during the query.
  
- @see LSIndexQueryResultsBlock
  @see LSIndexQueryOptions
  */
 
@@ -248,13 +257,17 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
 
 @end
 
-///-----------------------------
-/// @name Index Delegate Methods
-///-----------------------------
+/**
+	Delegate for `LSIndex` which allows for monitoring when indexing begins and finishes.
+*/
 
 @protocol LSIndexDelegate <NSObject>
 
 @optional
+
+///-----------------------
+/// @name Optional Methods
+///-----------------------
 
 /**
  Called when an index starts indexing.

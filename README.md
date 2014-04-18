@@ -1,5 +1,6 @@
 # LevelSearch
 
+[![Build Status](https://travis-ci.org/smyrgl/LevelSearch.svg?branch=master)](https://travis-ci.org/smyrgl/LevelSearch)
 [![Version](http://cocoapod-badges.herokuapp.com/v/LevelSearch/badge.png)](http://cocoadocs.org/docsets/LevelSearch)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/LevelSearch/badge.png)](http://cocoadocs.org/docsets/LevelSearch)
 

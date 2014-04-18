@@ -87,6 +87,14 @@ To run the example project; clone the repo, and run `pod install` from the root 
 
 ## Benchmarks
 
+#### Versus Core Data alone
+
+#### Versus RKSearchIndexer (RestKit)
+
+#### Versus sqlite(FTS4)
+
+#### Versus Search Kit
+
 ## Requirements
 
 

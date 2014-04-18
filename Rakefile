@@ -1,6 +1,28 @@
-desc "Runs the specs [EMPTY]"
+include FileUtils::Verbose
+
+namespace :test do 
+  task :prepare do 
+    mkdir_p "Tests/LevelSearchTests.xcodeproj/xcshareddata/xcschemes"
+    cp Dir.glob('Tests/Schemes/*.xcscheme'), "Tests/LevelSearchTests.xcodeproj/xcshareddata/xcschemes/"
+  end
+  
+  desc "Run the LevelSearch Tests for iOS"
+  task :ios => :prepare do
+    run_tests('LevelSearchTests', 'iphonesimulator')
+    tests_failed('iOS') unless $?.success?
+  end
+
+  desc "Run the LevelSearch Tests for Mac OSX"
+  task :osx => :prepare do
+    run_tests('LevelSearchTests', 'macosx')
+    tests_failed('OSX') unless $?.success?
+  end
+end
+
+desc "Runs the LevelSearch specs"
 task :spec do
-  # Provide your own implementation
+  Rake::Task['test:ios'].invoke
+  Rake::Task['test:osx'].invoke if is_mavericks_or_above
 end
 
 task :version do
@@ -154,3 +176,24 @@ def replace_version_number(new_version_number)
               "\\1#{new_version_number}\\3")
   File.open(podspec_path, "w") { |file| file.puts text }
 end
+
+private
+
+def run_tests(scheme, sdk)
+  sh("xctool -workspace LevelSearch.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
+end
+
+def is_mavericks_or_above
+  osx_version = `sw_vers -productVersion`.chomp
+  Gem::Version.new(osx_version) >= Gem::Version.new('10.9')
+end
+
+def tests_failed(platform)
+  puts red("#{platform} unit tests failed")
+  exit $?.exitstatus
+end
+
+def red(string)
+ "\033[0;31m! #{string}"
+end
+

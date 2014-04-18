@@ -326,10 +326,4 @@
     XCTAssert(results.count == 0, @"Results set should be empty");
 }
 
-- (void)testQueryWithNilString
-{
-    [self buildSampleIndex];
-    XCTAssertThrows([[LSIndex sharedIndex] queryWithString:nil], @"Nil string should throw an exception");
-}
-
 @end

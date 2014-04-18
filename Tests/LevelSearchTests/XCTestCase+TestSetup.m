@@ -27,9 +27,9 @@
 
 + (void)teardownTestCase
 {
+    [[LSIndex sharedIndex] purgeDiskIndex];
     [[LSIndex sharedIndex] stopWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
     [MagicalRecord cleanUp];
-    [[LSIndex sharedIndex] purgeDiskIndex];
 }
 
 + (void)teardownTestClass

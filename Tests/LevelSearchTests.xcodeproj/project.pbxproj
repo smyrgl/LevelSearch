@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520952BA18FF74510040D3E6 /* adjectives.json in Resources */ = {isa = PBXBuildFile; fileRef = 520952B918FF74510040D3E6 /* adjectives.json */; };
 		520F332018FC882400932E4B /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F331F18FC882400932E4B /* LSIndex.m */; };
 		520F332418FC887C00932E4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 520F332218FC887C00932E4B /* InfoPlist.strings */; };
 		520F332A18FC88E700932E4B /* LevelSearchTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 520F332618FC88E700932E4B /* LevelSearchTests.xcdatamodeld */; };
@@ -19,29 +18,10 @@
 		520F333A18FC891700932E4B /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 520F333918FC891700932E4B /* testAvatar.png */; };
 		520F333E18FC8E7800932E4B /* LevelSearchSetupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333D18FC8E7800932E4B /* LevelSearchSetupTests.m */; };
 		520F334018FC90E900932E4B /* LevelSearchContextWatchingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333F18FC90E900932E4B /* LevelSearchContextWatchingTests.m */; };
-		52474C6B18FCC4EE004EE6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527BDDDD18FCC4C200851317 /* Foundation.framework */; };
-		52474C6C18FCC4EE004EE6E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527BDDDF18FCC4C200851317 /* CoreGraphics.framework */; };
-		52474C6D18FCC4EE004EE6E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527BDDE118FCC4C200851317 /* UIKit.framework */; };
-		52474C7918FCC4EE004EE6E7 /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52474C7818FCC4EE004EE6E7 /* LSAppDelegate.m */; };
-		52474C7B18FCC4EE004EE6E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52474C7A18FCC4EE004EE6E7 /* Images.xcassets */; };
-		52474CA518FCC57A004EE6E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52474CA318FCC57A004EE6E7 /* main.m */; };
-		52474CA818FCC585004EE6E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52474CA618FCC585004EE6E7 /* InfoPlist.strings */; };
-		528A5B5618FCC6BF0006676A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528A5B5518FCC6BF0006676A /* Storyboard.storyboard */; };
-		528A5B5A18FCC6F60006676A /* LSMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5B5918FCC6F60006676A /* LSMainTableViewController.m */; };
-		528A5B5C18FCC7350006676A /* TestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333718FC890D00932E4B /* TestDataManager.m */; };
-		528A5B5D18FCC73C0006676A /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 520F333918FC891700932E4B /* testAvatar.png */; };
-		528A5B5E18FCC73F0006676A /* testNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 520F333418FC890700932E4B /* testNames.json */; };
-		528A5B5F18FCC7450006676A /* Person+PersonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F332E18FC88F400932E4B /* Person+PersonFactory.m */; };
-		528A5B6018FCC7470006676A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F332918FC88E700932E4B /* Person.m */; };
-		528A5B6118FCC7490006676A /* LevelSearchTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 520F332618FC88E700932E4B /* LevelSearchTests.xcdatamodeld */; };
-		528A5B6218FCC8200006676A /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F331F18FC882400932E4B /* LSIndex.m */; };
-		528A5B6318FCC8710006676A /* UIImage+TestColorImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333118FC88FD00932E4B /* UIImage+TestColorImages.m */; };
-		528A5B6618FCCA350006676A /* LSSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A5B6518FCCA350006676A /* LSSearchManager.m */; };
 		52A45F7F19004AA000B70C01 /* LevelSearchIndexingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A45F7E19004AA000B70C01 /* LevelSearchIndexingTests.m */; };
 		52A45F8419004D8400B70C01 /* adjectives.json in Resources */ = {isa = PBXBuildFile; fileRef = 520952B918FF74510040D3E6 /* adjectives.json */; };
 		52C21E23190017C90041CC87 /* LevelSearchQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C21E22190017C90041CC87 /* LevelSearchQueryTests.m */; };
 		52C21E27190018220041CC87 /* XCTestCase+TestSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C21E26190018220041CC87 /* XCTestCase+TestSetup.m */; };
-		AE24056F7DF64543B602EBE1 /* libPods-LevelSearchTestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F480765BE4774924344CF /* libPods-LevelSearchTestApp.a */; };
 		FA1ACF2D025746BA88CBE144 /* libPods-LevelSearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB58D1596774A149A228C22 /* libPods-LevelSearchTests.a */; };
 /* End PBXBuildFile section */
 
@@ -70,23 +50,10 @@
 		521411F118FC873200837228 /* LevelSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevelSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5214120B18FC875C00837228 /* LevelSearchTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LevelSearchTests-Info.plist"; sourceTree = "<group>"; };
 		5214120C18FC875C00837228 /* LevelSearchTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelSearchTests-Prefix.pch"; sourceTree = "<group>"; };
-		52474C6A18FCC4EE004EE6E7 /* LevelSearchTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelSearchTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52474C7718FCC4EE004EE6E7 /* LSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
-		52474C7818FCC4EE004EE6E7 /* LSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
-		52474C7A18FCC4EE004EE6E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		52474CA118FCC57A004EE6E7 /* LevelSearchTestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LevelSearchTestApp-Info.plist"; sourceTree = "<group>"; };
-		52474CA218FCC57A004EE6E7 /* LevelSearchTestApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelSearchTestApp-Prefix.pch"; sourceTree = "<group>"; };
-		52474CA318FCC57A004EE6E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		52474CA718FCC585004EE6E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		527BDDDD18FCC4C200851317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		527BDDDF18FCC4C200851317 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		527BDDE118FCC4C200851317 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		527BDDF618FCC4C200851317 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		528A5B5518FCC6BF0006676A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		528A5B5818FCC6F60006676A /* LSMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMainTableViewController.h; sourceTree = "<group>"; };
-		528A5B5918FCC6F60006676A /* LSMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMainTableViewController.m; sourceTree = "<group>"; };
-		528A5B6418FCCA350006676A /* LSSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSearchManager.h; sourceTree = "<group>"; };
-		528A5B6518FCCA350006676A /* LSSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSearchManager.m; sourceTree = "<group>"; };
 		52A45F7E19004AA000B70C01 /* LevelSearchIndexingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSearchIndexingTests.m; sourceTree = "<group>"; };
 		52C21E22190017C90041CC87 /* LevelSearchQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSearchQueryTests.m; sourceTree = "<group>"; };
 		52C21E25190018220041CC87 /* XCTestCase+TestSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+TestSetup.h"; sourceTree = "<group>"; };
@@ -100,17 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1ACF2D025746BA88CBE144 /* libPods-LevelSearchTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52474C6718FCC4EE004EE6E7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52474C6C18FCC4EE004EE6E7 /* CoreGraphics.framework in Frameworks */,
-				52474C6D18FCC4EE004EE6E7 /* UIKit.framework in Frameworks */,
-				52474C6B18FCC4EE004EE6E7 /* Foundation.framework in Frameworks */,
-				AE24056F7DF64543B602EBE1 /* libPods-LevelSearchTestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				528A5B5B18FCC7070006676A /* Shared */,
-				52474C6E18FCC4EE004EE6E7 /* LevelSearchTestApp */,
 				521411FA18FC873200837228 /* LevelSearchTests */,
 				3C81FB3EBB3646EDAEF121CE /* Frameworks */,
 				520F331B18FC881300932E4B /* Vendor */,
@@ -229,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				521411F118FC873200837228 /* LevelSearchTests.xctest */,
-				52474C6A18FCC4EE004EE6E7 /* LevelSearchTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,41 +206,6 @@
 				5214120C18FC875C00837228 /* LevelSearchTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		52474C6E18FCC4EE004EE6E7 /* LevelSearchTestApp */ = {
-			isa = PBXGroup;
-			children = (
-				528A5B5718FCC6D50006676A /* View Controllers */,
-				52474C7718FCC4EE004EE6E7 /* LSAppDelegate.h */,
-				52474C7818FCC4EE004EE6E7 /* LSAppDelegate.m */,
-				52474C7A18FCC4EE004EE6E7 /* Images.xcassets */,
-				52474C6F18FCC4EE004EE6E7 /* Supporting Files */,
-				528A5B5518FCC6BF0006676A /* Storyboard.storyboard */,
-			);
-			path = LevelSearchTestApp;
-			sourceTree = "<group>";
-		};
-		52474C6F18FCC4EE004EE6E7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				52474CA618FCC585004EE6E7 /* InfoPlist.strings */,
-				52474CA118FCC57A004EE6E7 /* LevelSearchTestApp-Info.plist */,
-				52474CA218FCC57A004EE6E7 /* LevelSearchTestApp-Prefix.pch */,
-				52474CA318FCC57A004EE6E7 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		528A5B5718FCC6D50006676A /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				528A5B5818FCC6F60006676A /* LSMainTableViewController.h */,
-				528A5B5918FCC6F60006676A /* LSMainTableViewController.m */,
-				528A5B6418FCCA350006676A /* LSSearchManager.h */,
-				528A5B6518FCCA350006676A /* LSSearchManager.m */,
-			);
-			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		528A5B5B18FCC7070006676A /* Shared */ = {
@@ -330,25 +249,6 @@
 			productReference = 521411F118FC873200837228 /* LevelSearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		52474C6918FCC4EE004EE6E7 /* LevelSearchTestApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52474C8E18FCC4EE004EE6E7 /* Build configuration list for PBXNativeTarget "LevelSearchTestApp" */;
-			buildPhases = (
-				A8CFFABEF52D4B948AF29BB6 /* Check Pods Manifest.lock */,
-				52474C6618FCC4EE004EE6E7 /* Sources */,
-				52474C6718FCC4EE004EE6E7 /* Frameworks */,
-				52474C6818FCC4EE004EE6E7 /* Resources */,
-				DEB0A2D97807453E88E98EE6 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LevelSearchTestApp;
-			productName = LevelSearchTestApp;
-			productReference = 52474C6A18FCC4EE004EE6E7 /* LevelSearchTestApp.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -356,14 +256,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				TargetAttributes = {
-					521411F018FC873200837228 = {
-						TestTargetID = 52474C6918FCC4EE004EE6E7;
-					};
-					52474C6918FCC4EE004EE6E7 = {
-						DevelopmentTeam = A5J4YXWLT3;
-					};
-				};
 			};
 			buildConfigurationList = 521411EA18FC870100837228 /* Build configuration list for PBXProject "LevelSearchTests" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -377,7 +269,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52474C6918FCC4EE004EE6E7 /* LevelSearchTestApp */,
 				521411F018FC873200837228 /* LevelSearchTests */,
 			);
 		};
@@ -392,19 +283,6 @@
 				52A45F8419004D8400B70C01 /* adjectives.json in Resources */,
 				520F333A18FC891700932E4B /* testAvatar.png in Resources */,
 				520F332418FC887C00932E4B /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52474C6818FCC4EE004EE6E7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52474C7B18FCC4EE004EE6E7 /* Images.xcassets in Resources */,
-				528A5B5618FCC6BF0006676A /* Storyboard.storyboard in Resources */,
-				528A5B5D18FCC73C0006676A /* testAvatar.png in Resources */,
-				520952BA18FF74510040D3E6 /* adjectives.json in Resources */,
-				528A5B5E18FCC73F0006676A /* testNames.json in Resources */,
-				52474CA818FCC585004EE6E7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,36 +319,6 @@
 			shellScript = "\"${SRCROOT}/../Pods/Pods-LevelSearchTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8CFFABEF52D4B948AF29BB6 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DEB0A2D97807453E88E98EE6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-LevelSearchTestApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -492,23 +340,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52474C6618FCC4EE004EE6E7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				528A5B5A18FCC6F60006676A /* LSMainTableViewController.m in Sources */,
-				52474CA518FCC57A004EE6E7 /* main.m in Sources */,
-				528A5B5F18FCC7450006676A /* Person+PersonFactory.m in Sources */,
-				528A5B5C18FCC7350006676A /* TestDataManager.m in Sources */,
-				528A5B6118FCC7490006676A /* LevelSearchTests.xcdatamodeld in Sources */,
-				528A5B6218FCC8200006676A /* LSIndex.m in Sources */,
-				528A5B6018FCC7470006676A /* Person.m in Sources */,
-				528A5B6318FCC8710006676A /* UIImage+TestColorImages.m in Sources */,
-				528A5B6618FCCA350006676A /* LSSearchManager.m in Sources */,
-				52474C7918FCC4EE004EE6E7 /* LSAppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -516,14 +347,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				520F332318FC887C00932E4B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		52474CA618FCC585004EE6E7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52474CA718FCC585004EE6E7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -556,7 +379,6 @@
 			baseConfigurationReference = 4BCC41BBC62240BCA57FBB5F /* Pods-LevelSearchTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LevelSearchTestApp.app/LevelSearchTestApp";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -604,7 +426,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -614,7 +435,6 @@
 			baseConfigurationReference = 4BCC41BBC62240BCA57FBB5F /* Pods-LevelSearchTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LevelSearchTestApp.app/LevelSearchTestApp";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -661,91 +481,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		52474C8F18FCC4EE004EE6E7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DB9B7E924604AD38E5778BC /* Pods-LevelSearchTestApp.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelSearchTestApp/LevelSearchTestApp-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "LevelSearchTestApp/LevelSearchTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		52474C9018FCC4EE004EE6E7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DB9B7E924604AD38E5778BC /* Pods-LevelSearchTestApp.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelSearchTestApp/LevelSearchTestApp-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "LevelSearchTestApp/LevelSearchTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -766,15 +503,6 @@
 			buildConfigurations = (
 				5214120318FC873200837228 /* Debug */,
 				5214120418FC873200837228 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52474C8E18FCC4EE004EE6E7 /* Build configuration list for PBXNativeTarget "LevelSearchTestApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52474C8F18FCC4EE004EE6E7 /* Debug */,
-				52474C9018FCC4EE004EE6E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

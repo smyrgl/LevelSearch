@@ -18,7 +18,7 @@ static NSString * const kIndexedEntitiesKey = @"LevelSearchIndexedEntitiesKey";
 NSString * const LSIndexingDidStartNotification = @"com.tinylittlegears.levelsearch.index.indexing.start";
 NSString * const LSIndexingDidFinishNotification = @"com.tinylittlegears.levelsearch.index.indexing.finish";
 
-static NSUInteger const kDefaultCacheSizeInBytes = 1048576 * 20;
+static NSUInteger const kDefaultCacheSizeInBytes = 1048576 * 5;
 
 static dispatch_queue_t level_search_clear_indexing_queue() {
     static dispatch_queue_t level_search_clear_indexing_queue;

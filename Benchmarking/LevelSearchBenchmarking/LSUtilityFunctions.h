@@ -9,3 +9,4 @@
 extern uint8_t LSCountOfCores(void);
 extern NSString *LSAppDataDirectory(void);
 extern CGFloat LSTimedBlock (void (^block)(void));
+extern NSString *LSGetRandomStringWithCharCount(int count);

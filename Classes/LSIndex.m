@@ -19,8 +19,8 @@ static NSString * const kIndexedEntitiesKey = @"LevelSearchIndexedEntitiesKey";
 NSString * const LSIndexingDidStartNotification = @"com.tinylittlegears.levelsearch.index.indexing.start";
 NSString * const LSIndexingDidFinishNotification = @"com.tinylittlegears.levelsearch.index.indexing.finish";
 
-static NSUInteger const kDefaultCacheSizeInBytes = 1048576 * 5;
-static NSUInteger const kDefaultBloomFilterSizeInBits = 1000;
+static int const kDefaultCacheSizeInBytes = 1048576 * 10;
+static int const kDefaultBloomFilterSizeInBits = 10;
 
 NSString * LSExecutableName(void)
 {
@@ -151,7 +151,7 @@ static dispatch_queue_t level_search_query_queue() {
         _cacheSizeInBytes = kDefaultCacheSizeInBytes;
         LevelDBOptions options = [LevelDB makeOptions];
         options.cacheSize = [settings[LSIndexCacheSizeSetting] integerValue];
-        options.filterPolicy = [settings[LSBloomFilterSizeSetting] integerValue];
+        options.filterPolicy = [settings[LSBloomFilterSizeSetting] intValue];
         self.indexDB = [[LevelDB alloc] initWithPath:[NSString stringWithFormat:@"%@/levelsearch/%@", LSPathToIndex(), self.name] name:self.name andOptions:options];
         self.indexDB.safe = NO;
         self.indexedEntities = [NSMutableDictionary new];
@@ -334,7 +334,7 @@ static dispatch_queue_t level_search_query_queue() {
         }
         
         NSMutableArray *results = [NSMutableArray new];
-        
+                
         [self.indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
             for (NSString *attributestring in value) {
                 if ([predicate evaluateWithObject:attributestring]) {

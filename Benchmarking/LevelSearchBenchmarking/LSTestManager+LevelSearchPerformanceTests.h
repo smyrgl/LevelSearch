@@ -12,4 +12,6 @@
 
 + (void)performLevelSearchPerformanceTests;
 
++ (void)performLevelSearchQueryTestsWithObjects:(NSUInteger)numberOfObjects queryCount:(NSUInteger)queries;
+
 @end

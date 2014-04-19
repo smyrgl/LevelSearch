@@ -39,4 +39,28 @@
                           }];
 }
 
++ (void)performLevelSearchQueryTestsWithObjects:(NSUInteger)numberOfObjects queryCount:(NSUInteger)queries;
+{
+    [[LSIndex sharedIndex] stopWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
+    DDLogInfo(@"Creating %lu books", numberOfObjects);
+    NSArray *books = [Book createRandomBooks:numberOfObjects];
+    NSSet *indexBooks = [NSSet setWithArray:books];
+    DDLogInfo(@"Created %lu books", numberOfObjects);
+    
+    [[LSIndex sharedIndex] indexEntities:indexBooks
+                          withCompletion:^{
+                              for (int x = 0; x < queries; x++) {
+                                  NSString *query = LSGetRandomStringWithCharCount(3);
+                                  LSStopwatch *queryStopwatch = [LSStopwatch new];
+                                  [queryStopwatch start];
+                                  [[LSIndex sharedIndex] queryInBackgroundWithString:query
+                                                                         withResults:^(NSSet *results) {
+                                                                             [queryStopwatch stop];
+                                                                             DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
+                                                                         }];
+                              }
+                          }];
+
+}
+
 @end

@@ -53,3 +53,12 @@ CGFloat LSTimedBlock (void (^block)(void))
     uint64_t nanos = elapsed * info.numer / info.denom;
     return (CGFloat)nanos / NSEC_PER_SEC;
 }
+
+NSString *LSGetRandomStringWithCharCount(int count)
+{
+    NSMutableString *randomString = [NSMutableString new];
+    for (int x = 0; x < count; x++) {
+        [randomString appendString:[NSString stringWithFormat:@"%c", arc4random_uniform(26) + 'a']];
+    }
+    return [NSString stringWithString:randomString];
+}

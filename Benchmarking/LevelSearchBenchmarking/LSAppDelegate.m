@@ -18,7 +18,7 @@
    // [LSTestManager performFTS4PerformanceTests];
     
     [[LSTestManager sharedManager] setupWithTestMode:LSTestModeLevelSearch];
-    [LSTestManager performLevelSearchPerformanceTests];
+    [LSTestManager performLevelSearchQueryTestsWithObjects:5000 queryCount:50];
 }
 
 @end

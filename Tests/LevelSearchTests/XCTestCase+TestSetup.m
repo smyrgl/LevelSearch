@@ -52,6 +52,7 @@
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
     [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:2];
+    [self waitForTimeout:0.5];
 }
 
 @end

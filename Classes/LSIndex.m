@@ -11,6 +11,7 @@
 #import <LDBWriteBatch.h>
 
 static NSString * const LSIndexCacheSizeSetting = @"LSIndexCacheSizeSetting";
+static NSString * const LSBloomFilterSizeSetting = @"LSBloomFilterSizeSetting";
 static NSString * const LSIndexNameSetting = @"LSIndexNameSetting";
 
 static NSString * const kIndexedEntitiesKey = @"LevelSearchIndexedEntitiesKey";
@@ -19,6 +20,7 @@ NSString * const LSIndexingDidStartNotification = @"com.tinylittlegears.levelsea
 NSString * const LSIndexingDidFinishNotification = @"com.tinylittlegears.levelsearch.index.indexing.finish";
 
 static NSUInteger const kDefaultCacheSizeInBytes = 1048576 * 5;
+static NSUInteger const kDefaultBloomFilterSizeInBits = 1000;
 
 NSString * LSExecutableName(void)
 {
@@ -127,7 +129,7 @@ static dispatch_queue_t level_search_query_queue() {
     static LSIndex *index = nil;
     
     dispatch_once(&onceQueue, ^{
-        index = [[self alloc] initWithSettings:@{LSIndexCacheSizeSetting: [NSNumber numberWithInteger:kDefaultCacheSizeInBytes], LSIndexNameSetting: @"shared"}];
+        index = [[self alloc] initWithSettings:@{LSIndexCacheSizeSetting: [NSNumber numberWithInteger:kDefaultCacheSizeInBytes], LSIndexNameSetting: @"shared", LSBloomFilterSizeSetting: [NSNumber numberWithInteger:kDefaultBloomFilterSizeInBits]}];
     });
     return index;
 }
@@ -149,7 +151,9 @@ static dispatch_queue_t level_search_query_queue() {
         _cacheSizeInBytes = kDefaultCacheSizeInBytes;
         LevelDBOptions options = [LevelDB makeOptions];
         options.cacheSize = [settings[LSIndexCacheSizeSetting] integerValue];
+        options.filterPolicy = [settings[LSBloomFilterSizeSetting] integerValue];
         self.indexDB = [[LevelDB alloc] initWithPath:[NSString stringWithFormat:@"%@/levelsearch/%@", LSPathToIndex(), self.name] name:self.name andOptions:options];
+        self.indexDB.safe = NO;
         self.indexedEntities = [NSMutableDictionary new];
         self.indexing = NO;
         _internalWatchedContexts = [NSMutableSet new];
@@ -158,11 +162,6 @@ static dispatch_queue_t level_search_query_queue() {
 }
 
 - (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)cleanup
 {
     [self.indexDB close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];

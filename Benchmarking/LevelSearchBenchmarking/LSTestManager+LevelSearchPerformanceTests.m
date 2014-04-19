@@ -21,6 +21,7 @@
     DDLogInfo(@"Created %lu books", createCount);
     
     LSStopwatch *stopwatch = [LSStopwatch new];
+    [stopwatch start];
     [[LSIndex sharedIndex] indexEntities:indexBooks
                           withCompletion:^{
                               [stopwatch stop];
@@ -33,6 +34,7 @@
                                                                          [queryStopwatch stop];
                                                                          DDLogInfo(@"Results: %@", results);
                                                                          DDLogInfo(@"Time to query %f seconds", [queryStopwatch recordedTime]);
+                                                                         [[LSIndex sharedIndex] cleanup];
                                                                      }];
                           }];
 }

@@ -249,6 +249,8 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
 /// @name Index Utility Functions
 ///------------------------------
 
+- (void)cleanup;
+
 /**
  Blocking call that clears all keys from the given index.
  */

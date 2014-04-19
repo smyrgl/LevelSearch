@@ -106,9 +106,9 @@
     XCTAssert(results, @"There must be a results set");
     XCTAssert(results.count == 0, @"There must be zero results");
     
-    NSString *partialName = [personOne.name substringWithRange:NSMakeRange(0, 2)];
-    NSString *partialKeyword = [personOne.keywords substringWithRange:NSMakeRange(0, 3)];
-    NSSet *partialResults = [[LSIndex sharedIndex] queryWithString:[NSString stringWithFormat:@"%@ %@", partialName, partialKeyword]];
+    NSString *firstPartName = [personOne.name substringWithRange:NSMakeRange(0, 3)];
+    NSString *lastPartName = [personOne.name substringWithRange:NSMakeRange(personOne.name.length - 3, 3)];
+    NSSet *partialResults = [[LSIndex sharedIndex] queryWithString:[NSString stringWithFormat:@"%@ %@", firstPartName, lastPartName]];
     
     XCTAssert(partialResults, @"There must be a results set");
     XCTAssert(partialResults.count == 1, @"There must be a single result");
@@ -214,10 +214,10 @@
     NSArray *peopleArray = [Person MR_findAll];
     Person *personOne = peopleArray[0];
     Person *personTwo = peopleArray[1];
-    NSString *partialName = [personOne.name substringWithRange:NSMakeRange(0, 4)];
-    NSString *partialKeyword = [personOne.keywords substringWithRange:NSMakeRange(0, 3)];
+    NSString *firstPartName = [personOne.name substringWithRange:NSMakeRange(0, 3)];
+    NSString *lastPartName = [personOne.name substringWithRange:NSMakeRange(personOne.name.length - 3, 3)];
     NSString *badQuery = [NSString stringWithFormat:@"%@ %@", personOne.name, personTwo.name];
-    NSString *goodQuery = [NSString stringWithFormat:@"%@ %@", partialName, partialKeyword];
+    NSString *goodQuery = [NSString stringWithFormat:@"%@ %@", firstPartName, lastPartName];
     
     __block NSSet *badQueryResults;
     __block NSSet *goodQueryResults;

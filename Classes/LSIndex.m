@@ -20,6 +20,41 @@ NSString * const LSIndexingDidFinishNotification = @"com.tinylittlegears.levelse
 
 static NSUInteger const kDefaultCacheSizeInBytes = 1048576 * 5;
 
+NSString * LSExecutableName(void)
+{
+    NSString *executableName = [[[NSBundle mainBundle] executablePath] lastPathComponent];
+    if (nil == executableName) {
+        executableName = @"LevelSearch";
+    }
+    
+    return executableName;
+}
+
+NSString * LSPathToIndex(void)
+{
+#if TARGET_OS_IPHONE
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+#else
+    NSFileManager *sharedFM = [NSFileManager defaultManager];
+    
+    NSArray *possibleURLs = [sharedFM URLsForDirectory:NSApplicationSupportDirectory
+                                             inDomains:NSUserDomainMask];
+    NSURL *appSupportDir = nil;
+    NSURL *appDirectory = nil;
+    
+    if ([possibleURLs count] >= 1) {
+        appSupportDir = [possibleURLs objectAtIndex:0];
+    }
+    
+    if (appSupportDir) {
+        appDirectory = [appSupportDir URLByAppendingPathComponent:LSExecutableName()];
+        return [appDirectory path];
+    }
+    return nil;
+#endif
+}
+
 static dispatch_queue_t level_search_clear_indexing_queue() {
     static dispatch_queue_t level_search_clear_indexing_queue;
     static dispatch_once_t onceToken;
@@ -72,7 +107,7 @@ static dispatch_queue_t level_search_query_queue() {
 
 @interface LSIndex ()
 
-@property (atomic, strong) LevelDB *indexDB;
+@property (nonatomic, strong) LevelDB *indexDB;
 @property (nonatomic, strong) NSMutableDictionary *indexedEntities;
 @property (nonatomic, copy, readwrite) NSString *name;
 @property (nonatomic, assign, readwrite, getter=isIndexing) BOOL indexing;
@@ -114,7 +149,7 @@ static dispatch_queue_t level_search_query_queue() {
         _cacheSizeInBytes = kDefaultCacheSizeInBytes;
         LevelDBOptions options = [LevelDB makeOptions];
         options.cacheSize = [settings[LSIndexCacheSizeSetting] integerValue];
-        self.indexDB = [LevelDB databaseInLibraryWithName:self.name andOptions:options];
+        self.indexDB = [[LevelDB alloc] initWithPath:[NSString stringWithFormat:@"%@/levelsearch/%@", LSPathToIndex(), self.name] name:self.name andOptions:options];
         self.indexedEntities = [NSMutableDictionary new];
         self.indexing = NO;
         _internalWatchedContexts = [NSMutableSet new];
@@ -123,6 +158,11 @@ static dispatch_queue_t level_search_query_queue() {
 }
 
 - (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)cleanup
 {
     [self.indexDB close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -271,55 +311,32 @@ static dispatch_queue_t level_search_query_queue() {
     NSParameterAssert(context);
 
     @autoreleasepool {
-        NSArray *wordsAndEmptyStrings = [qString.lowercaseString componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        NSArray *words = [wordsAndEmptyStrings filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"length > 0"]];
         
-        NSMutableSet *matchingIDs;
+        NSPredicate *predicate;
         
         if (options & LSIndexQueryOptionsSpaceMeansOR) {
-            
-            matchingIDs = [NSMutableSet new];
-            
-            NSMutableArray *subpredicates = [NSMutableArray new];
-            
-            for (NSString *qSubstring in words) {
-                NSPredicate *subpredicate = [NSPredicate predicateWithFormat:@"self CONTAINS %@", qSubstring];
-                [subpredicates addObject:subpredicate];
+            NSMutableArray *array = [NSMutableArray new];
+            for (NSString *token in [self tokenizeString:qString]) {
+                [array addObject:[NSPredicate predicateWithFormat:@"self CONTAINS %@", token]];
             }
-            
-            NSPredicate *finalPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:subpredicates];
-            
-            [self.indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
-                if ([finalPredicate evaluateWithObject:NSStringFromLevelDBKey(key)]) {
-                    [matchingIDs addObjectsFromArray:[value allObjects]];
-                }
-            }];
-            
+            predicate = [NSCompoundPredicate orPredicateWithSubpredicates:array];
         } else {
-            
-            NSMutableSet *resultSet = [NSMutableSet new];
-            for (NSString *word in words) {
-                NSMutableSet *wordResultSet = [NSMutableSet new];
-                [self.indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
-                    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self CONTAINS %@", word];
-                    if ([predicate evaluateWithObject:NSStringFromLevelDBKey(key)]) {
-                        [wordResultSet addObjectsFromArray:[value allObjects]];
-                    }
-                }];
-                [resultSet addObject:wordResultSet];
-            }
-            for (NSMutableSet *wordResultSet in resultSet) {
-                if (!matchingIDs) {
-                    matchingIDs = wordResultSet;
-                } else {
-                    [matchingIDs intersectSet:wordResultSet];
-                }
-            }
+            predicate = [NSPredicate predicateWithFormat:@"self CONTAINS %@", [self buildTokenizedString:[self tokenizedQueryArray:qString]]];
         }
         
-        NSMutableSet *returnSet = [NSMutableSet new];
+        NSMutableArray *results = [NSMutableArray new];
         
-        for (NSString *value in matchingIDs) {
+        [self.indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
+            for (NSString *attributestring in value) {
+                if ([predicate evaluateWithObject:attributestring]) {
+                    [results addObject:NSStringFromLevelDBKey(key)];
+                }
+            }
+        }];
+        
+        NSMutableSet *returnSet = [NSMutableSet new];
+
+        for (NSString *value in results) {
             NSManagedObjectID *objectID = [context.persistentStoreCoordinator managedObjectIDForURIRepresentation:[NSURL URLWithString:value]];
             NSManagedObject *object = [context existingObjectWithID:objectID error:nil];
             [returnSet addObject:object];
@@ -327,6 +344,7 @@ static dispatch_queue_t level_search_query_queue() {
         
         return [NSSet setWithSet:returnSet];
     }
+    
 }
 
 #pragma mark - Async Query Methods
@@ -362,8 +380,10 @@ static dispatch_queue_t level_search_query_queue() {
 {
     NSDictionary *userInfo = [notification userInfo];
     
-    NSSet *clearObjects = [[NSSet setWithSet:[userInfo objectForKey:NSUpdatedObjectsKey]] setByAddingObjectsFromSet:[userInfo objectForKey:NSDeletedObjectsKey]];
+    NSSet *clearObjects = [userInfo objectForKey:NSDeletedObjectsKey];
+    clearObjects = [self objectsWithCandidates:clearObjects];
     NSSet *indexObjects = [[NSSet setWithSet:[userInfo objectForKey:NSInsertedObjectsKey]] setByAddingObjectsFromSet:[userInfo objectForKey:NSUpdatedObjectsKey]];
+    indexObjects = [self objectsWithCandidates:indexObjects];
     
     __weak typeof(self) weakSelf = self;
     
@@ -413,25 +433,72 @@ static dispatch_queue_t level_search_query_queue() {
     }
 }
 
+- (NSArray *)tokenizedQueryArray:(NSString *)query
+{
+    if (!query || query.length == 0) {
+        return [NSArray array];
+    } else {
+        NSMutableArray *tokens = [NSMutableArray new];
+        
+        CFLocaleRef locale = CFLocaleCopyCurrent();
+        
+        NSString *tokenizeText = query = [query stringByFoldingWithOptions:kCFCompareCaseInsensitive|kCFCompareDiacriticInsensitive locale:[NSLocale systemLocale]];
+        CFStringTokenizerRef tokenizer = CFStringTokenizerCreate(kCFAllocatorDefault, (__bridge CFStringRef)tokenizeText, CFRangeMake(0, CFStringGetLength((__bridge CFStringRef)tokenizeText)), kCFStringTokenizerUnitWord, locale);
+        CFStringTokenizerTokenType tokenType = kCFStringTokenizerTokenNone;
+        
+        while (kCFStringTokenizerTokenNone != (tokenType = CFStringTokenizerAdvanceToNextToken(tokenizer))) {
+            CFRange tokenRange = CFStringTokenizerGetCurrentTokenRange(tokenizer);
+            
+            NSRange range = NSMakeRange(tokenRange.location, tokenRange.length);
+            NSString *token = [query substringWithRange:range];
+            
+            [tokens addObject:token];
+        }
+        
+        CFRelease(tokenizer);
+        CFRelease(locale);
+        
+        if (self.stopWords) [tokens removeObjectsInArray:[self.stopWords allObjects]];
+        
+        return [NSArray arrayWithArray:tokens];
+    }
+}
+
+- (NSString *)buildTokenizedString:(NSArray *)tokens
+{
+    if (tokens.count == 0) {
+        return nil;
+    }
+    NSMutableString *returnString = [NSMutableString new];
+    
+    for (NSString *token in tokens.reverseObjectEnumerator.allObjects) {
+        [returnString appendFormat:@"%@ ", token];
+    }
+    
+    [returnString deleteCharactersInRange:NSMakeRange(returnString.length - 1, 1)];
+    return [NSString stringWithString:returnString];
+}
+
+- (NSSet *)objectsWithCandidates:(NSSet *)candidates
+{
+    NSMutableSet *returnSet = [NSMutableSet new];
+    for (NSManagedObject *object in candidates) {
+        if (self.indexedEntities[object.entity.name] && !object.objectID.isTemporaryID) {
+            [returnSet addObject:object];
+        }
+    }
+    return [NSSet setWithSet:returnSet];
+}
+
 - (void)clearIndexForEntities:(NSSet *)entities withCompletion:(LSIndexEntitiesCompletionBlock)completion
 {
     @autoreleasepool {
         LDBWritebatch *deleteBatch = [self.indexDB newWritebatch];
-        
-        __weak typeof(self) weakSelf = self;
-        
+                
         for (NSManagedObject *clearObject in entities) {
             dispatch_group_async(level_search_clear_indexing_group(), level_search_clear_indexing_queue(), ^{
-                __strong typeof(weakSelf) strongSelf = weakSelf;
                 NSString *pk = clearObject.objectID.URIRepresentation.absoluteString;
-                [strongSelf.indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
-                    NSSet *valueSet = value;
-                    if ([valueSet containsObject:pk]) {
-                        NSMutableSet *newSet = [NSMutableSet setWithSet:valueSet];
-                        [newSet removeObject:pk];
-                        [deleteBatch setObject:[NSSet setWithSet:newSet] forKey:NSStringFromLevelDBKey(key)];
-                    }
-                }];
+                [deleteBatch removeObjectForKey:pk];
             });
         }
         
@@ -447,27 +514,30 @@ static dispatch_queue_t level_search_query_queue() {
 - (void)buildIndexForEntities:(NSSet *)entities withCompletion:(LSIndexEntitiesCompletionBlock)completion
 {
     @autoreleasepool {
+        LDBWritebatch *writeBatch = [self.indexDB newWritebatch];
+        
         __weak typeof(self) weakSelf = self;
         for (NSManagedObject *indexObject in entities) {
-            if (indexObject.objectID.isTemporaryID == NO) {
-                dispatch_group_async(level_search_indexing_group(), level_search_indexing_queue(), ^{
-                    __strong typeof(weakSelf) strongSelf = weakSelf;
-                    if ([strongSelf.indexedEntities valueForKey:indexObject.entity.name]) {
-                        for (NSString *attribute in (NSArray *)[strongSelf.indexedEntities valueForKey:indexObject.entity.name]) {
-                            NSString *value = [indexObject valueForKey:attribute];
-                            NSSet *tokenizedAttribute = [strongSelf tokenizeString:value];
-                            for (NSString *token in tokenizedAttribute) {
-                                NSMutableSet *valueSet = [NSMutableSet setWithSet:[self.indexDB valueForKey:token]];
-                                [valueSet addObject:indexObject.objectID.URIRepresentation.absoluteString];
-                                [strongSelf.indexDB setObject:[NSSet setWithSet:valueSet] forKey:token];
-                            }
-                        }
+            dispatch_group_async(level_search_indexing_group(), level_search_indexing_queue(), ^{
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                NSMutableSet *indexForObject = [NSMutableSet new];
+                for (NSString *attribute in (NSArray *)strongSelf.indexedEntities[indexObject.entity.name]) {
+                    NSString *value = [indexObject valueForKey:attribute];
+                    NSSet *tokens = [self tokenizeString:value];
+                    NSString *tokenString = [self buildTokenizedString:[tokens allObjects]];
+                    if (tokens.count > 0) {
+                        [indexForObject addObject:tokenString];
                     }
-                });
-            }
+                }
+                
+                if (indexForObject.count > 0) {
+                    [writeBatch setObject:[NSSet setWithSet:indexForObject] forKey:indexObject.objectID.URIRepresentation.absoluteString];
+                }
+            });
         }
         
         dispatch_group_notify(level_search_indexing_group(), level_search_indexing_queue(), ^{
+            [writeBatch apply];
             if (completion) {
                 completion();
             }

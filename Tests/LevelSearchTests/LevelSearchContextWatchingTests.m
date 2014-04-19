@@ -121,8 +121,6 @@
     
     // First verify the person is in the index
     
-    // First verify the person is in the index
-    
     Person *aPerson = [Person MR_findFirst];
     NSString *personName = [aPerson.name copy];
     NSString *newPersonName = @"Abominable Snowman";

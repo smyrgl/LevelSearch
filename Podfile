@@ -5,15 +5,17 @@ xcodeproj 'Benchmarking/LevelSearchBenchmarking.xcodeproj'
 
 inhibit_all_warnings!
 
-target :LevelSearchExample do 
+target :LevelSearchExample do
+    platform :ios, '7.0'
 	pod 'Objective-LevelDB'
 	xcodeproj 'Example/LevelSearchExample.xcodeproj'
 end
 
-target :LevelSearchTests do 
+target :LevelSearchTests do
+    platform :ios, '7.0'
 	pod 'Objective-LevelDB'
 	pod 'MagicalRecord'
-  pod 'XCAsyncTestCase'
+    pod 'XCAsyncTestCase'
 	xcodeproj 'Tests/LevelSearchTests.xcodeproj'
 end
 

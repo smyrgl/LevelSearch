@@ -308,19 +308,29 @@ static dispatch_queue_t level_search_query_queue() {
 {
     NSParameterAssert(qString);
     NSParameterAssert(context);
+    
+    if (!qString) {
+        return [NSSet set];
+    }
 
     @autoreleasepool {
         
+        NSSet *querySet = [self tokenizeString:qString];
+        
+        if (querySet.count == 0) {
+            return [NSSet set];
+        }
+        
         NSPredicate *predicate;
+        NSMutableArray *array = [NSMutableArray new];
+        for (NSString *token in [self tokenizeString:qString]) {
+            [array addObject:[NSPredicate predicateWithFormat:@"self CONTAINS %@", token]];
+        }
         
         if (options & LSIndexQueryOptionsSpaceMeansOR) {
-            NSMutableArray *array = [NSMutableArray new];
-            for (NSString *token in [self tokenizeString:qString]) {
-                [array addObject:[NSPredicate predicateWithFormat:@"self CONTAINS %@", token]];
-            }
             predicate = [NSCompoundPredicate orPredicateWithSubpredicates:array];
         } else {
-            predicate = [NSPredicate predicateWithFormat:@"self CONTAINS %@", [self buildTokenizedString:[self tokenizedQueryArray:qString]]];
+            predicate = [NSCompoundPredicate andPredicateWithSubpredicates:array];
         }
         
         NSMutableArray *results = [NSMutableArray new];
@@ -432,37 +442,6 @@ static dispatch_queue_t level_search_query_queue() {
     }
 }
 
-- (NSArray *)tokenizedQueryArray:(NSString *)query
-{
-    if (!query || query.length == 0) {
-        return [NSArray array];
-    } else {
-        NSMutableArray *tokens = [NSMutableArray new];
-        
-        CFLocaleRef locale = CFLocaleCopyCurrent();
-        
-        NSString *tokenizeText = query = [query stringByFoldingWithOptions:kCFCompareCaseInsensitive|kCFCompareDiacriticInsensitive locale:[NSLocale systemLocale]];
-        CFStringTokenizerRef tokenizer = CFStringTokenizerCreate(kCFAllocatorDefault, (__bridge CFStringRef)tokenizeText, CFRangeMake(0, CFStringGetLength((__bridge CFStringRef)tokenizeText)), kCFStringTokenizerUnitWord, locale);
-        CFStringTokenizerTokenType tokenType = kCFStringTokenizerTokenNone;
-        
-        while (kCFStringTokenizerTokenNone != (tokenType = CFStringTokenizerAdvanceToNextToken(tokenizer))) {
-            CFRange tokenRange = CFStringTokenizerGetCurrentTokenRange(tokenizer);
-            
-            NSRange range = NSMakeRange(tokenRange.location, tokenRange.length);
-            NSString *token = [query substringWithRange:range];
-            
-            [tokens addObject:token];
-        }
-        
-        CFRelease(tokenizer);
-        CFRelease(locale);
-        
-        if (self.stopWords) [tokens removeObjectsInArray:[self.stopWords allObjects]];
-        
-        return [NSArray arrayWithArray:tokens];
-    }
-}
-
 - (NSString *)buildTokenizedString:(NSArray *)tokens
 {
     if (tokens.count == 0) {
@@ -470,7 +449,7 @@ static dispatch_queue_t level_search_query_queue() {
     }
     NSMutableString *returnString = [NSMutableString new];
     
-    for (NSString *token in tokens.reverseObjectEnumerator.allObjects) {
+    for (NSString *token in tokens) {
         [returnString appendFormat:@"%@ ", token];
     }
     

@@ -35,7 +35,6 @@
                                                                          [queryStopwatch stop];
                                                                          DDLogInfo(@"Results: %@", results);
                                                                          DDLogInfo(@"Time to query %f seconds", [queryStopwatch recordedTime]);
-                                                                         [[LSIndex sharedIndex] cleanup];
                                                                      }];
                           }];
 }

@@ -39,20 +39,18 @@
 
 - (void)buildSampleIndex
 {
-    [Person buildRandomPeople:10];
+    [[LSIndex sharedIndex] stopWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
+    NSArray *people = [Person createRandomPeople:10];
     
     __weak typeof(self) weakSelf = self;
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:LSIndexingDidFinishNotification
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *note) {
-                                                      [weakSelf notify:XCTAsyncTestCaseStatusSucceeded];
-                                                  }];
+    [[LSIndex sharedIndex] indexEntities:[NSSet setWithArray:people] withCompletion:^{
+        [weakSelf notify:XCTAsyncTestCaseStatusSucceeded];
+    }];
     
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
     [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:2];
-    [self waitForTimeout:0.5];
+    
+    [[LSIndex sharedIndex] startWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
 }
 
 @end

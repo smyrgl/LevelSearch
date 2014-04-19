@@ -1,0 +1,37 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <DDLog.h>
+#import <DDASLLogger.h>
+#import <DDTTYLogger.h>
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
+#ifdef DEBUG
+static int ddLogLevel = LOG_LEVEL_INFO;
+#else
+static int ddLogLevel = LOG_LEVEL_INFO;
+#endif
+#pragma clang diagnostic pop
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <CoreData/CoreData.h>
+    #import <RestKit/RestKit.h>
+    #import <CoreData+MagicalRecord.h>
+    #import <CoreServices/CoreServices.h>
+    #import <FMDB/FMDatabase.h>
+    #import <FMDB/FMDatabaseQueue.h>
+    #import <FMDB/FMResultSet.h>
+    #import <FMDB/FMDatabasePool.h>
+    #import <FMDB/FMDatabaseAdditions.h>
+    #import "LevelSearch.h"
+    #import "LSUtilityFunctions.h"
+    #import "LSTestManager.h"
+    #import "Book.h"
+    #import "Book+Factory.h"
+    #import "LSStopwatch.h"
+#endif

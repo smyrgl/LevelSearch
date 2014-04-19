@@ -7,7 +7,6 @@
 //
 
 #import "Person+PersonFactory.h"
-#import "UIImage+TestColorImages.h"
 #import "TestDataManager.h"
 
 @implementation Person (PersonFactory)
@@ -28,9 +27,6 @@
     for (int i = 0; i < count; i++) {
         Person *newPerson = [Person MR_createInContext:context];
         newPerson.age = [NSNumber numberWithInteger:[Person randomAge]];
-        UIImage *ava = [UIImage imageWithColor:[UIColor redColor] andSize:CGSizeMake(100, 100)];
-        NSAssert(ava, @"There must be an avatar");
-        newPerson.avatar = UIImagePNGRepresentation(ava);
         newPerson.balanceInAccount = [Person randomBalance];
         newPerson.birthdate = [Person randomBirthdate];
         newPerson.married = [NSNumber numberWithBool:[Person randomBool]];

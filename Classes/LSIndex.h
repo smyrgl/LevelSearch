@@ -63,7 +63,7 @@ typedef NS_OPTIONS(NSUInteger, LSIndexQueryOptions) {
 @property (nonatomic, copy) NSSet *stopWords;
 
 /**
- Size of the LRU cache used with the `LSIndex`.  Default value is 20 Megabytes but you are heavily encouraged to customize this to your particular needs.
+ Size of the LRU cache used with the `LSIndex`.  Default value is 5 Megabytes but you are heavily encouraged to customize this to your particular needs.
  */
 
 @property (nonatomic, assign) NSUInteger cacheSizeInBytes;

@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		524E71AB1901CE1F009D0D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E71AA1901CE1F009D0D98 /* Cocoa.framework */; };
+		524E71B51901CE1F009D0D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 524E71B31901CE1F009D0D98 /* InfoPlist.strings */; };
+		524E71B71901CE1F009D0D98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71B61901CE1F009D0D98 /* main.m */; };
+		524E71BB1901CE1F009D0D98 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524E71B91901CE1F009D0D98 /* Credits.rtf */; };
+		524E71BE1901CE1F009D0D98 /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71BD1901CE1F009D0D98 /* LSAppDelegate.m */; };
+		524E71C11901CE1F009D0D98 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524E71BF1901CE1F009D0D98 /* MainMenu.xib */; };
+		524E71C31901CE1F009D0D98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524E71C21901CE1F009D0D98 /* Images.xcassets */; };
+		524E71E41901CFF6009D0D98 /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71E31901CFF6009D0D98 /* LSIndex.m */; };
+		524E71E81901D01C009D0D98 /* LSTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71E71901D01C009D0D98 /* LSTestManager.m */; };
+		524E71FB1901D0BE009D0D98 /* adjectives.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E71F61901D0BE009D0D98 /* adjectives.json */; };
+		524E71FC1901D0BE009D0D98 /* testNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E71F71901D0BE009D0D98 /* testNames.json */; };
+		524E71FD1901D0BE009D0D98 /* TestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71F91901D0BE009D0D98 /* TestDataManager.m */; };
+		524E71FE1901D0BE009D0D98 /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 524E71FA1901D0BE009D0D98 /* testAvatar.png */; };
+		524E71FF1901D108009D0D98 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E71AE1901CE1F009D0D98 /* CoreData.framework */; };
+		524E72011901D11C009D0D98 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E72001901D11C009D0D98 /* CoreServices.framework */; };
+		524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E72041901D25E009D0D98 /* LSUtilityFunctions.m */; };
+		524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */; };
+		524E72121901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E72111901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m */; };
+		524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */; };
+		524E721E1901F1D1009D0D98 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E721D1901F1D1009D0D98 /* Book.m */; };
+		52D84F581901F2A5002D599B /* Book+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F571901F2A5002D599B /* Book+Factory.m */; };
+		52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5A1901F7E5002D599B /* LSStopwatch.m */; };
+		52D84F5F1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5E1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m */; };
+		82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LevelSearchBenchmarking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelSearchBenchmarking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		524E71AA1901CE1F009D0D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		524E71AD1901CE1F009D0D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		524E71AE1901CE1F009D0D98 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		524E71AF1901CE1F009D0D98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		524E71B21901CE1F009D0D98 /* LevelSearchBenchmarking-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LevelSearchBenchmarking-Info.plist"; sourceTree = "<group>"; };
+		524E71B41901CE1F009D0D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		524E71B61901CE1F009D0D98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		524E71B81901CE1F009D0D98 /* LevelSearchBenchmarking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelSearchBenchmarking-Prefix.pch"; sourceTree = "<group>"; };
+		524E71BA1901CE1F009D0D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		524E71BC1901CE1F009D0D98 /* LSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
+		524E71BD1901CE1F009D0D98 /* LSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
+		524E71C01901CE1F009D0D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		524E71C21901CE1F009D0D98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		524E71C91901CE1F009D0D98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		524E71E11901CFF6009D0D98 /* LevelSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSearch.h; path = ../../Classes/LevelSearch.h; sourceTree = "<group>"; };
+		524E71E21901CFF6009D0D98 /* LSIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIndex.h; path = ../../Classes/LSIndex.h; sourceTree = "<group>"; };
+		524E71E31901CFF6009D0D98 /* LSIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIndex.m; path = ../../Classes/LSIndex.m; sourceTree = "<group>"; };
+		524E71E61901D01C009D0D98 /* LSTestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTestManager.h; sourceTree = "<group>"; };
+		524E71E71901D01C009D0D98 /* LSTestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTestManager.m; sourceTree = "<group>"; };
+		524E71F61901D0BE009D0D98 /* adjectives.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = adjectives.json; path = ../../Tests/LevelSearchTests/adjectives.json; sourceTree = "<group>"; };
+		524E71F71901D0BE009D0D98 /* testNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testNames.json; path = ../../Tests/LevelSearchTests/testNames.json; sourceTree = "<group>"; };
+		524E71F81901D0BE009D0D98 /* TestDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestDataManager.h; path = ../../Tests/LevelSearchTests/TestDataManager.h; sourceTree = "<group>"; };
+		524E71F91901D0BE009D0D98 /* TestDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestDataManager.m; path = ../../Tests/LevelSearchTests/TestDataManager.m; sourceTree = "<group>"; };
+		524E71FA1901D0BE009D0D98 /* testAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testAvatar.png; path = ../../Tests/LevelSearchTests/testAvatar.png; sourceTree = "<group>"; };
+		524E72001901D11C009D0D98 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		524E72031901D25E009D0D98 /* LSUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSUtilityFunctions.h; sourceTree = "<group>"; };
+		524E72041901D25E009D0D98 /* LSUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSUtilityFunctions.m; sourceTree = "<group>"; };
+		524E720A1901DFD6009D0D98 /* LSFTS4Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFTS4Manager.h; sourceTree = "<group>"; };
+		524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFTS4Manager.m; sourceTree = "<group>"; };
+		524E72101901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSTestManager+FTS4PerformanceTests.h"; sourceTree = "<group>"; };
+		524E72111901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LSTestManager+FTS4PerformanceTests.m"; sourceTree = "<group>"; };
+		524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelSearchBenchmarkingModel.xcdatamodel; sourceTree = "<group>"; };
+		524E721C1901F1D1009D0D98 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		524E721D1901F1D1009D0D98 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		52D84F561901F2A5002D599B /* Book+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Book+Factory.h"; sourceTree = "<group>"; };
+		52D84F571901F2A5002D599B /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = "<group>"; };
+		52D84F591901F7E5002D599B /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = "<group>"; };
+		52D84F5A1901F7E5002D599B /* LSStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStopwatch.m; sourceTree = "<group>"; };
+		52D84F5D1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSTestManager+LevelSearchPerformanceTests.h"; sourceTree = "<group>"; };
+		52D84F5E1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LSTestManager+LevelSearchPerformanceTests.m"; sourceTree = "<group>"; };
+		BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelSearchBenchmarking.xcconfig"; path = "../Pods/Pods-LevelSearchBenchmarking.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		524E71A41901CE1F009D0D98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524E72011901D11C009D0D98 /* CoreServices.framework in Frameworks */,
+				524E71FF1901D108009D0D98 /* CoreData.framework in Frameworks */,
+				524E71AB1901CE1F009D0D98 /* Cocoa.framework in Frameworks */,
+				82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		524E719E1901CE1F009D0D98 = {
+			isa = PBXGroup;
+			children = (
+				524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */,
+				524E71A91901CE1F009D0D98 /* Frameworks */,
+				524E71A81901CE1F009D0D98 /* Products */,
+				BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		524E71A81901CE1F009D0D98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		524E71A91901CE1F009D0D98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				524E72001901D11C009D0D98 /* CoreServices.framework */,
+				524E71AA1901CE1F009D0D98 /* Cocoa.framework */,
+				524E71C91901CE1F009D0D98 /* XCTest.framework */,
+				524E71AC1901CE1F009D0D98 /* Other Frameworks */,
+				21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		524E71AC1901CE1F009D0D98 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				524E71AD1901CE1F009D0D98 /* AppKit.framework */,
+				524E71AE1901CE1F009D0D98 /* CoreData.framework */,
+				524E71AF1901CE1F009D0D98 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */ = {
+			isa = PBXGroup;
+			children = (
+				524E71F51901D0B2009D0D98 /* Test Data */,
+				524E71E91901D07A009D0D98 /* Models */,
+				524E71E51901D00B009D0D98 /* Classes */,
+				524E71DE1901CFD3009D0D98 /* Categories */,
+				524E71BC1901CE1F009D0D98 /* LSAppDelegate.h */,
+				524E71BD1901CE1F009D0D98 /* LSAppDelegate.m */,
+				524E71BF1901CE1F009D0D98 /* MainMenu.xib */,
+				524E71C21901CE1F009D0D98 /* Images.xcassets */,
+				524E71B11901CE1F009D0D98 /* Supporting Files */,
+				524E71DF1901CFDA009D0D98 /* Vendor */,
+			);
+			path = LevelSearchBenchmarking;
+			sourceTree = "<group>";
+		};
+		524E71B11901CE1F009D0D98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				524E71B21901CE1F009D0D98 /* LevelSearchBenchmarking-Info.plist */,
+				524E71B31901CE1F009D0D98 /* InfoPlist.strings */,
+				524E71B61901CE1F009D0D98 /* main.m */,
+				524E71B81901CE1F009D0D98 /* LevelSearchBenchmarking-Prefix.pch */,
+				524E71B91901CE1F009D0D98 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		524E71DE1901CFD3009D0D98 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		524E71DF1901CFDA009D0D98 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				524E71E01901CFE8009D0D98 /* LevelSearch */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		524E71E01901CFE8009D0D98 /* LevelSearch */ = {
+			isa = PBXGroup;
+			children = (
+				524E71E11901CFF6009D0D98 /* LevelSearch.h */,
+				524E71E21901CFF6009D0D98 /* LSIndex.h */,
+				524E71E31901CFF6009D0D98 /* LSIndex.m */,
+			);
+			name = LevelSearch;
+			sourceTree = "<group>";
+		};
+		524E71E51901D00B009D0D98 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				52D84F5C1902062A002D599B /* LevelSearch */,
+				524E72091901DFC6009D0D98 /* FTS4 */,
+				524E72021901D24B009D0D98 /* Utilities */,
+				524E71E61901D01C009D0D98 /* LSTestManager.h */,
+				524E71E71901D01C009D0D98 /* LSTestManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		524E71E91901D07A009D0D98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				524E71F01901D099009D0D98 /* Factories */,
+				524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */,
+				524E721C1901F1D1009D0D98 /* Book.h */,
+				524E721D1901F1D1009D0D98 /* Book.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		524E71F01901D099009D0D98 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				52D84F561901F2A5002D599B /* Book+Factory.h */,
+				52D84F571901F2A5002D599B /* Book+Factory.m */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		524E71F51901D0B2009D0D98 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				524E71F61901D0BE009D0D98 /* adjectives.json */,
+				524E71F71901D0BE009D0D98 /* testNames.json */,
+				524E71F81901D0BE009D0D98 /* TestDataManager.h */,
+				524E71F91901D0BE009D0D98 /* TestDataManager.m */,
+				524E71FA1901D0BE009D0D98 /* testAvatar.png */,
+			);
+			name = "Test Data";
+			sourceTree = "<group>";
+		};
+		524E72021901D24B009D0D98 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				524E72031901D25E009D0D98 /* LSUtilityFunctions.h */,
+				524E72041901D25E009D0D98 /* LSUtilityFunctions.m */,
+				52D84F591901F7E5002D599B /* LSStopwatch.h */,
+				52D84F5A1901F7E5002D599B /* LSStopwatch.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		524E72091901DFC6009D0D98 /* FTS4 */ = {
+			isa = PBXGroup;
+			children = (
+				524E720A1901DFD6009D0D98 /* LSFTS4Manager.h */,
+				524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */,
+				524E72101901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.h */,
+				524E72111901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m */,
+			);
+			name = FTS4;
+			sourceTree = "<group>";
+		};
+		52D84F5C1902062A002D599B /* LevelSearch */ = {
+			isa = PBXGroup;
+			children = (
+				52D84F5D1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.h */,
+				52D84F5E1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m */,
+			);
+			name = LevelSearch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		524E71A61901CE1F009D0D98 /* LevelSearchBenchmarking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 524E71D81901CE1F009D0D98 /* Build configuration list for PBXNativeTarget "LevelSearchBenchmarking" */;
+			buildPhases = (
+				C6DAA053C0254465B3674C4C /* Check Pods Manifest.lock */,
+				524E71A31901CE1F009D0D98 /* Sources */,
+				524E71A41901CE1F009D0D98 /* Frameworks */,
+				524E71A51901CE1F009D0D98 /* Resources */,
+				3817430ED8D24857A879BEFD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LevelSearchBenchmarking;
+			productName = LevelSearchBenchmarking;
+			productReference = 524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		524E719F1901CE1F009D0D98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Tiny Little Gears";
+			};
+			buildConfigurationList = 524E71A21901CE1F009D0D98 /* Build configuration list for PBXProject "LevelSearchBenchmarking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 524E719E1901CE1F009D0D98;
+			productRefGroup = 524E71A81901CE1F009D0D98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				524E71A61901CE1F009D0D98 /* LevelSearchBenchmarking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		524E71A51901CE1F009D0D98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524E71FE1901D0BE009D0D98 /* testAvatar.png in Resources */,
+				524E71B51901CE1F009D0D98 /* InfoPlist.strings in Resources */,
+				524E71FC1901D0BE009D0D98 /* testNames.json in Resources */,
+				524E71C31901CE1F009D0D98 /* Images.xcassets in Resources */,
+				524E71FB1901D0BE009D0D98 /* adjectives.json in Resources */,
+				524E71BB1901CE1F009D0D98 /* Credits.rtf in Resources */,
+				524E71C11901CE1F009D0D98 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3817430ED8D24857A879BEFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-LevelSearchBenchmarking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6DAA053C0254465B3674C4C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		524E71A31901CE1F009D0D98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D84F5F1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m in Sources */,
+				52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */,
+				524E721E1901F1D1009D0D98 /* Book.m in Sources */,
+				524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */,
+				524E71E81901D01C009D0D98 /* LSTestManager.m in Sources */,
+				52D84F581901F2A5002D599B /* Book+Factory.m in Sources */,
+				524E71E41901CFF6009D0D98 /* LSIndex.m in Sources */,
+				524E71FD1901D0BE009D0D98 /* TestDataManager.m in Sources */,
+				524E72121901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m in Sources */,
+				524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */,
+				524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */,
+				524E71B71901CE1F009D0D98 /* main.m in Sources */,
+				524E71BE1901CE1F009D0D98 /* LSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		524E71B31901CE1F009D0D98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				524E71B41901CE1F009D0D98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		524E71B91901CE1F009D0D98 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				524E71BA1901CE1F009D0D98 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		524E71BF1901CE1F009D0D98 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				524E71C01901CE1F009D0D98 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		524E71D61901CE1F009D0D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		524E71D71901CE1F009D0D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		524E71D91901CE1F009D0D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LevelSearchBenchmarking/LevelSearchBenchmarking-Prefix.pch";
+				INFOPLIST_FILE = "LevelSearchBenchmarking/LevelSearchBenchmarking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		524E71DA1901CE1F009D0D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LevelSearchBenchmarking/LevelSearchBenchmarking-Prefix.pch";
+				INFOPLIST_FILE = "LevelSearchBenchmarking/LevelSearchBenchmarking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		524E71A21901CE1F009D0D98 /* Build configuration list for PBXProject "LevelSearchBenchmarking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524E71D61901CE1F009D0D98 /* Debug */,
+				524E71D71901CE1F009D0D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		524E71D81901CE1F009D0D98 /* Build configuration list for PBXNativeTarget "LevelSearchBenchmarking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524E71D91901CE1F009D0D98 /* Debug */,
+				524E71DA1901CE1F009D0D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */,
+			);
+			currentVersion = 524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */;
+			path = LevelSearchBenchmarkingModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 524E719F1901CE1F009D0D98 /* Project object */;
+}

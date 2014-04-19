@@ -154,6 +154,17 @@ static dispatch_queue_t level_search_query_queue() {
         options.filterPolicy = [settings[LSBloomFilterSizeSetting] intValue];
         self.indexDB = [[LevelDB alloc] initWithPath:[NSString stringWithFormat:@"%@/levelsearch/%@", LSPathToIndex(), self.name] name:self.name andOptions:options];
         self.indexDB.safe = NO;
+        
+        self.indexDB.decoder = ^(LevelDBKey *key, NSData *data)
+        {
+            return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        };
+        
+        self.indexDB.encoder = ^(LevelDBKey *key, id object)
+        {
+            return [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:nil];
+        };
+        
         self.indexedEntities = [NSMutableDictionary new];
         self.indexing = NO;
         _internalWatchedContexts = [NSMutableSet new];
@@ -498,7 +509,7 @@ static dispatch_queue_t level_search_query_queue() {
         for (NSManagedObject *indexObject in entities) {
             dispatch_group_async(level_search_indexing_group(), level_search_indexing_queue(), ^{
                 __strong typeof(weakSelf) strongSelf = weakSelf;
-                NSMutableSet *indexForObject = [NSMutableSet new];
+                NSMutableArray *indexForObject = [NSMutableArray new];
                 for (NSString *attribute in (NSArray *)strongSelf.indexedEntities[indexObject.entity.name]) {
                     NSString *value = [indexObject valueForKey:attribute];
                     NSSet *tokens = [self tokenizeString:value];
@@ -509,7 +520,7 @@ static dispatch_queue_t level_search_query_queue() {
                 }
                 
                 if (indexForObject.count > 0) {
-                    [writeBatch setObject:[NSSet setWithSet:indexForObject] forKey:indexObject.objectID.URIRepresentation.absoluteString];
+                    [writeBatch setObject:[NSArray arrayWithArray:indexForObject] forKey:indexObject.objectID.URIRepresentation.absoluteString];
                 }
             });
         }

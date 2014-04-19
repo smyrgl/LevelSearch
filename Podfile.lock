@@ -15,6 +15,7 @@ PODS:
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
+  - MessagePack (1.0.0)
   - Objective-LevelDB (2.0.7):
     - Objective-LevelDB/leveldb
     - Objective-LevelDB/leveldb
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - FMDB
   - MagicalRecord
+  - MessagePack
   - Objective-LevelDB
   - RestKit
   - RestKit/Search
@@ -67,6 +69,7 @@ SPEC CHECKSUMS:
   FMDB: e0dd09464b4e1a1cd7fa51ea835ae821b5656865
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
+  MessagePack: f54bf02dd4bc0dbd4ad84134a805a3e4d466c88f
   Objective-LevelDB: 8163d36d32e51b6d09ba7effad9e0e963ba44262
   RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182

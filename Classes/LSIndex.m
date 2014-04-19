@@ -9,6 +9,7 @@
 #import "LSIndex.h"
 #import <LevelDB.h>
 #import <LDBWriteBatch.h>
+#import <MessagePack/MessagePack.h>
 
 static NSString * const LSIndexCacheSizeSetting = @"LSIndexCacheSizeSetting";
 static NSString * const LSBloomFilterSizeSetting = @"LSBloomFilterSizeSetting";
@@ -157,12 +158,12 @@ static dispatch_queue_t level_search_query_queue() {
         
         self.indexDB.decoder = ^(LevelDBKey *key, NSData *data)
         {
-            return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            return [data messagePackParse];
         };
         
         self.indexDB.encoder = ^(LevelDBKey *key, id object)
         {
-            return [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:nil];
+            return [(NSArray *)object messagePack];
         };
         
         self.indexedEntities = [NSMutableDictionary new];

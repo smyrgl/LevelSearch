@@ -8,6 +8,7 @@ inhibit_all_warnings!
 target :LevelSearchExample do
     platform :ios, '7.0'
 	pod 'Objective-LevelDB'
+    pod 'MessagePack'
 	xcodeproj 'Example/LevelSearchExample.xcodeproj'
 end
 
@@ -16,6 +17,7 @@ target :LevelSearchTests do
 	pod 'Objective-LevelDB'
 	pod 'MagicalRecord'
     pod 'XCAsyncTestCase'
+    pod 'MessagePack'
 	xcodeproj 'Tests/LevelSearchTests.xcodeproj'
 end
 
@@ -29,5 +31,6 @@ target :LevelSearchBenchmarking do
     pod 'sqlite3/fts'
 	pod 'Objective-LevelDB'
     pod 'CocoaLumberjack'
+    pod 'MessagePack'
 	xcodeproj 'Benchmarking/LevelSearchBenchmarking.xcodeproj'
 end

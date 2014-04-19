@@ -12,8 +12,17 @@ target :LevelSearchExample do
 	xcodeproj 'Example/LevelSearchExample.xcodeproj'
 end
 
-target :LevelSearchTests do
+target :iostests do
     platform :ios, '7.0'
+	pod 'Objective-LevelDB'
+	pod 'MagicalRecord'
+    pod 'XCAsyncTestCase'
+    pod 'MessagePack'
+	xcodeproj 'Tests/LevelSearchTests.xcodeproj'
+end
+
+target :osxtests do
+    platform :osx, '10.9'
 	pod 'Objective-LevelDB'
 	pod 'MagicalRecord'
     pod 'XCAsyncTestCase'

@@ -8,13 +8,13 @@ namespace :test do
   
   desc "Run the LevelSearch Tests for iOS"
   task :ios => :prepare do
-    run_tests('LevelSearchTests', 'iphonesimulator')
+    run_tests('iostests', 'iphonesimulator')
     tests_failed('iOS') unless $?.success?
   end
 
   desc "Run the LevelSearch Tests for Mac OSX"
   task :osx => :prepare do
-    run_tests('LevelSearchTests', 'macosx')
+    run_tests('osxtests', 'macosx')
     tests_failed('OSX') unless $?.success?
   end
 end
@@ -31,7 +31,7 @@ end
 desc "Runs the LevelSearch specs"
 task :spec do
   Rake::Task['test:ios'].invoke
-  #Rake::Task['test:osx'].invoke if is_mavericks_or_above
+  Rake::Task['test:osx'].invoke if is_mavericks_or_above
 end
 
 namespace :docs do 

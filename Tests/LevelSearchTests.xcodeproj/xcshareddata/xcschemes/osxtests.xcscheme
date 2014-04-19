@@ -14,9 +14,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "521411F018FC873200837228"
-               BuildableName = "LevelSearchTests.xctest"
-               BlueprintName = "LevelSearchTests"
+               BlueprintIdentifier = "529573E41902E16400FAE59B"
+               BuildableName = "osxtests.xctest"
+               BlueprintName = "osxtests"
                ReferencedContainer = "container:LevelSearchTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "521411F018FC873200837228"
-               BuildableName = "LevelSearchTests.xctest"
-               BlueprintName = "LevelSearchTests"
+               BlueprintIdentifier = "529573E41902E16400FAE59B"
+               BuildableName = "osxtests.xctest"
+               BlueprintName = "osxtests"
                ReferencedContainer = "container:LevelSearchTests.xcodeproj">
             </BuildableReference>
          </TestableReference>

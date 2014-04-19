@@ -7,7 +7,6 @@
 #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import <CoreData+MagicalRecord.h>

@@ -26,6 +26,8 @@ typedef NS_ENUM(NSUInteger, LSTestMode) {
 - (void)setupWithTestMode:(LSTestMode)mode;
 - (void)resetTesting;
 
+- (void)runPerformanceTestsWithNumberOfObjects:(NSUInteger)objects numberOfQueries:(NSUInteger)queries;
+
 @end
 
 extern NSString * const kPathForSqliteDB;

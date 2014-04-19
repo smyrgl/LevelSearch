@@ -111,6 +111,80 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
     DDLogInfo(@"Reset all testing stores");
 }
 
+- (void)runPerformanceTestsWithNumberOfObjects:(NSUInteger)objects numberOfQueries:(NSUInteger)queries
+{
+    DDLogInfo(@"Starting performance test run.");
+    
+    switch (self.currentMode) {
+        case LSTestModeCoreData:
+            break;
+            
+        case LSTestModeFTS4:
+            [[LSFTS4Manager sharedManager] stopWatchingDefaultContext];
+            break;
+            
+        case LSTestModeSearchKit:
+            break;
+            
+        case LSTestModeRestKit:
+            break;
+            
+        case LSTestModeLevelSearch:
+            [[LSIndex sharedIndex] stopWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
+            break;
+            
+        default:
+            break;
+    }
+    
+    DDLogInfo(@"Creating %lu books", objects);
+    NSArray *books = [Book createRandomBooks:objects];
+    NSSet *indexBooks = [NSSet setWithArray:books];
+    DDLogInfo(@"Created %lu books", objects);
+    
+    LSStopwatch *stopwatch = [LSStopwatch new];
+    [stopwatch start];
+    
+    switch (self.currentMode) {
+        case LSTestModeCoreData:
+            break;
+            
+        case LSTestModeFTS4:
+            break;
+            
+        case LSTestModeSearchKit:
+            break;
+            
+        case LSTestModeRestKit:
+            break;
+            
+        case LSTestModeLevelSearch:
+        {
+            [[LSIndex sharedIndex] indexEntities:indexBooks withCompletion:^{
+                [stopwatch stop];
+                DDLogInfo(@"Time to index %f seconds", [stopwatch recordedTime]);
+                for (int x = 0; x < queries; x++) {
+                    NSString *query = LSGetRandomStringWithCharCount(3);
+                    LSStopwatch *queryStopwatch = [LSStopwatch new];
+                    [queryStopwatch start];
+                    [[LSIndex sharedIndex] queryInBackgroundWithString:query
+                                                           withResults:^(NSSet *results) {
+                                                               [queryStopwatch stop];
+                                                               DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
+                                                           }];
+                }
+            }];
+        }
+            break;
+            
+        default:
+            break;
+    }
+
+    
+}
+
+
 #pragma mark - Private
 
 - (void)setupRestkit
@@ -140,7 +214,7 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
 {
     self.currentMode = LSTestModeFTS4;
     [MagicalRecord setupAutoMigratingCoreDataStack];
-
+    [Book MR_truncateAll];
     NSString *sqlitePath = [NSString stringWithFormat:@"%@%@", LSAppDataDirectory(), kPathForSqliteDB];
     self.dbQueue = [FMDatabaseQueue databaseQueueWithPath:sqlitePath];    
     [[LSFTS4Manager sharedManager] addIndexingToEntity:[NSEntityDescription entityForName:@"Book" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"name", @"keywords"]];
@@ -151,6 +225,7 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
 {
     self.currentMode = LSTestModeCoreData;
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    [Book MR_truncateAll];
 }
 
 - (void)setupLevelSearch
@@ -159,6 +234,7 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
     
     [[LSIndex sharedIndex] purgeDiskIndex];
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    [Book MR_truncateAll];
     [[LSIndex sharedIndex] addIndexingToEntity:[NSEntityDescription entityForName:@"Book" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"name", @"keywords"]];
     [[LSIndex sharedIndex] startWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
     [[LSIndex sharedIndex] setDefaultQueryContext:[NSManagedObjectContext MR_defaultContext]];

@@ -7,8 +7,6 @@
 //
 
 #import "LSAppDelegate.h"
-#import "LSTestManager+FTS4PerformanceTests.h"
-#import "LSTestManager+LevelSearchPerformanceTests.h"
 
 @implementation LSAppDelegate
 
@@ -18,7 +16,7 @@
    // [LSTestManager performFTS4PerformanceTests];
     
     [[LSTestManager sharedManager] setupWithTestMode:LSTestModeLevelSearch];
-    [LSTestManager performLevelSearchQueryTestsWithObjects:5000 queryCount:50];
+    [[LSTestManager sharedManager] runPerformanceTestsWithNumberOfObjects:50000 numberOfQueries:50];
 }
 
 @end

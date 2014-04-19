@@ -24,12 +24,10 @@
 		524E72011901D11C009D0D98 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E72001901D11C009D0D98 /* CoreServices.framework */; };
 		524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E72041901D25E009D0D98 /* LSUtilityFunctions.m */; };
 		524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */; };
-		524E72121901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E72111901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m */; };
 		524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */; };
 		524E721E1901F1D1009D0D98 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E721D1901F1D1009D0D98 /* Book.m */; };
 		52D84F581901F2A5002D599B /* Book+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F571901F2A5002D599B /* Book+Factory.m */; };
 		52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5A1901F7E5002D599B /* LSStopwatch.m */; };
-		52D84F5F1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5E1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m */; };
 		82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +63,6 @@
 		524E72041901D25E009D0D98 /* LSUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSUtilityFunctions.m; sourceTree = "<group>"; };
 		524E720A1901DFD6009D0D98 /* LSFTS4Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFTS4Manager.h; sourceTree = "<group>"; };
 		524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFTS4Manager.m; sourceTree = "<group>"; };
-		524E72101901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSTestManager+FTS4PerformanceTests.h"; sourceTree = "<group>"; };
-		524E72111901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LSTestManager+FTS4PerformanceTests.m"; sourceTree = "<group>"; };
 		524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelSearchBenchmarkingModel.xcdatamodel; sourceTree = "<group>"; };
 		524E721C1901F1D1009D0D98 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		524E721D1901F1D1009D0D98 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
@@ -74,8 +70,6 @@
 		52D84F571901F2A5002D599B /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = "<group>"; };
 		52D84F591901F7E5002D599B /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = "<group>"; };
 		52D84F5A1901F7E5002D599B /* LSStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStopwatch.m; sourceTree = "<group>"; };
-		52D84F5D1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSTestManager+LevelSearchPerformanceTests.h"; sourceTree = "<group>"; };
-		52D84F5E1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LSTestManager+LevelSearchPerformanceTests.m"; sourceTree = "<group>"; };
 		BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelSearchBenchmarking.xcconfig"; path = "../Pods/Pods-LevelSearchBenchmarking.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,7 +185,6 @@
 		524E71E51901D00B009D0D98 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				52D84F5C1902062A002D599B /* LevelSearch */,
 				524E72091901DFC6009D0D98 /* FTS4 */,
 				524E72021901D24B009D0D98 /* Utilities */,
 				524E71E61901D01C009D0D98 /* LSTestManager.h */,
@@ -248,19 +241,8 @@
 			children = (
 				524E720A1901DFD6009D0D98 /* LSFTS4Manager.h */,
 				524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */,
-				524E72101901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.h */,
-				524E72111901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m */,
 			);
 			name = FTS4;
-			sourceTree = "<group>";
-		};
-		52D84F5C1902062A002D599B /* LevelSearch */ = {
-			isa = PBXGroup;
-			children = (
-				52D84F5D1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.h */,
-				52D84F5E1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m */,
-			);
-			name = LevelSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D84F5F1902064B002D599B /* LSTestManager+LevelSearchPerformanceTests.m in Sources */,
 				52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */,
 				524E721E1901F1D1009D0D98 /* Book.m in Sources */,
 				524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */,
@@ -376,7 +357,6 @@
 				52D84F581901F2A5002D599B /* Book+Factory.m in Sources */,
 				524E71E41901CFF6009D0D98 /* LSIndex.m in Sources */,
 				524E71FD1901D0BE009D0D98 /* TestDataManager.m in Sources */,
-				524E72121901EC4E009D0D98 /* LSTestManager+FTS4PerformanceTests.m in Sources */,
 				524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */,
 				524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */,
 				524E71B71901CE1F009D0D98 /* main.m in Sources */,

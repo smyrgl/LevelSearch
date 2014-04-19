@@ -8,6 +8,72 @@
 
 #import "LSFTS4Manager.h"
 
+NSString * LSFTS4IndexName(NSString *object, NSString *attribute)
+{
+    return [NSString stringWithFormat:@"%@%@", object, attribute];
+}
+
+static dispatch_queue_t fts4_search_clear_indexing_queue() {
+    static dispatch_queue_t fts4_search_clear_indexing_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fts4_search_clear_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.fts4test.index.clearIndexQueue", NULL);
+    });
+    
+    return fts4_search_clear_indexing_queue;
+}
+
+static dispatch_group_t fts4_search_clear_indexing_group() {
+    static dispatch_group_t fts4_search_clear_indexing_group;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fts4_search_clear_indexing_group = dispatch_group_create();
+    });
+    
+    return fts4_search_clear_indexing_group;
+}
+
+static dispatch_queue_t fts4_search_update_indexing_queue() {
+    static dispatch_queue_t fts4_search_update_indexing_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fts4_search_update_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.fts4test.index.updateIndexQueue", NULL);
+    });
+    
+    return fts4_search_update_indexing_queue;
+}
+
+static dispatch_group_t fts4_search_update_indexing_group() {
+    static dispatch_group_t fts4_search_update_indexing_group;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fts4_search_update_indexing_group = dispatch_group_create();
+    });
+    
+    return fts4_search_update_indexing_group;
+}
+
+
+static dispatch_queue_t fts4_search_indexing_queue() {
+    static dispatch_queue_t fts4_search_indexing_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fts4_search_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.fts4test.index.indexingQueue", NULL);
+    });
+    
+    return fts4_search_indexing_queue;
+}
+
+static dispatch_group_t fts4_search_indexing_group() {
+    static dispatch_group_t fts4_search_indexing_group;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fts4_search_indexing_group = dispatch_group_create();
+    });
+    
+    return fts4_search_indexing_group;
+}
+
 static dispatch_queue_t fts4_search_query_queue() {
     static dispatch_queue_t fts4_search_query_queue;
     static dispatch_once_t onceToken;
@@ -23,6 +89,7 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
 
 @interface LSFTS4Manager ()
 @property (nonatomic, strong) NSMutableDictionary *indexedEntities;
+@property (nonatomic, strong) NSMutableDictionary *indexes;
 @property (nonatomic, assign, readwrite, getter=isIndexing) BOOL indexing;
 @end
 
@@ -42,6 +109,7 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
     self = [super init];
     if (self) {
         self.indexedEntities = [NSMutableDictionary new];
+        self.indexes = [NSMutableDictionary new];
     }
     return self;
 }
@@ -66,6 +134,10 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
 - (void)addIndexingToEntity:(NSEntityDescription *)entity forAttributes:(NSArray *)attributes
 {
     for (NSString *attributeName in attributes) {
+        [[LSTestManager sharedManager].dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+            [db executeUpdate:[NSString stringWithFormat:@"CREATE VIRTUAL TABLE IF NOT EXISTS %@ USING fts4(name, contents);", LSFTS4IndexName(entity.name, attributeName)]];
+        }];
+        [self.indexes setObject:LSFTS4IndexName(entity.name, attributeName) forKey:entity.name];
         NSAttributeDescription *description = entity.attributesByName[attributeName];
         NSAssert(description.attributeType == NSStringAttributeType, @"Indexed attributes must be of NSString type");
     }
@@ -111,21 +183,25 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
 - (NSSet *)queryWithString:(NSString *)qString
 {
     NSString *query = [self queryStringFromInput:qString];
-    NSString *fullQueryString = [NSString stringWithFormat:@"SELECT name FROM testindex WHERE testindex MATCH '\"%@\"'", query];
-    __block FMResultSet *results;
-    [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
-        results = [db executeQuery:fullQueryString];
-    }];
     
     NSMutableSet *returnSet = [NSMutableSet new];
-    while ([results next]) {
-        NSString *pk = [results stringForColumn:@"name"];
-        NSManagedObjectID *objectID = [[[NSManagedObjectContext MR_defaultContext] persistentStoreCoordinator] managedObjectIDForURIRepresentation:[NSURL URLWithString:pk]];
-        NSManagedObject *object = [[NSManagedObjectContext MR_defaultContext] existingObjectWithID:objectID error:nil];
-        [returnSet addObject:object];
+
+    for (NSString *indexName in [self.indexes allValues]) {
+        NSString *fullQueryString = [NSString stringWithFormat:@"SELECT name FROM %@ WHERE %@ MATCH '\"%@\"'", indexName, indexName, query];
+        __block FMResultSet *results;
+        [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
+            results = [db executeQuery:fullQueryString];
+        }];
+        
+        while ([results next]) {
+            NSString *pk = [results stringForColumn:@"name"];
+            NSManagedObjectID *objectID = [[[NSManagedObjectContext MR_defaultContext] persistentStoreCoordinator] managedObjectIDForURIRepresentation:[NSURL URLWithString:pk]];
+            NSManagedObject *object = [[NSManagedObjectContext MR_defaultContext] existingObjectWithID:objectID error:nil];
+            [returnSet addObject:object];
+        }
+        
+        [results close];
     }
-    
-    [results close];
     
     return [NSSet setWithSet:returnSet];
 }
@@ -232,19 +308,36 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
     return [NSString stringWithString:indexString];
 }
 
+- (NSString *)indexStringForAttributeString:(NSString *)attribute
+{
+    NSMutableString *indexString = [NSMutableString new];
+    NSSet *tokenizedAttributes = [self tokenizeString:attribute];
+    for (NSString *attributeToken in tokenizedAttributes) {
+        [indexString appendString:[NSString stringWithFormat:@"%@ ", attributeToken]];
+    }
+    
+    return [NSString stringWithString:indexString];
+}
+
 - (void)clearIndexForEntities:(NSSet *)entities withCompletion:(LSIndexEntitiesCompletionBlock)completion
 {
     @autoreleasepool {
         
         for (NSManagedObject *clearObject in entities) {
-            [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
-                [db executeUpdate:@"DELETE FROM testindex WHERE name = ?", clearObject.objectID.URIRepresentation.absoluteString];
-            }];
+            dispatch_group_async(fts4_search_clear_indexing_group(), fts4_search_clear_indexing_queue(), ^{
+                for (NSString *attribute in (NSArray *)self.indexedEntities[clearObject.entity.name]) {
+                    [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
+                        [db executeUpdate:[NSString stringWithFormat:@"DELETE FROM %@ WHERE name = ?", LSFTS4IndexName(clearObject.entity.name, attribute)], clearObject.objectID.URIRepresentation.absoluteString];
+                    }];
+                }
+            });
         }
         
-        if (completion) {
-            completion();
-        }
+        dispatch_group_notify(fts4_search_clear_indexing_group(), fts4_search_clear_indexing_queue(), ^{
+            if (completion) {
+                completion();
+            }
+        });
     }
 }
 
@@ -252,14 +345,20 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
 {
     @autoreleasepool {
         for (NSManagedObject *updateObject in entities) {
-            NSString *indexString = [self indexStringForObject:updateObject];
-            [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
-                [db executeUpdate:@"UPDATE testindex SET contents = ? WHERE name = ?;", indexString, updateObject.objectID.URIRepresentation.absoluteString];
-            }];
+            dispatch_group_async(fts4_search_update_indexing_group(), fts4_search_update_indexing_queue(), ^{
+                for (NSString *attribute in (NSArray *)self.indexedEntities[updateObject.entity.name]) {
+                    NSString *indexString = [self indexStringForAttributeString:[updateObject valueForKey:attribute]];
+                    [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
+                        [db executeUpdate:[NSString stringWithFormat:@"UPDATE %@ SET contents = ? WHERE name = ?;", LSFTS4IndexName(updateObject.entity.name, attribute)], indexString, updateObject.objectID.URIRepresentation.absoluteString];
+                    }];
+                }
+            });
         }
-        if (completion) {
-            completion();
-        }
+        dispatch_group_notify(fts4_search_update_indexing_group(), fts4_search_update_indexing_queue(), ^{
+            if (completion) {
+                completion();
+            }
+        });
     }
 }
 
@@ -267,15 +366,20 @@ NSString * const LSFTS4IndexingDidFinishNotification = @"com.tinylittlegears.lev
 {
     @autoreleasepool {
         for (NSManagedObject *updateObject in entities) {
-            NSString *indexString = [self indexStringForObject:updateObject];
-            [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
-                [db executeUpdate:@"INSERT INTO testindex (name, contents) VALUES(?, ?);", updateObject.objectID.URIRepresentation.absoluteString, indexString];
-            }];
+            dispatch_group_async(fts4_search_indexing_group(), fts4_search_indexing_queue(), ^{
+                for (NSString *attribute in (NSArray *)self.indexedEntities[updateObject.entity.name]) {
+                    NSString *indexString = [self indexStringForAttributeString:[updateObject valueForKey:attribute]];
+                    [[[LSTestManager sharedManager] dbQueue] inDatabase:^(FMDatabase *db) {
+                        [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@ (name, contents) VALUES(?, ?);", LSFTS4IndexName(updateObject.entity.name, attribute)], updateObject.objectID.URIRepresentation.absoluteString, indexString];
+                    }];
+                }
+            });
         }
-        
-        if (completion) {
-            completion();
-        }
+        dispatch_group_notify(fts4_search_indexing_group(), fts4_search_indexing_queue(), ^{
+            if (completion) {
+                completion();
+            }
+        });
     }
 }
 

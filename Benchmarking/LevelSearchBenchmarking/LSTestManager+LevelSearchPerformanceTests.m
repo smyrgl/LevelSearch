@@ -26,10 +26,11 @@
                           withCompletion:^{
                               [stopwatch stop];
                               DDLogInfo(@"Time to index %f seconds", [stopwatch recordedTime]);
-                              
+                              Book *testBook = [Book MR_findFirst];
+                              NSString *partialName = [testBook.name substringToIndex:5];
                               LSStopwatch *queryStopwatch = [LSStopwatch new];
                               [queryStopwatch start];
-                              [[LSIndex sharedIndex] queryInBackgroundWithString:@"a b"
+                              [[LSIndex sharedIndex] queryInBackgroundWithString:partialName
                                                                      withResults:^(NSSet *results) {
                                                                          [queryStopwatch stop];
                                                                          DDLogInfo(@"Results: %@", results);

@@ -29,9 +29,11 @@
         NSString *pathToDB = [NSString stringWithFormat:@"%@%@", LSAppDataDirectory(), kPathForSqliteDB];
         NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:pathToDB error:nil];
         DDLogInfo(@"Index disk size is %llu", (unsigned long long)attributes[NSFileSize]);
+        Book *testBook = [Book MR_findFirst];
+        NSString *partialName = [testBook.name substringToIndex:5];
         LSStopwatch *queryStopwatch = [LSStopwatch new];
         [queryStopwatch start];
-        [[LSFTS4Manager sharedManager] queryInBackgroundWithString:@"a b"
+        [[LSFTS4Manager sharedManager] queryInBackgroundWithString:partialName
                                                        withResults:^(NSSet *results) {
                                                            [queryStopwatch stop];
                                                            DDLogInfo(@"Results: %@", results);

@@ -14,6 +14,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+   // [[LSTestManager sharedManager] setupWithTestMode:LSTestModeFTS4];
+   // [LSTestManager performFTS4PerformanceTests];
+    
     [[LSTestManager sharedManager] setupWithTestMode:LSTestModeLevelSearch];
     [LSTestManager performLevelSearchPerformanceTests];
 }

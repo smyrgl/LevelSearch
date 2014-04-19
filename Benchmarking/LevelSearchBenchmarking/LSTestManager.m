@@ -142,11 +142,7 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
     [MagicalRecord setupAutoMigratingCoreDataStack];
 
     NSString *sqlitePath = [NSString stringWithFormat:@"%@%@", LSAppDataDirectory(), kPathForSqliteDB];
-    self.dbQueue = [FMDatabaseQueue databaseQueueWithPath:sqlitePath];
-    [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        [db executeUpdate:@"CREATE VIRTUAL TABLE IF NOT EXISTS testindex USING fts4(name, contents);"];
-    }];
-    
+    self.dbQueue = [FMDatabaseQueue databaseQueueWithPath:sqlitePath];    
     [[LSFTS4Manager sharedManager] addIndexingToEntity:[NSEntityDescription entityForName:@"Book" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"name", @"keywords"]];
     [[LSFTS4Manager sharedManager] startWatchingDefaultContext];
 }

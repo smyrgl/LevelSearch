@@ -72,10 +72,10 @@ There are two sets of query methods: synchronous and async query methods.  For m
 Otherwise the query interface is identical between the sync and async queries, a simple query looks like this:
 
 ```objective-c
-	    [[LSIndex sharedIndex] queryInBackgroundWithString:@"example query"
-                                           withResults:^(NSSet *results) {
-                                               // Put your completion code here...
-                                           }];
+[[LSIndex sharedIndex] queryInBackgroundWithString:@"example query"
+                       withResults:^(NSSet *results) {
+                          // Put your completion code here...
+                       }];
 
 ```
 
@@ -87,9 +87,30 @@ To run the example project; clone the repo, and run `pod install` from the root 
 
 ## Benchmarks
 
-Coming soon.
+The intent is to perform more comprehensive analysis over time but here are some early results comparing LevelSearch to other possible search solutions.
+
+### Methodology
+
+It was important during these tests to use realistic data sets so two models were chose as being representitive of the two most common datasets.
+
+- Song: This is a model based on the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/) and it includes a large number of entities during a given run but a relatively small amount of metadata.  All of the songs used were extracted from the actual dataset and indexing was performed on title, album name and artist name.
+- Book: Selected from five random books from [Project Guttenberg](http://www.gutenberg.org) this is a relatively simple model that has all of the text of a book in a contents field on the model which is the sole indexed attribute.  This is an example closer to more document oriented usage models.
+
+Queries themselves were randomly generated.  This is a part of the methodology that will probably change as this benchmark is refined but for now it will do.
+
+### Test setup
+
+Initial test was run on the OSX build machine (Core i7 w/ 16GB of RAM).  As time passes this will be updated with a larger cross-section of hardware results including iOS devices.
+
+For this test 10,000 songs and 100 Books were created in Core Data and then manually indexed (where applicable) before performing a batch of 50 queries serially with times averaged among all 50.
+
+#### Baseline results
+
+- 0.03 seconds per query averaged
 
 #### Versus Core Data alone
+
+- 1.35 seconds per query averaged
 
 #### Versus RKSearchIndexer (RestKit)
 

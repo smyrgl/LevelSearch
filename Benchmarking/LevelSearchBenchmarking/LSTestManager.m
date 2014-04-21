@@ -152,16 +152,16 @@ static dispatch_queue_t serial_test_query_queue() {
     [Song createNumberOfSongs:objects];
     NSSet *songs = [NSSet setWithArray:[Song MR_findAll]];
     DDLogInfo(@"Created %lu songs", objects);
-    [Book createNumberOfBooks:50];
+    [Book createNumberOfBooks:100];
     NSSet *books = [NSSet setWithArray:[Book MR_findAll]];
     
     switch (self.currentMode) {
         case LSTestModeCoreData:
         {
             for (int x = 0; x < queries; x++) {
-                LSStopwatch *queryStopwatch = [LSStopwatch new];
-                [queryStopwatch start];
                 dispatch_async(serial_test_query_queue(), ^{
+                    LSStopwatch *queryStopwatch = [LSStopwatch new];
+                    [queryStopwatch start];
                     NSString *query = LSGetRandomStringWithCharCount(3);
                     NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
                     fetch.predicate = [NSPredicate predicateWithFormat:@"(title LIKE[cd] %@) OR (artist LIKE[cd] %@) OR (album LIKE[cd] %@)", query, query, query];
@@ -194,14 +194,14 @@ static dispatch_queue_t serial_test_query_queue() {
                 [stopwatch stop];
                 DDLogInfo(@"Time to index %f seconds", [stopwatch recordedTime]);
                 for (int x = 0; x < queries; x++) {
-                    NSString *query = LSGetRandomStringWithCharCount(3);
-                    LSStopwatch *queryStopwatch = [LSStopwatch new];
-                    [queryStopwatch start];
-                    [[LSIndex sharedIndex] queryInBackgroundWithString:query
-                                                           withResults:^(NSSet *results) {
-                                                               [queryStopwatch stop];
-                                                               DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
-                                                           }];
+                    dispatch_async(serial_test_query_queue(), ^{
+                        NSString *query = LSGetRandomStringWithCharCount(3);
+                        LSStopwatch *queryStopwatch = [LSStopwatch new];
+                        [queryStopwatch start];
+                        [[LSIndex sharedIndex] queryWithString:query];
+                        [queryStopwatch stop];
+                        DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
+                    });
                 }
             }];
         }

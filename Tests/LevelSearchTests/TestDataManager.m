@@ -49,7 +49,7 @@
 
 - (NSString *)randomKeywords
 {
-    int count = arc4random_uniform(5) + 1;
+    int count = arc4random_uniform(50) + 1;
     NSMutableString *keywords = [NSMutableString new];
     for (int i = 0; i < count; i++) {
         [keywords appendString:_testKeywordsArray[arc4random_uniform((u_int32_t)[_testKeywordsArray count] - 1)]];

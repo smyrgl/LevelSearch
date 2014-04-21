@@ -160,9 +160,8 @@ static dispatch_queue_t serial_test_query_queue() {
                     NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
                     fetch.predicate = [NSPredicate predicateWithFormat:@"(name LIKE[cd] %@) OR (keywords LIKE[cd] %@)", query, query];
                     fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
-                    NSArray *results = [[NSManagedObjectContext MR_contextForCurrentThread] executeFetchRequest:fetch error:nil];
+                    [[NSManagedObjectContext MR_contextForCurrentThread] executeFetchRequest:fetch error:nil];
                     [queryStopwatch stop];
-                    DDLogInfo(@"Query results: %lu", (unsigned long)results.count);
                     DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
                 });
             }

@@ -40,6 +40,30 @@
 		A6940895A84C4148B4D57405 /* libPods-osxtests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4BDC35932E4EBF9E6A4155 /* libPods-osxtests.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		52C10F1F1904D46C009ED2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52C10ED81904D0D9009ED2A2;
+			remoteInfo = LevelSearchResources;
+		};
+		52C10F211904D472009ED2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C10ED71904D0D9009ED2A2;
+			remoteInfo = LevelSearchResources;
+		};
+		52C10F231904D477009ED2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C10ED71904D0D9009ED2A2;
+			remoteInfo = LevelSearchResources;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1A4BDC35932E4EBF9E6A4155 /* libPods-osxtests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osxtests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F25F5760DFD4E95922371AE /* Pods-osxtests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osxtests.xcconfig"; path = "../Pods/Pods-osxtests.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +94,7 @@
 		527BDDF618FCC4C200851317 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		529573FD1902E16400FAE59B /* osxtests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = osxtests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A45F7E19004AA000B70C01 /* LevelSearchIndexingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSearchIndexingTests.m; sourceTree = "<group>"; };
+		52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LevelSearchResources.xcodeproj; path = ../LevelSearchResources/LevelSearchResources.xcodeproj; sourceTree = "<group>"; };
 		52C21E22190017C90041CC87 /* LevelSearchQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSearchQueryTests.m; sourceTree = "<group>"; };
 		52C21E25190018220041CC87 /* XCTestCase+TestSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+TestSetup.h"; sourceTree = "<group>"; };
 		52C21E26190018220041CC87 /* XCTestCase+TestSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+TestSetup.m"; sourceTree = "<group>"; };
@@ -194,6 +219,7 @@
 		521411E618FC870100837228 = {
 			isa = PBXGroup;
 			children = (
+				52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */,
 				528A5B5B18FCC7070006676A /* Shared */,
 				521411FA18FC873200837228 /* LevelSearchTests */,
 				3C81FB3EBB3646EDAEF121CE /* Frameworks */,
@@ -243,6 +269,14 @@
 			name = Shared;
 			sourceTree = "<group>";
 		};
+		52C10F1C1904D46C009ED2A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52C10F201904D46C009ED2A2 /* LevelSearchResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		52C21E24190017EA0041CC87 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +302,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				52C10F221904D472009ED2A2 /* PBXTargetDependency */,
 			);
 			name = iostests;
 			productName = LevelSearchTests;
@@ -287,6 +322,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				52C10F241904D477009ED2A2 /* PBXTargetDependency */,
 			);
 			name = osxtests;
 			productName = LevelSearchTests;
@@ -311,6 +347,12 @@
 			mainGroup = 521411E618FC870100837228;
 			productRefGroup = 521411F218FC873200837228 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 52C10F1C1904D46C009ED2A2 /* Products */;
+					ProjectRef = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				521411F018FC873200837228 /* iostests */,
@@ -318,6 +360,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		52C10F201904D46C009ED2A2 /* LevelSearchResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LevelSearchResources.bundle;
+			remoteRef = 52C10F1F1904D46C009ED2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		521411EF18FC873200837228 /* Resources */ = {
@@ -444,6 +496,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52C10F221904D472009ED2A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LevelSearchResources;
+			targetProxy = 52C10F211904D472009ED2A2 /* PBXContainerItemProxy */;
+		};
+		52C10F241904D477009ED2A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LevelSearchResources;
+			targetProxy = 52C10F231904D477009ED2A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		520F332218FC887C00932E4B /* InfoPlist.strings */ = {

@@ -18,6 +18,9 @@
       location = "group:Example/LevelSearchExample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:LevelSearchResources/LevelSearchResources.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Tests/LevelSearchTests.xcodeproj">
    </FileRef>
    <FileRef

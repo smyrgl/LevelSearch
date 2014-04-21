@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes'
-  # s.resources = 'Assets/*.png'
+  s.resource_bundles = { 'LevelSearch' => 'Assets/*.txt' }
 
   s.ios.exclude_files = 'Classes/Private'
   s.osx.exclude_files = 'Classes/Private'
@@ -20,4 +20,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'Foundation', 'CoreData'
   s.dependency 'Objective-LevelDB', '~> 2.0.7'
   s.dependency 'MessagePack', '~> 1.0.0'
+
 end

@@ -31,6 +31,23 @@
 		82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		52C10F171904D376009ED2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52C10ED81904D0D9009ED2A2;
+			remoteInfo = LevelSearchResources;
+		};
+		52C10F191904D37B009ED2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C10ED71904D0D9009ED2A2;
+			remoteInfo = LevelSearchResources;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LevelSearchBenchmarking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelSearchBenchmarking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +83,7 @@
 		524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelSearchBenchmarkingModel.xcdatamodel; sourceTree = "<group>"; };
 		524E721C1901F1D1009D0D98 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		524E721D1901F1D1009D0D98 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LevelSearchResources.xcodeproj; path = ../LevelSearchResources/LevelSearchResources.xcodeproj; sourceTree = "<group>"; };
 		52D84F561901F2A5002D599B /* Book+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Book+Factory.h"; sourceTree = "<group>"; };
 		52D84F571901F2A5002D599B /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = "<group>"; };
 		52D84F591901F7E5002D599B /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = "<group>"; };
@@ -91,6 +109,7 @@
 		524E719E1901CE1F009D0D98 = {
 			isa = PBXGroup;
 			children = (
+				52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */,
 				524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */,
 				524E71A91901CE1F009D0D98 /* Frameworks */,
 				524E71A81901CE1F009D0D98 /* Products */,
@@ -245,6 +264,14 @@
 			name = FTS4;
 			sourceTree = "<group>";
 		};
+		52C10F141904D376009ED2A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52C10F181904D376009ED2A2 /* LevelSearchResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +288,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				52C10F1A1904D37B009ED2A2 /* PBXTargetDependency */,
 			);
 			name = LevelSearchBenchmarking;
 			productName = LevelSearchBenchmarking;
@@ -288,12 +316,28 @@
 			mainGroup = 524E719E1901CE1F009D0D98;
 			productRefGroup = 524E71A81901CE1F009D0D98 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 52C10F141904D376009ED2A2 /* Products */;
+					ProjectRef = 52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				524E71A61901CE1F009D0D98 /* LevelSearchBenchmarking */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		52C10F181904D376009ED2A2 /* LevelSearchResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LevelSearchResources.bundle;
+			remoteRef = 52C10F171904D376009ED2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		524E71A51901CE1F009D0D98 /* Resources */ = {
@@ -365,6 +409,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52C10F1A1904D37B009ED2A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LevelSearchResources;
+			targetProxy = 52C10F191904D37B009ED2A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		524E71B31901CE1F009D0D98 /* InfoPlist.strings */ = {

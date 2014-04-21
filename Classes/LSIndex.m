@@ -23,6 +23,7 @@ NSString * const LSIndexingDidFinishNotification = @"com.tinylittlegears.levelse
 static int const kDefaultCacheSizeInBytes = 1048576 * 10;
 static int const kDefaultBloomFilterSizeInBits = 10;
 
+
 NSString * LSExecutableName(void)
 {
     NSString *executableName = [[[NSBundle mainBundle] executablePath] lastPathComponent];
@@ -62,7 +63,7 @@ static dispatch_queue_t level_search_clear_indexing_queue() {
     static dispatch_queue_t level_search_clear_indexing_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        level_search_clear_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.index.clearIndexQueue", NULL);
+        level_search_clear_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.index.clearIndexQueue", DISPATCH_QUEUE_CONCURRENT);
     });
     
     return level_search_clear_indexing_queue;
@@ -82,7 +83,7 @@ static dispatch_queue_t level_search_indexing_queue() {
     static dispatch_queue_t level_search_indexing_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        level_search_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.index.indexingQueue", NULL);
+        level_search_indexing_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.index.indexingQueue", DISPATCH_QUEUE_SERIAL);
     });
     
     return level_search_indexing_queue;
@@ -163,7 +164,7 @@ static dispatch_queue_t level_search_query_queue() {
         
         self.indexDB.encoder = ^(LevelDBKey *key, id object)
         {
-            return [[(NSSet *)object allObjects] messagePack];
+            return [[object allObjects] messagePack];
         };
         
         self.indexedEntities = [NSMutableDictionary new];
@@ -517,7 +518,6 @@ static dispatch_queue_t level_search_query_queue() {
                     NSString *value = [indexObject valueForKey:attribute];
                     [indexWords unionSet:[self tokenizeString:value]];
                 }
-                
                 
                 for (NSString *indexWord in indexWords) {
                     NSSet *currentObjects = [strongSelf.indexDB objectForKey:indexWord];

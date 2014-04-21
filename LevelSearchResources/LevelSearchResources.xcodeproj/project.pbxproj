@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52C10EFD1904D1C1009ED2A2 /* arStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEA1904D1C0009ED2A2 /* arStopWords.txt */; };
+		52C10EFE1904D1C1009ED2A2 /* caStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEB1904D1C0009ED2A2 /* caStopWords.txt */; };
+		52C10EFF1904D1C1009ED2A2 /* csStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEC1904D1C0009ED2A2 /* csStopWords.txt */; };
+		52C10F001904D1C1009ED2A2 /* daStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EED1904D1C0009ED2A2 /* daStopWords.txt */; };
+		52C10F011904D1C1009ED2A2 /* deStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEE1904D1C0009ED2A2 /* deStopWords.txt */; };
+		52C10F021904D1C1009ED2A2 /* elStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEF1904D1C0009ED2A2 /* elStopWords.txt */; };
+		52C10F031904D1C1009ED2A2 /* enStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF01904D1C0009ED2A2 /* enStopWords.txt */; };
+		52C10F041904D1C1009ED2A2 /* esStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF11904D1C0009ED2A2 /* esStopWords.txt */; };
+		52C10F051904D1C1009ED2A2 /* fiStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF21904D1C0009ED2A2 /* fiStopWords.txt */; };
+		52C10F061904D1C1009ED2A2 /* huStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF31904D1C0009ED2A2 /* huStopWords.txt */; };
+		52C10F071904D1C1009ED2A2 /* itStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF41904D1C0009ED2A2 /* itStopWords.txt */; };
+		52C10F081904D1C1009ED2A2 /* jaStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF51904D1C0009ED2A2 /* jaStopWords.txt */; };
+		52C10F091904D1C1009ED2A2 /* nbStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF61904D1C0009ED2A2 /* nbStopWords.txt */; };
+		52C10F0A1904D1C1009ED2A2 /* nlStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF71904D1C0009ED2A2 /* nlStopWords.txt */; };
+		52C10F0B1904D1C1009ED2A2 /* plStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF81904D1C0009ED2A2 /* plStopWords.txt */; };
+		52C10F0C1904D1C1009ED2A2 /* ptStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF91904D1C0009ED2A2 /* ptStopWords.txt */; };
+		52C10F0D1904D1C1009ED2A2 /* ruStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EFA1904D1C0009ED2A2 /* ruStopWords.txt */; };
+		52C10F0E1904D1C1009ED2A2 /* svStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EFB1904D1C0009ED2A2 /* svStopWords.txt */; };
+		52C10F0F1904D1C1009ED2A2 /* trStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EFC1904D1C0009ED2A2 /* trStopWords.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		52C10ED81904D0D9009ED2A2 /* LevelSearchResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevelSearchResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C10EEA1904D1C0009ED2A2 /* arStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = arStopWords.txt; path = ../../Assets/arStopWords.txt; sourceTree = "<group>"; };
+		52C10EEB1904D1C0009ED2A2 /* caStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = caStopWords.txt; path = ../../Assets/caStopWords.txt; sourceTree = "<group>"; };
+		52C10EEC1904D1C0009ED2A2 /* csStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = csStopWords.txt; path = ../../Assets/csStopWords.txt; sourceTree = "<group>"; };
+		52C10EED1904D1C0009ED2A2 /* daStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = daStopWords.txt; path = ../../Assets/daStopWords.txt; sourceTree = "<group>"; };
+		52C10EEE1904D1C0009ED2A2 /* deStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = deStopWords.txt; path = ../../Assets/deStopWords.txt; sourceTree = "<group>"; };
+		52C10EEF1904D1C0009ED2A2 /* elStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = elStopWords.txt; path = ../../Assets/elStopWords.txt; sourceTree = "<group>"; };
+		52C10EF01904D1C0009ED2A2 /* enStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = enStopWords.txt; path = ../../Assets/enStopWords.txt; sourceTree = "<group>"; };
+		52C10EF11904D1C0009ED2A2 /* esStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = esStopWords.txt; path = ../../Assets/esStopWords.txt; sourceTree = "<group>"; };
+		52C10EF21904D1C0009ED2A2 /* fiStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fiStopWords.txt; path = ../../Assets/fiStopWords.txt; sourceTree = "<group>"; };
+		52C10EF31904D1C0009ED2A2 /* huStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = huStopWords.txt; path = ../../Assets/huStopWords.txt; sourceTree = "<group>"; };
+		52C10EF41904D1C0009ED2A2 /* itStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = itStopWords.txt; path = ../../Assets/itStopWords.txt; sourceTree = "<group>"; };
+		52C10EF51904D1C0009ED2A2 /* jaStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = jaStopWords.txt; path = ../../Assets/jaStopWords.txt; sourceTree = "<group>"; };
+		52C10EF61904D1C0009ED2A2 /* nbStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = nbStopWords.txt; path = ../../Assets/nbStopWords.txt; sourceTree = "<group>"; };
+		52C10EF71904D1C0009ED2A2 /* nlStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = nlStopWords.txt; path = ../../Assets/nlStopWords.txt; sourceTree = "<group>"; };
+		52C10EF81904D1C0009ED2A2 /* plStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = plStopWords.txt; path = ../../Assets/plStopWords.txt; sourceTree = "<group>"; };
+		52C10EF91904D1C0009ED2A2 /* ptStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ptStopWords.txt; path = ../../Assets/ptStopWords.txt; sourceTree = "<group>"; };
+		52C10EFA1904D1C0009ED2A2 /* ruStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ruStopWords.txt; path = ../../Assets/ruStopWords.txt; sourceTree = "<group>"; };
+		52C10EFB1904D1C0009ED2A2 /* svStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = svStopWords.txt; path = ../../Assets/svStopWords.txt; sourceTree = "<group>"; };
+		52C10EFC1904D1C0009ED2A2 /* trStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = trStopWords.txt; path = ../../Assets/trStopWords.txt; sourceTree = "<group>"; };
+		52C10F111904D210009ED2A2 /* LevelSearchResources-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LevelSearchResources-Info.plist"; path = "LevelSearchResources/LevelSearchResources-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52C10ED51904D0D9009ED2A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52C10ECF1904D0D9009ED2A2 = {
+			isa = PBXGroup;
+			children = (
+				52C10EDD1904D0D9009ED2A2 /* Resources */,
+				52C10F101904D1E4009ED2A2 /* Supporting Files */,
+				52C10ED91904D0D9009ED2A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52C10ED91904D0D9009ED2A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52C10ED81904D0D9009ED2A2 /* LevelSearchResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52C10EDD1904D0D9009ED2A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52C10EE91904D1AA009ED2A2 /* txt */,
+			);
+			name = Resources;
+			path = LevelSearchResources;
+			sourceTree = "<group>";
+		};
+		52C10EE91904D1AA009ED2A2 /* txt */ = {
+			isa = PBXGroup;
+			children = (
+				52C10EEA1904D1C0009ED2A2 /* arStopWords.txt */,
+				52C10EEB1904D1C0009ED2A2 /* caStopWords.txt */,
+				52C10EEC1904D1C0009ED2A2 /* csStopWords.txt */,
+				52C10EED1904D1C0009ED2A2 /* daStopWords.txt */,
+				52C10EEE1904D1C0009ED2A2 /* deStopWords.txt */,
+				52C10EEF1904D1C0009ED2A2 /* elStopWords.txt */,
+				52C10EF01904D1C0009ED2A2 /* enStopWords.txt */,
+				52C10EF11904D1C0009ED2A2 /* esStopWords.txt */,
+				52C10EF21904D1C0009ED2A2 /* fiStopWords.txt */,
+				52C10EF31904D1C0009ED2A2 /* huStopWords.txt */,
+				52C10EF41904D1C0009ED2A2 /* itStopWords.txt */,
+				52C10EF51904D1C0009ED2A2 /* jaStopWords.txt */,
+				52C10EF61904D1C0009ED2A2 /* nbStopWords.txt */,
+				52C10EF71904D1C0009ED2A2 /* nlStopWords.txt */,
+				52C10EF81904D1C0009ED2A2 /* plStopWords.txt */,
+				52C10EF91904D1C0009ED2A2 /* ptStopWords.txt */,
+				52C10EFA1904D1C0009ED2A2 /* ruStopWords.txt */,
+				52C10EFB1904D1C0009ED2A2 /* svStopWords.txt */,
+				52C10EFC1904D1C0009ED2A2 /* trStopWords.txt */,
+			);
+			name = txt;
+			sourceTree = "<group>";
+		};
+		52C10F101904D1E4009ED2A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52C10F111904D210009ED2A2 /* LevelSearchResources-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52C10ED71904D0D9009ED2A2 /* LevelSearchResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C10EE61904D0D9009ED2A2 /* Build configuration list for PBXNativeTarget "LevelSearchResources" */;
+			buildPhases = (
+				52C10ED41904D0D9009ED2A2 /* Sources */,
+				52C10ED51904D0D9009ED2A2 /* Frameworks */,
+				52C10ED61904D0D9009ED2A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LevelSearchResources;
+			productName = LevelSearchResources;
+			productReference = 52C10ED81904D0D9009ED2A2 /* LevelSearchResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52C10ED01904D0D9009ED2A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Tiny Little Gears";
+			};
+			buildConfigurationList = 52C10ED31904D0D9009ED2A2 /* Build configuration list for PBXProject "LevelSearchResources" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 52C10ECF1904D0D9009ED2A2;
+			productRefGroup = 52C10ED91904D0D9009ED2A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52C10ED71904D0D9009ED2A2 /* LevelSearchResources */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52C10ED61904D0D9009ED2A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C10EFE1904D1C1009ED2A2 /* caStopWords.txt in Resources */,
+				52C10F091904D1C1009ED2A2 /* nbStopWords.txt in Resources */,
+				52C10F021904D1C1009ED2A2 /* elStopWords.txt in Resources */,
+				52C10F0B1904D1C1009ED2A2 /* plStopWords.txt in Resources */,
+				52C10F041904D1C1009ED2A2 /* esStopWords.txt in Resources */,
+				52C10F0E1904D1C1009ED2A2 /* svStopWords.txt in Resources */,
+				52C10F051904D1C1009ED2A2 /* fiStopWords.txt in Resources */,
+				52C10F0C1904D1C1009ED2A2 /* ptStopWords.txt in Resources */,
+				52C10EFF1904D1C1009ED2A2 /* csStopWords.txt in Resources */,
+				52C10F081904D1C1009ED2A2 /* jaStopWords.txt in Resources */,
+				52C10EFD1904D1C1009ED2A2 /* arStopWords.txt in Resources */,
+				52C10F001904D1C1009ED2A2 /* daStopWords.txt in Resources */,
+				52C10F061904D1C1009ED2A2 /* huStopWords.txt in Resources */,
+				52C10F0F1904D1C1009ED2A2 /* trStopWords.txt in Resources */,
+				52C10F071904D1C1009ED2A2 /* itStopWords.txt in Resources */,
+				52C10F011904D1C1009ED2A2 /* deStopWords.txt in Resources */,
+				52C10F0A1904D1C1009ED2A2 /* nlStopWords.txt in Resources */,
+				52C10F031904D1C1009ED2A2 /* enStopWords.txt in Resources */,
+				52C10F0D1904D1C1009ED2A2 /* ruStopWords.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52C10ED41904D0D9009ED2A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		52C10EE41904D0D9009ED2A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52C10EE51904D0D9009ED2A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52C10EE71904D0D9009ED2A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "LevelSearchResources/LevelSearchResources-Info.plist";
+				INSTALL_PATH = "/tmp/$(PROJECT_NAME).dst";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		52C10EE81904D0D9009ED2A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "LevelSearchResources/LevelSearchResources-Info.plist";
+				INSTALL_PATH = "/tmp/$(PROJECT_NAME).dst";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52C10ED31904D0D9009ED2A2 /* Build configuration list for PBXProject "LevelSearchResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C10EE41904D0D9009ED2A2 /* Debug */,
+				52C10EE51904D0D9009ED2A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C10EE61904D0D9009ED2A2 /* Build configuration list for PBXNativeTarget "LevelSearchResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C10EE71904D0D9009ED2A2 /* Debug */,
+				52C10EE81904D0D9009ED2A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52C10ED01904D0D9009ED2A2 /* Project object */;
+}

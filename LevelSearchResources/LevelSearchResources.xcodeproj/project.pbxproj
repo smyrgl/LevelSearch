@@ -13,7 +13,6 @@
 		52C10F001904D1C1009ED2A2 /* daStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EED1904D1C0009ED2A2 /* daStopWords.txt */; };
 		52C10F011904D1C1009ED2A2 /* deStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEE1904D1C0009ED2A2 /* deStopWords.txt */; };
 		52C10F021904D1C1009ED2A2 /* elStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EEF1904D1C0009ED2A2 /* elStopWords.txt */; };
-		52C10F031904D1C1009ED2A2 /* enStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF01904D1C0009ED2A2 /* enStopWords.txt */; };
 		52C10F041904D1C1009ED2A2 /* esStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF11904D1C0009ED2A2 /* esStopWords.txt */; };
 		52C10F051904D1C1009ED2A2 /* fiStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF21904D1C0009ED2A2 /* fiStopWords.txt */; };
 		52C10F061904D1C1009ED2A2 /* huStopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10EF31904D1C0009ED2A2 /* huStopWords.txt */; };
@@ -36,7 +35,6 @@
 		52C10EED1904D1C0009ED2A2 /* daStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = daStopWords.txt; path = ../../Assets/daStopWords.txt; sourceTree = "<group>"; };
 		52C10EEE1904D1C0009ED2A2 /* deStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = deStopWords.txt; path = ../../Assets/deStopWords.txt; sourceTree = "<group>"; };
 		52C10EEF1904D1C0009ED2A2 /* elStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = elStopWords.txt; path = ../../Assets/elStopWords.txt; sourceTree = "<group>"; };
-		52C10EF01904D1C0009ED2A2 /* enStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = enStopWords.txt; path = ../../Assets/enStopWords.txt; sourceTree = "<group>"; };
 		52C10EF11904D1C0009ED2A2 /* esStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = esStopWords.txt; path = ../../Assets/esStopWords.txt; sourceTree = "<group>"; };
 		52C10EF21904D1C0009ED2A2 /* fiStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fiStopWords.txt; path = ../../Assets/fiStopWords.txt; sourceTree = "<group>"; };
 		52C10EF31904D1C0009ED2A2 /* huStopWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = huStopWords.txt; path = ../../Assets/huStopWords.txt; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				52C10EED1904D1C0009ED2A2 /* daStopWords.txt */,
 				52C10EEE1904D1C0009ED2A2 /* deStopWords.txt */,
 				52C10EEF1904D1C0009ED2A2 /* elStopWords.txt */,
-				52C10EF01904D1C0009ED2A2 /* enStopWords.txt */,
 				52C10EF11904D1C0009ED2A2 /* esStopWords.txt */,
 				52C10EF21904D1C0009ED2A2 /* fiStopWords.txt */,
 				52C10EF31904D1C0009ED2A2 /* huStopWords.txt */,
@@ -191,7 +188,6 @@
 				52C10F071904D1C1009ED2A2 /* itStopWords.txt in Resources */,
 				52C10F011904D1C1009ED2A2 /* deStopWords.txt in Resources */,
 				52C10F0A1904D1C1009ED2A2 /* nlStopWords.txt in Resources */,
-				52C10F031904D1C1009ED2A2 /* enStopWords.txt in Resources */,
 				52C10F0D1904D1C1009ED2A2 /* ruStopWords.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +324,7 @@
 				52C10EE81904D0D9009ED2A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

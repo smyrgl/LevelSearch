@@ -338,16 +338,17 @@ static dispatch_queue_t level_search_query_queue() {
         
         for (NSString *queryWord in querySet) {
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self CONTAINS %@", queryWord];
+            __weak typeof(self) weakSelf = self;
             if (options & LSIndexQueryOptionsSpaceMeansOR || matchingIDs.count == 0) {
-                [self.indexDB enumerateKeysUsingBlock:^(LevelDBKey *key, BOOL *stop) {
+                [weakSelf.indexDB enumerateKeysUsingBlock:^(LevelDBKey *key, BOOL *stop) {
                     if ([predicate evaluateWithObject:NSStringFromLevelDBKey(key)]) {
-                        [matchingIDs unionSet:[self.indexDB objectForKey:NSStringFromLevelDBKey(key)]];
+                        [matchingIDs unionSet:[weakSelf.indexDB objectForKey:NSStringFromLevelDBKey(key)]];
                     }
                 }];
             } else {
                 NSMutableSet *newSet = [NSMutableSet new];
-                [self.indexDB enumerateKeysUsingBlock:^(LevelDBKey *key, BOOL *stop) {
-                    [newSet unionSet:[self.indexDB objectForKey:NSStringFromLevelDBKey(key)]];
+                [weakSelf.indexDB enumerateKeysUsingBlock:^(LevelDBKey *key, BOOL *stop) {
+                    [newSet unionSet:[weakSelf.indexDB objectForKey:NSStringFromLevelDBKey(key)]];
                 }];
                 [matchingIDs intersectSet:newSet];
             }
@@ -480,20 +481,21 @@ static dispatch_queue_t level_search_query_queue() {
 - (void)clearIndexForEntities:(NSSet *)entities withCompletion:(LSIndexEntitiesCompletionBlock)completion
 {
     @autoreleasepool {
-        __weak typeof(self) weakSelf = self;
+        LevelDB *indexDB = self.indexDB;
         for (NSManagedObject *clearObject in entities) {
             dispatch_group_async(level_search_clear_indexing_group(), level_search_clear_indexing_queue(), ^{
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                LDBWritebatch *writeBatch = [strongSelf.indexDB newWritebatch];
-                NSString *pk = clearObject.objectID.URIRepresentation.absoluteString;
-                [strongSelf.indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
-                    if ([value containsObject:pk]) {
-                        NSMutableSet *mutableSet = [NSMutableSet setWithSet:value];
-                        [mutableSet removeObject:pk];
-                        [writeBatch setObject:[NSSet setWithSet:mutableSet] forKey:NSStringFromLevelDBKey(key)];
-                    }
-                }];
-                [writeBatch apply];
+                @autoreleasepool {
+                    LDBWritebatch *writeBatch = [indexDB newWritebatch];
+                    [indexDB enumerateKeysAndObjectsUsingBlock:^(LevelDBKey *key, id value, BOOL *stop) {
+                        NSString *pk = clearObject.objectID.URIRepresentation.absoluteString;
+                        if ([value containsObject:pk]) {
+                            NSMutableSet *mutableSet = [NSMutableSet setWithSet:value];
+                            [mutableSet removeObject:pk];
+                            [writeBatch setObject:[NSSet setWithSet:mutableSet] forKey:NSStringFromLevelDBKey(key)];
+                        }
+                    }];
+                    [writeBatch apply];
+                }
             });
         }
         
@@ -508,28 +510,29 @@ static dispatch_queue_t level_search_query_queue() {
 - (void)buildIndexForEntities:(NSSet *)entities withCompletion:(LSIndexEntitiesCompletionBlock)completion
 {
     @autoreleasepool {
-        __weak typeof(self) weakSelf = self;
+        LevelDB *indexDB = self.indexDB;
+        NSDictionary *indexedEntities = self.indexedEntities;
         for (NSManagedObject *indexObject in entities) {
             dispatch_group_async(level_search_indexing_group(), level_search_indexing_queue(), ^{
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                LDBWritebatch *writeBatch = [strongSelf.indexDB newWritebatch];
-                NSMutableSet *indexWords = [NSMutableSet new];
-                for (NSString *attribute in (NSArray *)strongSelf.indexedEntities[indexObject.entity.name]) {
-                    NSString *value = [indexObject valueForKey:attribute];
-                    [indexWords unionSet:[self tokenizeString:value]];
-                }
-                
-                for (NSString *indexWord in indexWords) {
-                    NSSet *currentObjects = [strongSelf.indexDB objectForKey:indexWord];
-                    if (currentObjects) {
-                        NSMutableSet *newSet = [NSMutableSet setWithSet:currentObjects];
-                        [newSet addObject:indexObject.objectID.URIRepresentation.absoluteString];
-                        [writeBatch setObject:newSet forKey:indexWord];
-                    } else {
-                        [writeBatch setObject:[NSSet setWithObject:indexObject.objectID.URIRepresentation.absoluteString] forKey:indexWord];
+                @autoreleasepool {
+                    NSMutableSet *indexWords = [NSMutableSet new];
+                    for (NSString *attribute in indexedEntities[indexObject.entity.name]) {
+                        NSString *value = [indexObject valueForKey:attribute];
+                        [indexWords unionSet:[self tokenizeString:value]];
+                    }
+                    
+                    for (NSString *indexWord in indexWords) {
+                        NSSet *currentObjects = [indexDB objectForKey:indexWord];
+                        if (currentObjects) {
+                            NSMutableSet *newSet = [NSMutableSet setWithSet:currentObjects];
+                            [newSet addObject:indexObject.objectID.URIRepresentation.absoluteString];
+                            [indexDB setObject:newSet forKey:indexWord];
+                        } else {
+                            NSSet *newSet = [NSSet setWithObject:indexObject.objectID.URIRepresentation.absoluteString];
+                            [indexDB setObject:newSet forKey:indexWord];
+                        }
                     }
                 }
-                [writeBatch apply];
             });
         }
         

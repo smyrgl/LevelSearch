@@ -21,20 +21,17 @@
         number = songs.count;
     }
     
-    for (int i = 0; i < number; i++) {
-        NSDictionary *songDict = songs[i];
-        Song *newSong = [Song MR_findFirstByAttribute:@"id" withValue:songDict[@"id"]];
-        if (!newSong) {
-            newSong = [Song MR_createEntity];
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        for (int i = 0; i < number; i++) {
+            NSDictionary *songDict = songs[i];
+            Song *newSong = [Song MR_createEntity];
             newSong.id = songDict[@"id"];
+            newSong.artist = songDict[@"artist_name"];
+            newSong.popularity = [NSNumber numberWithDouble:[songDict[@"artist_popularity"] doubleValue]];
+            newSong.album = songDict[@"release"];
+            newSong.title = songDict[@"title"];
         }
-        newSong.artist = songDict[@"artist_name"];
-        newSong.popularity = [NSNumber numberWithDouble:[songDict[@"artist_popularity"] doubleValue]];
-        newSong.album = songDict[@"release"];
-        newSong.title = songDict[@"title"];
-    }
-    
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    }];    
 }
 
 @end

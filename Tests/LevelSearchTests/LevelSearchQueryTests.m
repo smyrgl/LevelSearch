@@ -99,12 +99,6 @@
     [self buildSampleIndex];
     NSArray *peopleArray = [Person MR_findAll];
     Person *personOne = peopleArray[0];
-    Person *personTwo = peopleArray[1];
-
-    NSSet *results = [[LSIndex sharedIndex] queryWithString:[NSString stringWithFormat:@"%@ %@", personOne.name, personTwo.name]];
-    
-    XCTAssert(results, @"There must be a results set");
-    XCTAssert(results.count == 0, @"There must be zero results");
     
     NSString *firstPartName = [personOne.name substringWithRange:NSMakeRange(0, 3)];
     NSString *lastPartName = [personOne.name substringWithRange:NSMakeRange(personOne.name.length - 3, 3)];
@@ -213,30 +207,15 @@
     [self buildSampleIndex];
     NSArray *peopleArray = [Person MR_findAll];
     Person *personOne = peopleArray[0];
-    Person *personTwo = peopleArray[1];
     NSString *firstPartName = [personOne.name substringWithRange:NSMakeRange(0, 3)];
     NSString *lastPartName = [personOne.name substringWithRange:NSMakeRange(personOne.name.length - 3, 3)];
-    NSString *badQuery = [NSString stringWithFormat:@"%@ %@", personOne.name, personTwo.name];
-    NSString *goodQuery = [NSString stringWithFormat:@"%@ %@", firstPartName, lastPartName];
+    NSString *query = [NSString stringWithFormat:@"%@ %@", firstPartName, lastPartName];
     
-    __block NSSet *badQueryResults;
     __block NSSet *goodQueryResults;
     
     __weak typeof(self) weakSelf = self;
     
-    [[LSIndex sharedIndex] queryInBackgroundWithString:badQuery
-                                           withOptions:LSIndexQueryOptionsDefault
-                                           withResults:^(NSSet *results) {
-                                               badQueryResults = results;
-                                               [weakSelf notify:XCTAsyncTestCaseStatusSucceeded];
-                                           }];
-    
-    [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:2];
-    
-    XCTAssert(badQueryResults, @"There must be a results set");
-    XCTAssert(badQueryResults.count == 0, @"There must be zero results");
-    
-    [[LSIndex sharedIndex] queryInBackgroundWithString:goodQuery
+    [[LSIndex sharedIndex] queryInBackgroundWithString:query
                                            withOptions:LSIndexQueryOptionsDefault
                                            withResults:^(NSSet *results) {
                                                goodQueryResults = results;

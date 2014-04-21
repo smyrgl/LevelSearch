@@ -11,6 +11,16 @@
 
 NSString * const kPathForSqliteDB = @"/sqlite.db";
 
+static dispatch_queue_t serial_test_query_queue() {
+    static dispatch_queue_t level_search_query_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        level_search_query_queue = dispatch_queue_create("com.tinylittlegears.levelsearch.test.serialQueryQueue", DISPATCH_QUEUE_SERIAL);
+    });
+    
+    return level_search_query_queue;
+}
+
 @interface LSTestManager ()
 @property (nonatomic, assign, readwrite) LSTestMode currentMode;
 @end
@@ -116,9 +126,6 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
     DDLogInfo(@"Starting performance test run.");
     
     switch (self.currentMode) {
-        case LSTestModeCoreData:
-            break;
-            
         case LSTestModeFTS4:
             [[LSFTS4Manager sharedManager] stopWatchingDefaultContext];
             break;
@@ -142,11 +149,24 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
     NSSet *indexBooks = [NSSet setWithArray:books];
     DDLogInfo(@"Created %lu books", objects);
     
-    LSStopwatch *stopwatch = [LSStopwatch new];
-    [stopwatch start];
-    
     switch (self.currentMode) {
         case LSTestModeCoreData:
+        {
+            for (int x = 0; x < queries; x++) {
+                LSStopwatch *queryStopwatch = [LSStopwatch new];
+                [queryStopwatch start];
+                dispatch_async(serial_test_query_queue(), ^{
+                    NSString *query = LSGetRandomStringWithCharCount(3);
+                    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
+                    fetch.predicate = [NSPredicate predicateWithFormat:@"(name LIKE[cd] %@) OR (keywords LIKE[cd] %@)", query, query];
+                    fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
+                    NSArray *results = [[NSManagedObjectContext MR_contextForCurrentThread] executeFetchRequest:fetch error:nil];
+                    [queryStopwatch stop];
+                    DDLogInfo(@"Query results: %lu", (unsigned long)results.count);
+                    DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
+                });
+            }
+        }
             break;
             
         case LSTestModeFTS4:
@@ -160,6 +180,8 @@ NSString * const kPathForSqliteDB = @"/sqlite.db";
             
         case LSTestModeLevelSearch:
         {
+            LSStopwatch *stopwatch = [LSStopwatch new];
+            [stopwatch start];
             [[LSIndex sharedIndex] indexEntities:indexBooks withCompletion:^{
                 [stopwatch stop];
                 DDLogInfo(@"Time to index %f seconds", [stopwatch recordedTime]);

@@ -12,9 +12,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    //[[LSTestManager sharedManager] setupWithTestMode:LSTestModeCoreData];
+    [[LSTestManager sharedManager] setupWithTestMode:LSTestModeCoreData];
     // [[LSTestManager sharedManager] setupWithTestMode:LSTestModeFTS4];
-    [[LSTestManager sharedManager] setupWithTestMode:LSTestModeLevelSearch];
+    //[[LSTestManager sharedManager] setupWithTestMode:LSTestModeLevelSearch];
     
     [[LSTestManager sharedManager] runPerformanceTestsWithNumberOfObjects:5000 numberOfQueries:50];
 }

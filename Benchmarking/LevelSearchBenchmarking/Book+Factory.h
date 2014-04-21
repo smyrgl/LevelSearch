@@ -10,7 +10,6 @@
 
 @interface Book (Factory)
 
-+ (NSArray *)buildRandomBooks:(NSUInteger)count;
-+ (NSArray *)createRandomBooks:(NSUInteger)count;
++ (void)createNumberOfBooks:(NSUInteger)number;
 
 @end

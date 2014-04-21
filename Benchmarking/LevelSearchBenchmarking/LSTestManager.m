@@ -152,6 +152,8 @@ static dispatch_queue_t serial_test_query_queue() {
     [Song createNumberOfSongs:objects];
     NSSet *songs = [NSSet setWithArray:[Song MR_findAll]];
     DDLogInfo(@"Created %lu songs", objects);
+    [Book createNumberOfBooks:50];
+    NSSet *books = [NSSet setWithArray:[Book MR_findAll]];
     
     switch (self.currentMode) {
         case LSTestModeCoreData:
@@ -164,6 +166,9 @@ static dispatch_queue_t serial_test_query_queue() {
                     NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
                     fetch.predicate = [NSPredicate predicateWithFormat:@"(title LIKE[cd] %@) OR (artist LIKE[cd] %@) OR (album LIKE[cd] %@)", query, query, query];
                     fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:NO]];
+                    fetch = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
+                    fetch.predicate = [NSPredicate predicateWithFormat:@"content LIKE[cd] %@", query];
+                    fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
                     [[NSManagedObjectContext MR_contextForCurrentThread] executeFetchRequest:fetch error:nil];
                     [queryStopwatch stop];
                     DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
@@ -185,7 +190,7 @@ static dispatch_queue_t serial_test_query_queue() {
         {
             LSStopwatch *stopwatch = [LSStopwatch new];
             [stopwatch start];
-            [[LSIndex sharedIndex] indexEntities:songs withCompletion:^{
+            [[LSIndex sharedIndex] indexEntities:books withCompletion:^{
                 [stopwatch stop];
                 DDLogInfo(@"Time to index %f seconds", [stopwatch recordedTime]);
                 for (int x = 0; x < queries; x++) {
@@ -262,6 +267,7 @@ static dispatch_queue_t serial_test_query_queue() {
     [Book MR_truncateAll];
     [Song MR_truncateAll];
     [[LSIndex sharedIndex] addIndexingToEntity:[NSEntityDescription entityForName:@"Song" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"album", @"artist", @"title"]];
+    [[LSIndex sharedIndex] addIndexingToEntity:[NSEntityDescription entityForName:@"Book" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"content"]];
     [[LSIndex sharedIndex] startWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
     [[LSIndex sharedIndex] setDefaultQueryContext:[NSManagedObjectContext MR_defaultContext]];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"stopwords" ofType:@"json"];

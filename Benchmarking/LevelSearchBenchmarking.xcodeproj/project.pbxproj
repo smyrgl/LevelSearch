@@ -31,6 +31,11 @@
 		52C10F381904F650009ED2A2 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F371904F650009ED2A2 /* Song.m */; };
 		52C10F3B1904F67C009ED2A2 /* Song+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F3A1904F67C009ED2A2 /* Song+Factory.m */; };
 		52C10F3F1904FA6B009ED2A2 /* stopwords.json in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F3E1904FA6B009ED2A2 /* stopwords.json */; };
+		52C10F4219052016009ED2A2 /* candide.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F4119052016009ED2A2 /* candide.txt */; };
+		52C10F45190529C7009ED2A2 /* prideandprej.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F44190529C7009ED2A2 /* prideandprej.txt */; };
+		52C10F47190529D4009ED2A2 /* huckfinn.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F46190529D4009ED2A2 /* huckfinn.txt */; };
+		52C10F4919052A23009ED2A2 /* aliceinwonderland.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F4819052A23009ED2A2 /* aliceinwonderland.txt */; };
+		52C10F4B19052A34009ED2A2 /* divinecomedy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F4A19052A34009ED2A2 /* divinecomedy.txt */; };
 		52D84F581901F2A5002D599B /* Book+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F571901F2A5002D599B /* Book+Factory.m */; };
 		52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5A1901F7E5002D599B /* LSStopwatch.m */; };
 		82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */; };
@@ -79,6 +84,11 @@
 		52C10F391904F67C009ED2A2 /* Song+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Factory.h"; sourceTree = "<group>"; };
 		52C10F3A1904F67C009ED2A2 /* Song+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Factory.m"; sourceTree = "<group>"; };
 		52C10F3E1904FA6B009ED2A2 /* stopwords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stopwords.json; sourceTree = "<group>"; };
+		52C10F4119052016009ED2A2 /* candide.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candide.txt; sourceTree = "<group>"; };
+		52C10F44190529C7009ED2A2 /* prideandprej.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prideandprej.txt; sourceTree = "<group>"; };
+		52C10F46190529D4009ED2A2 /* huckfinn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = huckfinn.txt; sourceTree = "<group>"; };
+		52C10F4819052A23009ED2A2 /* aliceinwonderland.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aliceinwonderland.txt; sourceTree = "<group>"; };
+		52C10F4A19052A34009ED2A2 /* divinecomedy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = divinecomedy.txt; sourceTree = "<group>"; };
 		52D84F561901F2A5002D599B /* Book+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Book+Factory.h"; sourceTree = "<group>"; };
 		52D84F571901F2A5002D599B /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = "<group>"; };
 		52D84F591901F7E5002D599B /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = "<group>"; };
@@ -234,6 +244,7 @@
 		524E71F51901D0B2009D0D98 /* Test Data */ = {
 			isa = PBXGroup;
 			children = (
+				52C10F4C19052A46009ED2A2 /* Books */,
 				52C10F3E1904FA6B009ED2A2 /* stopwords.json */,
 				52C10F301904F1C5009ED2A2 /* songs */,
 				524E71F61901D0BE009D0D98 /* adjectives.json */,
@@ -272,6 +283,18 @@
 				52C10F331904F275009ED2A2 /* LSMainViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		52C10F4C19052A46009ED2A2 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				52C10F4A19052A34009ED2A2 /* divinecomedy.txt */,
+				52C10F4819052A23009ED2A2 /* aliceinwonderland.txt */,
+				52C10F46190529D4009ED2A2 /* huckfinn.txt */,
+				52C10F4119052016009ED2A2 /* candide.txt */,
+				52C10F44190529C7009ED2A2 /* prideandprej.txt */,
+			);
+			name = Books;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +355,14 @@
 				524E71FE1901D0BE009D0D98 /* testAvatar.png in Resources */,
 				52C10F3F1904FA6B009ED2A2 /* stopwords.json in Resources */,
 				524E71B51901CE1F009D0D98 /* InfoPlist.strings in Resources */,
+				52C10F45190529C7009ED2A2 /* prideandprej.txt in Resources */,
+				52C10F4B19052A34009ED2A2 /* divinecomedy.txt in Resources */,
 				524E71FC1901D0BE009D0D98 /* testNames.json in Resources */,
 				524E71C31901CE1F009D0D98 /* Images.xcassets in Resources */,
+				52C10F4219052016009ED2A2 /* candide.txt in Resources */,
 				524E71FB1901D0BE009D0D98 /* adjectives.json in Resources */,
+				52C10F47190529D4009ED2A2 /* huckfinn.txt in Resources */,
+				52C10F4919052A23009ED2A2 /* aliceinwonderland.txt in Resources */,
 				524E71BB1901CE1F009D0D98 /* Credits.rtf in Resources */,
 				524E71C11901CE1F009D0D98 /* MainMenu.xib in Resources */,
 				52C10F311904F1C5009ED2A2 /* songs in Resources */,

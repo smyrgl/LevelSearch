@@ -12,6 +12,6 @@
 @implementation Book
 
 @dynamic name;
-@dynamic keywords;
+@dynamic content;
 
 @end

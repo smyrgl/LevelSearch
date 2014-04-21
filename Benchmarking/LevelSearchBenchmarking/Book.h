@@ -13,6 +13,6 @@
 @interface Book : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * keywords;
+@property (nonatomic, retain) NSString * content;
 
 @end

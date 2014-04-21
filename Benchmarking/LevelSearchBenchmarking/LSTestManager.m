@@ -8,6 +8,10 @@
 
 #import "LSTestManager.h"
 #import "LSFTS4Manager.h"
+#import <MessagePackPacker.h>
+#import <MessagePack.h>
+#import "Song.h"
+#import "Song+Factory.h"
 
 NSString * const kPathForSqliteDB = @"/sqlite.db";
 
@@ -118,7 +122,7 @@ static dispatch_queue_t serial_test_query_queue() {
     DDLogInfo(@"Purging LevelSearch index");
     [[LSIndex sharedIndex] purgeDiskIndex];
     
-    DDLogInfo(@"Reset all testing stores");
+    DDLogInfo(@"Reset all testing stores");    
 }
 
 - (void)runPerformanceTestsWithNumberOfObjects:(NSUInteger)objects numberOfQueries:(NSUInteger)queries
@@ -144,10 +148,10 @@ static dispatch_queue_t serial_test_query_queue() {
             break;
     }
     
-    DDLogInfo(@"Creating %lu books", objects);
-    NSArray *books = [Book createRandomBooks:objects];
-    NSSet *indexBooks = [NSSet setWithArray:books];
-    DDLogInfo(@"Created %lu books", objects);
+    DDLogInfo(@"Creating %lu songs", objects);
+    [Song createNumberOfSongs:objects];
+    NSSet *songs = [NSSet setWithArray:[Song MR_findAll]];
+    DDLogInfo(@"Created %lu songs", objects);
     
     switch (self.currentMode) {
         case LSTestModeCoreData:
@@ -157,9 +161,9 @@ static dispatch_queue_t serial_test_query_queue() {
                 [queryStopwatch start];
                 dispatch_async(serial_test_query_queue(), ^{
                     NSString *query = LSGetRandomStringWithCharCount(3);
-                    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
-                    fetch.predicate = [NSPredicate predicateWithFormat:@"(name LIKE[cd] %@) OR (keywords LIKE[cd] %@)", query, query];
-                    fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO]];
+                    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
+                    fetch.predicate = [NSPredicate predicateWithFormat:@"(title LIKE[cd] %@) OR (artist LIKE[cd] %@) OR (album LIKE[cd] %@)", query, query, query];
+                    fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:NO]];
                     [[NSManagedObjectContext MR_contextForCurrentThread] executeFetchRequest:fetch error:nil];
                     [queryStopwatch stop];
                     DDLogInfo(@"Query time: %f seconds", [queryStopwatch recordedTime]);
@@ -181,7 +185,7 @@ static dispatch_queue_t serial_test_query_queue() {
         {
             LSStopwatch *stopwatch = [LSStopwatch new];
             [stopwatch start];
-            [[LSIndex sharedIndex] indexEntities:indexBooks withCompletion:^{
+            [[LSIndex sharedIndex] indexEntities:songs withCompletion:^{
                 [stopwatch stop];
                 DDLogInfo(@"Time to index %f seconds", [stopwatch recordedTime]);
                 for (int x = 0; x < queries; x++) {
@@ -238,7 +242,7 @@ static dispatch_queue_t serial_test_query_queue() {
     [Book MR_truncateAll];
     NSString *sqlitePath = [NSString stringWithFormat:@"%@%@", LSAppDataDirectory(), kPathForSqliteDB];
     self.dbQueue = [FMDatabaseQueue databaseQueueWithPath:sqlitePath];    
-    [[LSFTS4Manager sharedManager] addIndexingToEntity:[NSEntityDescription entityForName:@"Book" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"name", @"keywords"]];
+    [[LSFTS4Manager sharedManager] addIndexingToEntity:[NSEntityDescription entityForName:@"Song" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"album", @"artist", @"title"]];
     [[LSFTS4Manager sharedManager] startWatchingDefaultContext];
 }
 
@@ -256,9 +260,15 @@ static dispatch_queue_t serial_test_query_queue() {
     [[LSIndex sharedIndex] purgeDiskIndex];
     [MagicalRecord setupAutoMigratingCoreDataStack];
     [Book MR_truncateAll];
-    [[LSIndex sharedIndex] addIndexingToEntity:[NSEntityDescription entityForName:@"Book" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"name", @"keywords"]];
+    [Song MR_truncateAll];
+    [[LSIndex sharedIndex] addIndexingToEntity:[NSEntityDescription entityForName:@"Song" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]] forAttributes:@[@"album", @"artist", @"title"]];
     [[LSIndex sharedIndex] startWatchingManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
     [[LSIndex sharedIndex] setDefaultQueryContext:[NSManagedObjectContext MR_defaultContext]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"stopwords" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    NSSet *stopWords = [NSSet setWithArray:json];
+    [[LSIndex sharedIndex] setStopWords:stopWords];
 }
 
 - (void)setupSearchKit

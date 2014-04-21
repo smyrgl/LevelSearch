@@ -26,27 +26,15 @@
 		524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */; };
 		524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */; };
 		524E721E1901F1D1009D0D98 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E721D1901F1D1009D0D98 /* Book.m */; };
+		52C10F311904F1C5009ED2A2 /* songs in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F301904F1C5009ED2A2 /* songs */; };
+		52C10F341904F275009ED2A2 /* LSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F331904F275009ED2A2 /* LSMainViewController.m */; };
+		52C10F381904F650009ED2A2 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F371904F650009ED2A2 /* Song.m */; };
+		52C10F3B1904F67C009ED2A2 /* Song+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F3A1904F67C009ED2A2 /* Song+Factory.m */; };
+		52C10F3F1904FA6B009ED2A2 /* stopwords.json in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F3E1904FA6B009ED2A2 /* stopwords.json */; };
 		52D84F581901F2A5002D599B /* Book+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F571901F2A5002D599B /* Book+Factory.m */; };
 		52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5A1901F7E5002D599B /* LSStopwatch.m */; };
 		82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		52C10F171904D376009ED2A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52C10ED81904D0D9009ED2A2;
-			remoteInfo = LevelSearchResources;
-		};
-		52C10F191904D37B009ED2A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 52C10ED71904D0D9009ED2A2;
-			remoteInfo = LevelSearchResources;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LevelSearchBenchmarking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +71,14 @@
 		524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelSearchBenchmarkingModel.xcdatamodel; sourceTree = "<group>"; };
 		524E721C1901F1D1009D0D98 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		524E721D1901F1D1009D0D98 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
-		52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LevelSearchResources.xcodeproj; path = ../LevelSearchResources/LevelSearchResources.xcodeproj; sourceTree = "<group>"; };
+		52C10F301904F1C5009ED2A2 /* songs */ = {isa = PBXFileReference; lastKnownFileType = file; path = songs; sourceTree = "<group>"; };
+		52C10F321904F275009ED2A2 /* LSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMainViewController.h; sourceTree = "<group>"; };
+		52C10F331904F275009ED2A2 /* LSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMainViewController.m; sourceTree = "<group>"; };
+		52C10F361904F650009ED2A2 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		52C10F371904F650009ED2A2 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		52C10F391904F67C009ED2A2 /* Song+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Factory.h"; sourceTree = "<group>"; };
+		52C10F3A1904F67C009ED2A2 /* Song+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Factory.m"; sourceTree = "<group>"; };
+		52C10F3E1904FA6B009ED2A2 /* stopwords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stopwords.json; sourceTree = "<group>"; };
 		52D84F561901F2A5002D599B /* Book+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Book+Factory.h"; sourceTree = "<group>"; };
 		52D84F571901F2A5002D599B /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = "<group>"; };
 		52D84F591901F7E5002D599B /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = "<group>"; };
@@ -109,7 +104,6 @@
 		524E719E1901CE1F009D0D98 = {
 			isa = PBXGroup;
 			children = (
-				52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */,
 				524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */,
 				524E71A91901CE1F009D0D98 /* Frameworks */,
 				524E71A81901CE1F009D0D98 /* Products */,
@@ -150,6 +144,7 @@
 		524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */ = {
 			isa = PBXGroup;
 			children = (
+				52C10F351904F278009ED2A2 /* View Controllers */,
 				524E71F51901D0B2009D0D98 /* Test Data */,
 				524E71E91901D07A009D0D98 /* Models */,
 				524E71E51901D00B009D0D98 /* Classes */,
@@ -217,6 +212,8 @@
 			children = (
 				524E71F01901D099009D0D98 /* Factories */,
 				524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */,
+				52C10F361904F650009ED2A2 /* Song.h */,
+				52C10F371904F650009ED2A2 /* Song.m */,
 				524E721C1901F1D1009D0D98 /* Book.h */,
 				524E721D1901F1D1009D0D98 /* Book.m */,
 			);
@@ -228,6 +225,8 @@
 			children = (
 				52D84F561901F2A5002D599B /* Book+Factory.h */,
 				52D84F571901F2A5002D599B /* Book+Factory.m */,
+				52C10F391904F67C009ED2A2 /* Song+Factory.h */,
+				52C10F3A1904F67C009ED2A2 /* Song+Factory.m */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -235,6 +234,8 @@
 		524E71F51901D0B2009D0D98 /* Test Data */ = {
 			isa = PBXGroup;
 			children = (
+				52C10F3E1904FA6B009ED2A2 /* stopwords.json */,
+				52C10F301904F1C5009ED2A2 /* songs */,
 				524E71F61901D0BE009D0D98 /* adjectives.json */,
 				524E71F71901D0BE009D0D98 /* testNames.json */,
 				524E71F81901D0BE009D0D98 /* TestDataManager.h */,
@@ -264,12 +265,13 @@
 			name = FTS4;
 			sourceTree = "<group>";
 		};
-		52C10F141904D376009ED2A2 /* Products */ = {
+		52C10F351904F278009ED2A2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				52C10F181904D376009ED2A2 /* LevelSearchResources.bundle */,
+				52C10F321904F275009ED2A2 /* LSMainViewController.h */,
+				52C10F331904F275009ED2A2 /* LSMainViewController.m */,
 			);
-			name = Products;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +290,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				52C10F1A1904D37B009ED2A2 /* PBXTargetDependency */,
 			);
 			name = LevelSearchBenchmarking;
 			productName = LevelSearchBenchmarking;
@@ -316,12 +317,6 @@
 			mainGroup = 524E719E1901CE1F009D0D98;
 			productRefGroup = 524E71A81901CE1F009D0D98 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 52C10F141904D376009ED2A2 /* Products */;
-					ProjectRef = 52C10F131904D376009ED2A2 /* LevelSearchResources.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				524E71A61901CE1F009D0D98 /* LevelSearchBenchmarking */,
@@ -329,28 +324,20 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		52C10F181904D376009ED2A2 /* LevelSearchResources.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = LevelSearchResources.bundle;
-			remoteRef = 52C10F171904D376009ED2A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		524E71A51901CE1F009D0D98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				524E71FE1901D0BE009D0D98 /* testAvatar.png in Resources */,
+				52C10F3F1904FA6B009ED2A2 /* stopwords.json in Resources */,
 				524E71B51901CE1F009D0D98 /* InfoPlist.strings in Resources */,
 				524E71FC1901D0BE009D0D98 /* testNames.json in Resources */,
 				524E71C31901CE1F009D0D98 /* Images.xcassets in Resources */,
 				524E71FB1901D0BE009D0D98 /* adjectives.json in Resources */,
 				524E71BB1901CE1F009D0D98 /* Credits.rtf in Resources */,
 				524E71C11901CE1F009D0D98 /* MainMenu.xib in Resources */,
+				52C10F311904F1C5009ED2A2 /* songs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +381,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C10F381904F650009ED2A2 /* Song.m in Sources */,
+				52C10F341904F275009ED2A2 /* LSMainViewController.m in Sources */,
 				52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */,
 				524E721E1901F1D1009D0D98 /* Book.m in Sources */,
 				524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */,
@@ -405,18 +394,11 @@
 				524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */,
 				524E71B71901CE1F009D0D98 /* main.m in Sources */,
 				524E71BE1901CE1F009D0D98 /* LSAppDelegate.m in Sources */,
+				52C10F3B1904F67C009ED2A2 /* Song+Factory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		52C10F1A1904D37B009ED2A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LevelSearchResources;
-			targetProxy = 52C10F191904D37B009ED2A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		524E71B31901CE1F009D0D98 /* InfoPlist.strings */ = {

@@ -1,4 +1,17 @@
 PODS:
+  - AFNetworking (1.3.4)
+  - CocoaLumberjack (1.8.1):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.8.1)
+  - CocoaLumberjack/Extensions (1.8.1):
+    - CocoaLumberjack/Core
+  - FMDB (2.2):
+    - FMDB/standard
+  - FMDB/common (2.2)
+  - FMDB/standard (2.2):
+    - FMDB/common
+  - ISO8601DateFormatterValueTransformer (0.5.0):
+    - RKValueTransformers (~> 1.0.0)
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
@@ -8,18 +21,61 @@ PODS:
     - Objective-LevelDB/leveldb
   - Objective-LevelDB/leveldb (2.0.7):
     - Objective-LevelDB/leveldb
+  - RestKit (0.22.0):
+    - RestKit/Core
+  - RestKit/Core (0.22.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.22.0)
+  - RestKit/Network (0.22.0):
+    - AFNetworking (~> 1.3.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.22.0):
+    - ISO8601DateFormatterValueTransformer (~> 0.5.0)
+    - RestKit/Support
+    - RKValueTransformers (~> 1.0.1)
+  - RestKit/Search (0.22.0):
+    - RestKit/CoreData
+  - RestKit/Support (0.22.0):
+    - TransitionKit (= 2.0.0)
+  - RKValueTransformers (1.0.1)
+  - SOCKit (1.1)
+  - sqlite3 (3.8.4.3):
+    - sqlite3/common
+  - sqlite3/common (3.8.4.3)
+  - sqlite3/fts (3.8.4.3):
+    - sqlite3/common
+  - TransitionKit (2.0.0)
   - XCAsyncTestCase (0.0.1)
 
 DEPENDENCIES:
+  - CocoaLumberjack
+  - FMDB
   - MagicalRecord
   - MessagePack
   - Objective-LevelDB
+  - RestKit
+  - RestKit/Search
+  - sqlite3
+  - sqlite3/fts
   - XCAsyncTestCase
 
 SPEC CHECKSUMS:
+  AFNetworking: e403d4333a4e1956cb3fe42364c3c879f820c9a0
+  CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
+  FMDB: e0dd09464b4e1a1cd7fa51ea835ae821b5656865
+  ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   MessagePack: f54bf02dd4bc0dbd4ad84134a805a3e4d466c88f
   Objective-LevelDB: 8163d36d32e51b6d09ba7effad9e0e963ba44262
+  RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
+  RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
+  SOCKit: 8871d058926a6c6cc144f0c5eee82c5d0ec274a3
+  sqlite3: 04f92b2dcd748b522bf96cc9b16ccb2b0acd9cc8
+  TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
   XCAsyncTestCase: 6e92e14f923ed5925d93bc80720ef0e81e1e896f
 
 COCOAPODS: 0.32.1

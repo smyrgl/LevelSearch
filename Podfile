@@ -30,7 +30,7 @@ target :osxtests do
 		xcodeproj 'Tests/LevelSearchTests.xcodeproj'
 end
 
-target :LevelSearchBenchmarking do
+target :benchmarking do
   platform :osx, '10.9'
 	pod 'RestKit'
 	pod 'RestKit/Search'

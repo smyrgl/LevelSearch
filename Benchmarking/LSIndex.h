@@ -6,6 +6,9 @@
 //
 //
 
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
 typedef void (^LSIndexQueryResultsBlock)(NSSet *results);
 typedef void (^LSIndexEntitiesCompletionBlock)();
 

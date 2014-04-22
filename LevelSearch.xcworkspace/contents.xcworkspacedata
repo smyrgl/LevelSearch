@@ -21,10 +21,10 @@
       location = "group:LevelSearchResources/LevelSearchResources.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Tests/LevelSearchTests.xcodeproj">
+      location = "group:Benchmarking/LevelSearchBenchmarking.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Benchmarking/LevelSearchBenchmarking.xcodeproj">
+      location = "group:Tests/LevelSearchTests.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

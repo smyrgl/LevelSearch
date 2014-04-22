@@ -7,93 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5229CA9F19060208005F6482 /* LSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CA9E19060208005F6482 /* LSMainViewController.m */; };
+		5229CAAF19060239005F6482 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAAB19060239005F6482 /* main.m */; };
+		5229CAB21906026C005F6482 /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAB11906026C005F6482 /* LSAppDelegate.m */; };
+		5229CAB519060279005F6482 /* LSTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAB419060279005F6482 /* LSTestManager.m */; };
+		5229CABA19060283005F6482 /* LSStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAB719060283005F6482 /* LSStopwatch.m */; };
+		5229CABB19060283005F6482 /* LSUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAB919060283005F6482 /* LSUtilityFunctions.m */; };
+		5229CABE1906028D005F6482 /* LSFTS4Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CABD1906028D005F6482 /* LSFTS4Manager.m */; };
+		5229CAC319060297005F6482 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAC019060297005F6482 /* Book.m */; };
+		5229CAC419060297005F6482 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAC219060297005F6482 /* Song.m */; };
+		5229CAC9190602A7005F6482 /* Book+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAC6190602A7005F6482 /* Book+Factory.m */; };
+		5229CACA190602A7005F6482 /* Song+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229CAC8190602A7005F6482 /* Song+Factory.m */; };
+		5229CACD190602B6005F6482 /* songs in Resources */ = {isa = PBXBuildFile; fileRef = 5229CACB190602B6005F6482 /* songs */; };
+		5229CACE190602B6005F6482 /* stopwords.json in Resources */ = {isa = PBXBuildFile; fileRef = 5229CACC190602B6005F6482 /* stopwords.json */; };
+		5229CAD4190602C8005F6482 /* aliceinwonderland.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5229CACF190602C8005F6482 /* aliceinwonderland.txt */; };
+		5229CAD5190602C8005F6482 /* candide.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5229CAD0190602C8005F6482 /* candide.txt */; };
+		5229CAD6190602C8005F6482 /* divinecomedy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5229CAD1190602C8005F6482 /* divinecomedy.txt */; };
+		5229CAD7190602C8005F6482 /* huckfinn.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5229CAD2190602C8005F6482 /* huckfinn.txt */; };
+		5229CAD8190602C8005F6482 /* prideandprej.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5229CAD3190602C8005F6482 /* prideandprej.txt */; };
 		524E71AB1901CE1F009D0D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E71AA1901CE1F009D0D98 /* Cocoa.framework */; };
-		524E71B51901CE1F009D0D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 524E71B31901CE1F009D0D98 /* InfoPlist.strings */; };
-		524E71B71901CE1F009D0D98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71B61901CE1F009D0D98 /* main.m */; };
-		524E71BB1901CE1F009D0D98 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524E71B91901CE1F009D0D98 /* Credits.rtf */; };
-		524E71BE1901CE1F009D0D98 /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71BD1901CE1F009D0D98 /* LSAppDelegate.m */; };
-		524E71C11901CE1F009D0D98 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524E71BF1901CE1F009D0D98 /* MainMenu.xib */; };
-		524E71C31901CE1F009D0D98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524E71C21901CE1F009D0D98 /* Images.xcassets */; };
-		524E71E41901CFF6009D0D98 /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71E31901CFF6009D0D98 /* LSIndex.m */; };
-		524E71E81901D01C009D0D98 /* LSTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71E71901D01C009D0D98 /* LSTestManager.m */; };
 		524E71FB1901D0BE009D0D98 /* adjectives.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E71F61901D0BE009D0D98 /* adjectives.json */; };
 		524E71FC1901D0BE009D0D98 /* testNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 524E71F71901D0BE009D0D98 /* testNames.json */; };
-		524E71FD1901D0BE009D0D98 /* TestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E71F91901D0BE009D0D98 /* TestDataManager.m */; };
 		524E71FE1901D0BE009D0D98 /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 524E71FA1901D0BE009D0D98 /* testAvatar.png */; };
 		524E71FF1901D108009D0D98 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E71AE1901CE1F009D0D98 /* CoreData.framework */; };
 		524E72011901D11C009D0D98 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E72001901D11C009D0D98 /* CoreServices.framework */; };
-		524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E72041901D25E009D0D98 /* LSUtilityFunctions.m */; };
-		524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */; };
-		524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */; };
-		524E721E1901F1D1009D0D98 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 524E721D1901F1D1009D0D98 /* Book.m */; };
-		52C10F311904F1C5009ED2A2 /* songs in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F301904F1C5009ED2A2 /* songs */; };
-		52C10F341904F275009ED2A2 /* LSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F331904F275009ED2A2 /* LSMainViewController.m */; };
-		52C10F381904F650009ED2A2 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F371904F650009ED2A2 /* Song.m */; };
-		52C10F3B1904F67C009ED2A2 /* Song+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C10F3A1904F67C009ED2A2 /* Song+Factory.m */; };
-		52C10F3F1904FA6B009ED2A2 /* stopwords.json in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F3E1904FA6B009ED2A2 /* stopwords.json */; };
-		52C10F4219052016009ED2A2 /* candide.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F4119052016009ED2A2 /* candide.txt */; };
-		52C10F45190529C7009ED2A2 /* prideandprej.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F44190529C7009ED2A2 /* prideandprej.txt */; };
-		52C10F47190529D4009ED2A2 /* huckfinn.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F46190529D4009ED2A2 /* huckfinn.txt */; };
-		52C10F4919052A23009ED2A2 /* aliceinwonderland.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F4819052A23009ED2A2 /* aliceinwonderland.txt */; };
-		52C10F4B19052A34009ED2A2 /* divinecomedy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C10F4A19052A34009ED2A2 /* divinecomedy.txt */; };
-		52D84F581901F2A5002D599B /* Book+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F571901F2A5002D599B /* Book+Factory.m */; };
-		52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D84F5A1901F7E5002D599B /* LSStopwatch.m */; };
-		82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */; };
+		525078CA190603C800BE55DE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525078C8190603C800BE55DE /* MainMenu.xib */; };
+		5274A0CA1906056C003FFFD4 /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5274A0C91906056C003FFFD4 /* LSIndex.m */; };
+		EF37AB7849604C9097082C49 /* libPods-benchmarking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C4A817529C4BA4A0CB9380 /* libPods-benchmarking.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LevelSearchBenchmarking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevelSearchBenchmarking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5229CA9D19060208005F6482 /* LSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMainViewController.h; sourceTree = SOURCE_ROOT; };
+		5229CA9E19060208005F6482 /* LSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMainViewController.m; sourceTree = SOURCE_ROOT; };
+		5229CAA019060219005F6482 /* LevelSearchBenchmarking-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LevelSearchBenchmarking-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5229CAA119060219005F6482 /* LevelSearchBenchmarking-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelSearchBenchmarking-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		5229CAAB19060239005F6482 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		5229CAB01906026C005F6482 /* LSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		5229CAB11906026C005F6482 /* LSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		5229CAB319060279005F6482 /* LSTestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTestManager.h; sourceTree = SOURCE_ROOT; };
+		5229CAB419060279005F6482 /* LSTestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTestManager.m; sourceTree = SOURCE_ROOT; };
+		5229CAB619060283005F6482 /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = SOURCE_ROOT; };
+		5229CAB719060283005F6482 /* LSStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStopwatch.m; sourceTree = SOURCE_ROOT; };
+		5229CAB819060283005F6482 /* LSUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSUtilityFunctions.h; sourceTree = SOURCE_ROOT; };
+		5229CAB919060283005F6482 /* LSUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSUtilityFunctions.m; sourceTree = SOURCE_ROOT; };
+		5229CABC1906028D005F6482 /* LSFTS4Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFTS4Manager.h; sourceTree = SOURCE_ROOT; };
+		5229CABD1906028D005F6482 /* LSFTS4Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFTS4Manager.m; sourceTree = SOURCE_ROOT; };
+		5229CABF19060297005F6482 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = SOURCE_ROOT; };
+		5229CAC019060297005F6482 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = SOURCE_ROOT; };
+		5229CAC119060297005F6482 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = SOURCE_ROOT; };
+		5229CAC219060297005F6482 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = SOURCE_ROOT; };
+		5229CAC5190602A7005F6482 /* Book+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Book+Factory.h"; sourceTree = SOURCE_ROOT; };
+		5229CAC6190602A7005F6482 /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = SOURCE_ROOT; };
+		5229CAC7190602A7005F6482 /* Song+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Factory.h"; sourceTree = SOURCE_ROOT; };
+		5229CAC8190602A7005F6482 /* Song+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Factory.m"; sourceTree = SOURCE_ROOT; };
+		5229CACB190602B6005F6482 /* songs */ = {isa = PBXFileReference; lastKnownFileType = file; path = songs; sourceTree = SOURCE_ROOT; };
+		5229CACC190602B6005F6482 /* stopwords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stopwords.json; sourceTree = SOURCE_ROOT; };
+		5229CACF190602C8005F6482 /* aliceinwonderland.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aliceinwonderland.txt; sourceTree = SOURCE_ROOT; };
+		5229CAD0190602C8005F6482 /* candide.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candide.txt; sourceTree = SOURCE_ROOT; };
+		5229CAD1190602C8005F6482 /* divinecomedy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = divinecomedy.txt; sourceTree = SOURCE_ROOT; };
+		5229CAD2190602C8005F6482 /* huckfinn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = huckfinn.txt; sourceTree = SOURCE_ROOT; };
+		5229CAD3190602C8005F6482 /* prideandprej.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prideandprej.txt; sourceTree = SOURCE_ROOT; };
+		524E71A71901CE1F009D0D98 /* benchmarking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = benchmarking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524E71AA1901CE1F009D0D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		524E71AD1901CE1F009D0D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		524E71AE1901CE1F009D0D98 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		524E71AF1901CE1F009D0D98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		524E71B21901CE1F009D0D98 /* LevelSearchBenchmarking-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LevelSearchBenchmarking-Info.plist"; sourceTree = "<group>"; };
-		524E71B41901CE1F009D0D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		524E71B61901CE1F009D0D98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		524E71B81901CE1F009D0D98 /* LevelSearchBenchmarking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelSearchBenchmarking-Prefix.pch"; sourceTree = "<group>"; };
-		524E71BA1901CE1F009D0D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		524E71BC1901CE1F009D0D98 /* LSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
-		524E71BD1901CE1F009D0D98 /* LSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
-		524E71C01901CE1F009D0D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		524E71C21901CE1F009D0D98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		524E71C91901CE1F009D0D98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		524E71E11901CFF6009D0D98 /* LevelSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSearch.h; path = ../../Classes/LevelSearch.h; sourceTree = "<group>"; };
-		524E71E21901CFF6009D0D98 /* LSIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIndex.h; path = ../../Classes/LSIndex.h; sourceTree = "<group>"; };
-		524E71E31901CFF6009D0D98 /* LSIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIndex.m; path = ../../Classes/LSIndex.m; sourceTree = "<group>"; };
-		524E71E61901D01C009D0D98 /* LSTestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTestManager.h; sourceTree = "<group>"; };
-		524E71E71901D01C009D0D98 /* LSTestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTestManager.m; sourceTree = "<group>"; };
 		524E71F61901D0BE009D0D98 /* adjectives.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = adjectives.json; path = ../../Tests/LevelSearchTests/adjectives.json; sourceTree = "<group>"; };
 		524E71F71901D0BE009D0D98 /* testNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testNames.json; path = ../../Tests/LevelSearchTests/testNames.json; sourceTree = "<group>"; };
 		524E71F81901D0BE009D0D98 /* TestDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestDataManager.h; path = ../../Tests/LevelSearchTests/TestDataManager.h; sourceTree = "<group>"; };
 		524E71F91901D0BE009D0D98 /* TestDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestDataManager.m; path = ../../Tests/LevelSearchTests/TestDataManager.m; sourceTree = "<group>"; };
 		524E71FA1901D0BE009D0D98 /* testAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testAvatar.png; path = ../../Tests/LevelSearchTests/testAvatar.png; sourceTree = "<group>"; };
 		524E72001901D11C009D0D98 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		524E72031901D25E009D0D98 /* LSUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSUtilityFunctions.h; sourceTree = "<group>"; };
-		524E72041901D25E009D0D98 /* LSUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSUtilityFunctions.m; sourceTree = "<group>"; };
-		524E720A1901DFD6009D0D98 /* LSFTS4Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFTS4Manager.h; sourceTree = "<group>"; };
-		524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFTS4Manager.m; sourceTree = "<group>"; };
 		524E72161901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelSearchBenchmarkingModel.xcdatamodel; sourceTree = "<group>"; };
-		524E721C1901F1D1009D0D98 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
-		524E721D1901F1D1009D0D98 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
-		52C10F301904F1C5009ED2A2 /* songs */ = {isa = PBXFileReference; lastKnownFileType = file; path = songs; sourceTree = "<group>"; };
-		52C10F321904F275009ED2A2 /* LSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMainViewController.h; sourceTree = "<group>"; };
-		52C10F331904F275009ED2A2 /* LSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMainViewController.m; sourceTree = "<group>"; };
-		52C10F361904F650009ED2A2 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
-		52C10F371904F650009ED2A2 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
-		52C10F391904F67C009ED2A2 /* Song+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Factory.h"; sourceTree = "<group>"; };
-		52C10F3A1904F67C009ED2A2 /* Song+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Factory.m"; sourceTree = "<group>"; };
-		52C10F3E1904FA6B009ED2A2 /* stopwords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stopwords.json; sourceTree = "<group>"; };
-		52C10F4119052016009ED2A2 /* candide.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candide.txt; sourceTree = "<group>"; };
-		52C10F44190529C7009ED2A2 /* prideandprej.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prideandprej.txt; sourceTree = "<group>"; };
-		52C10F46190529D4009ED2A2 /* huckfinn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = huckfinn.txt; sourceTree = "<group>"; };
-		52C10F4819052A23009ED2A2 /* aliceinwonderland.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aliceinwonderland.txt; sourceTree = "<group>"; };
-		52C10F4A19052A34009ED2A2 /* divinecomedy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = divinecomedy.txt; sourceTree = "<group>"; };
-		52D84F561901F2A5002D599B /* Book+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Book+Factory.h"; sourceTree = "<group>"; };
-		52D84F571901F2A5002D599B /* Book+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Book+Factory.m"; sourceTree = "<group>"; };
-		52D84F591901F7E5002D599B /* LSStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStopwatch.h; sourceTree = "<group>"; };
-		52D84F5A1901F7E5002D599B /* LSStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStopwatch.m; sourceTree = "<group>"; };
-		BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelSearchBenchmarking.xcconfig"; path = "../Pods/Pods-LevelSearchBenchmarking.xcconfig"; sourceTree = "<group>"; };
+		525078C9190603C800BE55DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		5274A0C71906056C003FFFD4 /* LevelSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSearch.h; sourceTree = SOURCE_ROOT; };
+		5274A0C81906056C003FFFD4 /* LSIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIndex.h; sourceTree = SOURCE_ROOT; };
+		5274A0C91906056C003FFFD4 /* LSIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIndex.m; sourceTree = SOURCE_ROOT; };
+		61275C3DA64948FF919FB8EF /* Pods-benchmarking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-benchmarking.xcconfig"; path = "../Pods/Pods-benchmarking.xcconfig"; sourceTree = "<group>"; };
+		63C4A817529C4BA4A0CB9380 /* libPods-benchmarking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-benchmarking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +96,7 @@
 				524E72011901D11C009D0D98 /* CoreServices.framework in Frameworks */,
 				524E71FF1901D108009D0D98 /* CoreData.framework in Frameworks */,
 				524E71AB1901CE1F009D0D98 /* Cocoa.framework in Frameworks */,
-				82BC5340D4B04056ACC5BEEF /* libPods-LevelSearchBenchmarking.a in Frameworks */,
+				EF37AB7849604C9097082C49 /* libPods-benchmarking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,17 +106,17 @@
 		524E719E1901CE1F009D0D98 = {
 			isa = PBXGroup;
 			children = (
-				524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */,
+				524E71B01901CE1F009D0D98 /* Benchmarking */,
 				524E71A91901CE1F009D0D98 /* Frameworks */,
 				524E71A81901CE1F009D0D98 /* Products */,
-				BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */,
+				61275C3DA64948FF919FB8EF /* Pods-benchmarking.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		524E71A81901CE1F009D0D98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */,
+				524E71A71901CE1F009D0D98 /* benchmarking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,7 +128,7 @@
 				524E71AA1901CE1F009D0D98 /* Cocoa.framework */,
 				524E71C91901CE1F009D0D98 /* XCTest.framework */,
 				524E71AC1901CE1F009D0D98 /* Other Frameworks */,
-				21AB005D004D45F0A963EF4F /* libPods-LevelSearchBenchmarking.a */,
+				63C4A817529C4BA4A0CB9380 /* libPods-benchmarking.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,7 +143,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		524E71B01901CE1F009D0D98 /* LevelSearchBenchmarking */ = {
+		524E71B01901CE1F009D0D98 /* Benchmarking */ = {
 			isa = PBXGroup;
 			children = (
 				52C10F351904F278009ED2A2 /* View Controllers */,
@@ -159,24 +151,24 @@
 				524E71E91901D07A009D0D98 /* Models */,
 				524E71E51901D00B009D0D98 /* Classes */,
 				524E71DE1901CFD3009D0D98 /* Categories */,
-				524E71BC1901CE1F009D0D98 /* LSAppDelegate.h */,
-				524E71BD1901CE1F009D0D98 /* LSAppDelegate.m */,
-				524E71BF1901CE1F009D0D98 /* MainMenu.xib */,
-				524E71C21901CE1F009D0D98 /* Images.xcassets */,
+				5229CAB01906026C005F6482 /* LSAppDelegate.h */,
+				5229CAB11906026C005F6482 /* LSAppDelegate.m */,
+				525078C8190603C800BE55DE /* MainMenu.xib */,
 				524E71B11901CE1F009D0D98 /* Supporting Files */,
-				524E71DF1901CFDA009D0D98 /* Vendor */,
 			);
+			name = Benchmarking;
 			path = LevelSearchBenchmarking;
 			sourceTree = "<group>";
 		};
 		524E71B11901CE1F009D0D98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				524E71B21901CE1F009D0D98 /* LevelSearchBenchmarking-Info.plist */,
-				524E71B31901CE1F009D0D98 /* InfoPlist.strings */,
-				524E71B61901CE1F009D0D98 /* main.m */,
-				524E71B81901CE1F009D0D98 /* LevelSearchBenchmarking-Prefix.pch */,
-				524E71B91901CE1F009D0D98 /* Credits.rtf */,
+				5274A0C71906056C003FFFD4 /* LevelSearch.h */,
+				5274A0C81906056C003FFFD4 /* LSIndex.h */,
+				5274A0C91906056C003FFFD4 /* LSIndex.m */,
+				5229CAAB19060239005F6482 /* main.m */,
+				5229CAA019060219005F6482 /* LevelSearchBenchmarking-Info.plist */,
+				5229CAA119060219005F6482 /* LevelSearchBenchmarking-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -188,31 +180,13 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		524E71DF1901CFDA009D0D98 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				524E71E01901CFE8009D0D98 /* LevelSearch */,
-			);
-			name = Vendor;
-			sourceTree = "<group>";
-		};
-		524E71E01901CFE8009D0D98 /* LevelSearch */ = {
-			isa = PBXGroup;
-			children = (
-				524E71E11901CFF6009D0D98 /* LevelSearch.h */,
-				524E71E21901CFF6009D0D98 /* LSIndex.h */,
-				524E71E31901CFF6009D0D98 /* LSIndex.m */,
-			);
-			name = LevelSearch;
-			sourceTree = "<group>";
-		};
 		524E71E51901D00B009D0D98 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				524E72091901DFC6009D0D98 /* FTS4 */,
 				524E72021901D24B009D0D98 /* Utilities */,
-				524E71E61901D01C009D0D98 /* LSTestManager.h */,
-				524E71E71901D01C009D0D98 /* LSTestManager.m */,
+				5229CAB319060279005F6482 /* LSTestManager.h */,
+				5229CAB419060279005F6482 /* LSTestManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -222,10 +196,10 @@
 			children = (
 				524E71F01901D099009D0D98 /* Factories */,
 				524E72151901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld */,
-				52C10F361904F650009ED2A2 /* Song.h */,
-				52C10F371904F650009ED2A2 /* Song.m */,
-				524E721C1901F1D1009D0D98 /* Book.h */,
-				524E721D1901F1D1009D0D98 /* Book.m */,
+				5229CABF19060297005F6482 /* Book.h */,
+				5229CAC019060297005F6482 /* Book.m */,
+				5229CAC119060297005F6482 /* Song.h */,
+				5229CAC219060297005F6482 /* Song.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -233,10 +207,10 @@
 		524E71F01901D099009D0D98 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				52D84F561901F2A5002D599B /* Book+Factory.h */,
-				52D84F571901F2A5002D599B /* Book+Factory.m */,
-				52C10F391904F67C009ED2A2 /* Song+Factory.h */,
-				52C10F3A1904F67C009ED2A2 /* Song+Factory.m */,
+				5229CAC5190602A7005F6482 /* Book+Factory.h */,
+				5229CAC6190602A7005F6482 /* Book+Factory.m */,
+				5229CAC7190602A7005F6482 /* Song+Factory.h */,
+				5229CAC8190602A7005F6482 /* Song+Factory.m */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -245,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				52C10F4C19052A46009ED2A2 /* Books */,
-				52C10F3E1904FA6B009ED2A2 /* stopwords.json */,
-				52C10F301904F1C5009ED2A2 /* songs */,
+				5229CACB190602B6005F6482 /* songs */,
+				5229CACC190602B6005F6482 /* stopwords.json */,
 				524E71F61901D0BE009D0D98 /* adjectives.json */,
 				524E71F71901D0BE009D0D98 /* testNames.json */,
 				524E71F81901D0BE009D0D98 /* TestDataManager.h */,
@@ -259,10 +233,10 @@
 		524E72021901D24B009D0D98 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				524E72031901D25E009D0D98 /* LSUtilityFunctions.h */,
-				524E72041901D25E009D0D98 /* LSUtilityFunctions.m */,
-				52D84F591901F7E5002D599B /* LSStopwatch.h */,
-				52D84F5A1901F7E5002D599B /* LSStopwatch.m */,
+				5229CAB619060283005F6482 /* LSStopwatch.h */,
+				5229CAB719060283005F6482 /* LSStopwatch.m */,
+				5229CAB819060283005F6482 /* LSUtilityFunctions.h */,
+				5229CAB919060283005F6482 /* LSUtilityFunctions.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -270,8 +244,8 @@
 		524E72091901DFC6009D0D98 /* FTS4 */ = {
 			isa = PBXGroup;
 			children = (
-				524E720A1901DFD6009D0D98 /* LSFTS4Manager.h */,
-				524E720B1901DFD6009D0D98 /* LSFTS4Manager.m */,
+				5229CABC1906028D005F6482 /* LSFTS4Manager.h */,
+				5229CABD1906028D005F6482 /* LSFTS4Manager.m */,
 			);
 			name = FTS4;
 			sourceTree = "<group>";
@@ -279,8 +253,8 @@
 		52C10F351904F278009ED2A2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				52C10F321904F275009ED2A2 /* LSMainViewController.h */,
-				52C10F331904F275009ED2A2 /* LSMainViewController.m */,
+				5229CA9D19060208005F6482 /* LSMainViewController.h */,
+				5229CA9E19060208005F6482 /* LSMainViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -288,11 +262,11 @@
 		52C10F4C19052A46009ED2A2 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				52C10F4A19052A34009ED2A2 /* divinecomedy.txt */,
-				52C10F4819052A23009ED2A2 /* aliceinwonderland.txt */,
-				52C10F46190529D4009ED2A2 /* huckfinn.txt */,
-				52C10F4119052016009ED2A2 /* candide.txt */,
-				52C10F44190529C7009ED2A2 /* prideandprej.txt */,
+				5229CACF190602C8005F6482 /* aliceinwonderland.txt */,
+				5229CAD0190602C8005F6482 /* candide.txt */,
+				5229CAD1190602C8005F6482 /* divinecomedy.txt */,
+				5229CAD2190602C8005F6482 /* huckfinn.txt */,
+				5229CAD3190602C8005F6482 /* prideandprej.txt */,
 			);
 			name = Books;
 			sourceTree = "<group>";
@@ -300,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		524E71A61901CE1F009D0D98 /* LevelSearchBenchmarking */ = {
+		524E71A61901CE1F009D0D98 /* benchmarking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 524E71D81901CE1F009D0D98 /* Build configuration list for PBXNativeTarget "LevelSearchBenchmarking" */;
+			buildConfigurationList = 524E71D81901CE1F009D0D98 /* Build configuration list for PBXNativeTarget "benchmarking" */;
 			buildPhases = (
 				C6DAA053C0254465B3674C4C /* Check Pods Manifest.lock */,
 				524E71A31901CE1F009D0D98 /* Sources */,
@@ -314,9 +288,9 @@
 			);
 			dependencies = (
 			);
-			name = LevelSearchBenchmarking;
+			name = benchmarking;
 			productName = LevelSearchBenchmarking;
-			productReference = 524E71A71901CE1F009D0D98 /* LevelSearchBenchmarking.app */;
+			productReference = 524E71A71901CE1F009D0D98 /* benchmarking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -342,7 +316,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				524E71A61901CE1F009D0D98 /* LevelSearchBenchmarking */,
+				524E71A61901CE1F009D0D98 /* benchmarking */,
 			);
 		};
 /* End PBXProject section */
@@ -352,20 +326,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5229CAD7190602C8005F6482 /* huckfinn.txt in Resources */,
+				5229CAD5190602C8005F6482 /* candide.txt in Resources */,
+				5229CACD190602B6005F6482 /* songs in Resources */,
+				5229CAD4190602C8005F6482 /* aliceinwonderland.txt in Resources */,
 				524E71FE1901D0BE009D0D98 /* testAvatar.png in Resources */,
-				52C10F3F1904FA6B009ED2A2 /* stopwords.json in Resources */,
-				524E71B51901CE1F009D0D98 /* InfoPlist.strings in Resources */,
-				52C10F45190529C7009ED2A2 /* prideandprej.txt in Resources */,
-				52C10F4B19052A34009ED2A2 /* divinecomedy.txt in Resources */,
+				5229CAD6190602C8005F6482 /* divinecomedy.txt in Resources */,
+				5229CACE190602B6005F6482 /* stopwords.json in Resources */,
+				5229CAD8190602C8005F6482 /* prideandprej.txt in Resources */,
 				524E71FC1901D0BE009D0D98 /* testNames.json in Resources */,
-				524E71C31901CE1F009D0D98 /* Images.xcassets in Resources */,
-				52C10F4219052016009ED2A2 /* candide.txt in Resources */,
+				525078CA190603C800BE55DE /* MainMenu.xib in Resources */,
 				524E71FB1901D0BE009D0D98 /* adjectives.json in Resources */,
-				52C10F47190529D4009ED2A2 /* huckfinn.txt in Resources */,
-				52C10F4919052A23009ED2A2 /* aliceinwonderland.txt in Resources */,
-				524E71BB1901CE1F009D0D98 /* Credits.rtf in Resources */,
-				524E71C11901CE1F009D0D98 /* MainMenu.xib in Resources */,
-				52C10F311904F1C5009ED2A2 /* songs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-LevelSearchBenchmarking-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Pods-benchmarking-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6DAA053C0254465B3674C4C /* Check Pods Manifest.lock */ = {
@@ -409,46 +380,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C10F381904F650009ED2A2 /* Song.m in Sources */,
-				52C10F341904F275009ED2A2 /* LSMainViewController.m in Sources */,
-				52D84F5B1901F7E5002D599B /* LSStopwatch.m in Sources */,
-				524E721E1901F1D1009D0D98 /* Book.m in Sources */,
-				524E720C1901DFD6009D0D98 /* LSFTS4Manager.m in Sources */,
-				524E71E81901D01C009D0D98 /* LSTestManager.m in Sources */,
-				52D84F581901F2A5002D599B /* Book+Factory.m in Sources */,
-				524E71E41901CFF6009D0D98 /* LSIndex.m in Sources */,
-				524E71FD1901D0BE009D0D98 /* TestDataManager.m in Sources */,
-				524E72171901F0F8009D0D98 /* LevelSearchBenchmarkingModel.xcdatamodeld in Sources */,
-				524E72051901D25E009D0D98 /* LSUtilityFunctions.m in Sources */,
-				524E71B71901CE1F009D0D98 /* main.m in Sources */,
-				524E71BE1901CE1F009D0D98 /* LSAppDelegate.m in Sources */,
-				52C10F3B1904F67C009ED2A2 /* Song+Factory.m in Sources */,
+				5229CABE1906028D005F6482 /* LSFTS4Manager.m in Sources */,
+				5229CAB519060279005F6482 /* LSTestManager.m in Sources */,
+				5229CAC419060297005F6482 /* Song.m in Sources */,
+				5274A0CA1906056C003FFFD4 /* LSIndex.m in Sources */,
+				5229CABA19060283005F6482 /* LSStopwatch.m in Sources */,
+				5229CAB21906026C005F6482 /* LSAppDelegate.m in Sources */,
+				5229CAC319060297005F6482 /* Book.m in Sources */,
+				5229CABB19060283005F6482 /* LSUtilityFunctions.m in Sources */,
+				5229CAC9190602A7005F6482 /* Book+Factory.m in Sources */,
+				5229CAAF19060239005F6482 /* main.m in Sources */,
+				5229CA9F19060208005F6482 /* LSMainViewController.m in Sources */,
+				5229CACA190602A7005F6482 /* Song+Factory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		524E71B31901CE1F009D0D98 /* InfoPlist.strings */ = {
+		525078C8190603C800BE55DE /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				524E71B41901CE1F009D0D98 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		524E71B91901CE1F009D0D98 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				524E71BA1901CE1F009D0D98 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		524E71BF1901CE1F009D0D98 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				524E71C01901CE1F009D0D98 /* Base */,
+				525078C9190603C800BE55DE /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -528,14 +481,14 @@
 		};
 		524E71D91901CE1F009D0D98 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */;
+			baseConfigurationReference = 61275C3DA64948FF919FB8EF /* Pods-benchmarking.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelSearchBenchmarking/LevelSearchBenchmarking-Prefix.pch";
-				INFOPLIST_FILE = "LevelSearchBenchmarking/LevelSearchBenchmarking-Info.plist";
+				GCC_PREFIX_HEADER = "LevelSearchBenchmarking-Prefix.pch";
+				INFOPLIST_FILE = "LevelSearchBenchmarking-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
@@ -544,14 +497,14 @@
 		};
 		524E71DA1901CE1F009D0D98 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDC53FE5ADAC445697122833 /* Pods-LevelSearchBenchmarking.xcconfig */;
+			baseConfigurationReference = 61275C3DA64948FF919FB8EF /* Pods-benchmarking.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelSearchBenchmarking/LevelSearchBenchmarking-Prefix.pch";
-				INFOPLIST_FILE = "LevelSearchBenchmarking/LevelSearchBenchmarking-Info.plist";
+				GCC_PREFIX_HEADER = "LevelSearchBenchmarking-Prefix.pch";
+				INFOPLIST_FILE = "LevelSearchBenchmarking-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
@@ -570,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		524E71D81901CE1F009D0D98 /* Build configuration list for PBXNativeTarget "LevelSearchBenchmarking" */ = {
+		524E71D81901CE1F009D0D98 /* Build configuration list for PBXNativeTarget "benchmarking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				524E71D91901CE1F009D0D98 /* Debug */,

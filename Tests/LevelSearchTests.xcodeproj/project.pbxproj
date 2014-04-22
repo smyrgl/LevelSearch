@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520F332018FC882400932E4B /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F331F18FC882400932E4B /* LSIndex.m */; };
 		520F332418FC887C00932E4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 520F332218FC887C00932E4B /* InfoPlist.strings */; };
 		520F332A18FC88E700932E4B /* LevelSearchTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 520F332618FC88E700932E4B /* LevelSearchTests.xcdatamodeld */; };
 		520F332B18FC88E700932E4B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F332918FC88E700932E4B /* Person.m */; };
@@ -18,6 +17,8 @@
 		520F333A18FC891700932E4B /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 520F333918FC891700932E4B /* testAvatar.png */; };
 		520F333E18FC8E7800932E4B /* LevelSearchSetupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333D18FC8E7800932E4B /* LevelSearchSetupTests.m */; };
 		520F334018FC90E900932E4B /* LevelSearchContextWatchingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333F18FC90E900932E4B /* LevelSearchContextWatchingTests.m */; };
+		5274A0BC190604F6003FFFD4 /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5274A0BB190604F6003FFFD4 /* LSIndex.m */; };
+		5274A0BD190604F6003FFFD4 /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5274A0BB190604F6003FFFD4 /* LSIndex.m */; };
 		529573E71902E16400FAE59B /* XCTestCase+TestSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C21E26190018220041CC87 /* XCTestCase+TestSetup.m */; };
 		529573E81902E16400FAE59B /* LevelSearchTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 520F332618FC88E700932E4B /* LevelSearchTests.xcdatamodeld */; };
 		529573E91902E16400FAE59B /* TestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333718FC890D00932E4B /* TestDataManager.m */; };
@@ -26,7 +27,6 @@
 		529573EC1902E16400FAE59B /* LevelSearchSetupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F333D18FC8E7800932E4B /* LevelSearchSetupTests.m */; };
 		529573ED1902E16400FAE59B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F332918FC88E700932E4B /* Person.m */; };
 		529573EE1902E16400FAE59B /* LevelSearchIndexingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A45F7E19004AA000B70C01 /* LevelSearchIndexingTests.m */; };
-		529573EF1902E16400FAE59B /* LSIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 520F331F18FC882400932E4B /* LSIndex.m */; };
 		529573F11902E16400FAE59B /* LevelSearchQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C21E22190017C90041CC87 /* LevelSearchQueryTests.m */; };
 		529573F51902E16400FAE59B /* testNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 520F333418FC890700932E4B /* testNames.json */; };
 		529573F61902E16400FAE59B /* adjectives.json in Resources */ = {isa = PBXBuildFile; fileRef = 520952B918FF74510040D3E6 /* adjectives.json */; };
@@ -40,37 +40,10 @@
 		A6940895A84C4148B4D57405 /* libPods-osxtests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4BDC35932E4EBF9E6A4155 /* libPods-osxtests.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		52C10F1F1904D46C009ED2A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52C10ED81904D0D9009ED2A2;
-			remoteInfo = LevelSearchResources;
-		};
-		52C10F211904D472009ED2A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 52C10ED71904D0D9009ED2A2;
-			remoteInfo = LevelSearchResources;
-		};
-		52C10F231904D477009ED2A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 52C10ED71904D0D9009ED2A2;
-			remoteInfo = LevelSearchResources;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		1A4BDC35932E4EBF9E6A4155 /* libPods-osxtests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osxtests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F25F5760DFD4E95922371AE /* Pods-osxtests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osxtests.xcconfig"; path = "../Pods/Pods-osxtests.xcconfig"; sourceTree = "<group>"; };
 		520952B918FF74510040D3E6 /* adjectives.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adjectives.json; sourceTree = "<group>"; };
-		520F331D18FC882400932E4B /* LevelSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSearch.h; path = ../Classes/LevelSearch.h; sourceTree = "<group>"; };
-		520F331E18FC882400932E4B /* LSIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIndex.h; path = ../Classes/LSIndex.h; sourceTree = "<group>"; };
-		520F331F18FC882400932E4B /* LSIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIndex.m; path = ../Classes/LSIndex.m; sourceTree = "<group>"; };
 		520F332318FC887C00932E4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		520F332718FC88E700932E4B /* LevelSearchTests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelSearchTests.xcdatamodel; sourceTree = "<group>"; };
 		520F332818FC88E700932E4B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -88,13 +61,15 @@
 		521411F118FC873200837228 /* iostests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iostests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5214120B18FC875C00837228 /* LevelSearchTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LevelSearchTests-Info.plist"; sourceTree = "<group>"; };
 		5214120C18FC875C00837228 /* LevelSearchTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelSearchTests-Prefix.pch"; sourceTree = "<group>"; };
+		5274A0B9190604F6003FFFD4 /* LevelSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSearch.h; path = ../Classes/LevelSearch.h; sourceTree = "<group>"; };
+		5274A0BA190604F6003FFFD4 /* LSIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIndex.h; path = ../Classes/LSIndex.h; sourceTree = "<group>"; };
+		5274A0BB190604F6003FFFD4 /* LSIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIndex.m; path = ../Classes/LSIndex.m; sourceTree = "<group>"; };
 		527BDDDD18FCC4C200851317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		527BDDDF18FCC4C200851317 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		527BDDE118FCC4C200851317 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		527BDDF618FCC4C200851317 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		529573FD1902E16400FAE59B /* osxtests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = osxtests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A45F7E19004AA000B70C01 /* LevelSearchIndexingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSearchIndexingTests.m; sourceTree = "<group>"; };
-		52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LevelSearchResources.xcodeproj; path = ../LevelSearchResources/LevelSearchResources.xcodeproj; sourceTree = "<group>"; };
 		52C21E22190017C90041CC87 /* LevelSearchQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSearchQueryTests.m; sourceTree = "<group>"; };
 		52C21E25190018220041CC87 /* XCTestCase+TestSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+TestSetup.h"; sourceTree = "<group>"; };
 		52C21E26190018220041CC87 /* XCTestCase+TestSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+TestSetup.m"; sourceTree = "<group>"; };
@@ -138,19 +113,11 @@
 		520F331B18FC881300932E4B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				520F331C18FC881900932E4B /* LevelSearch */,
+				5274A0B9190604F6003FFFD4 /* LevelSearch.h */,
+				5274A0BA190604F6003FFFD4 /* LSIndex.h */,
+				5274A0BB190604F6003FFFD4 /* LSIndex.m */,
 			);
 			name = Vendor;
-			sourceTree = "<group>";
-		};
-		520F331C18FC881900932E4B /* LevelSearch */ = {
-			isa = PBXGroup;
-			children = (
-				520F331D18FC882400932E4B /* LevelSearch.h */,
-				520F331E18FC882400932E4B /* LSIndex.h */,
-				520F331F18FC882400932E4B /* LSIndex.m */,
-			);
-			name = LevelSearch;
 			sourceTree = "<group>";
 		};
 		520F332118FC887C00932E4B /* en.lproj */ = {
@@ -219,7 +186,6 @@
 		521411E618FC870100837228 = {
 			isa = PBXGroup;
 			children = (
-				52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */,
 				528A5B5B18FCC7070006676A /* Shared */,
 				521411FA18FC873200837228 /* LevelSearchTests */,
 				3C81FB3EBB3646EDAEF121CE /* Frameworks */,
@@ -269,14 +235,6 @@
 			name = Shared;
 			sourceTree = "<group>";
 		};
-		52C10F1C1904D46C009ED2A2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52C10F201904D46C009ED2A2 /* LevelSearchResources.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		52C21E24190017EA0041CC87 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +260,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				52C10F221904D472009ED2A2 /* PBXTargetDependency */,
 			);
 			name = iostests;
 			productName = LevelSearchTests;
@@ -322,7 +279,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				52C10F241904D477009ED2A2 /* PBXTargetDependency */,
 			);
 			name = osxtests;
 			productName = LevelSearchTests;
@@ -347,12 +303,6 @@
 			mainGroup = 521411E618FC870100837228;
 			productRefGroup = 521411F218FC873200837228 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 52C10F1C1904D46C009ED2A2 /* Products */;
-					ProjectRef = 52C10F1B1904D46C009ED2A2 /* LevelSearchResources.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				521411F018FC873200837228 /* iostests */,
@@ -360,16 +310,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		52C10F201904D46C009ED2A2 /* LevelSearchResources.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = LevelSearchResources.bundle;
-			remoteRef = 52C10F1F1904D46C009ED2A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		521411EF18FC873200837228 /* Resources */ = {
@@ -470,9 +410,9 @@
 				520F334018FC90E900932E4B /* LevelSearchContextWatchingTests.m in Sources */,
 				520F332F18FC88F400932E4B /* Person+PersonFactory.m in Sources */,
 				520F333E18FC8E7800932E4B /* LevelSearchSetupTests.m in Sources */,
+				5274A0BC190604F6003FFFD4 /* LSIndex.m in Sources */,
 				520F332B18FC88E700932E4B /* Person.m in Sources */,
 				52A45F7F19004AA000B70C01 /* LevelSearchIndexingTests.m in Sources */,
-				520F332018FC882400932E4B /* LSIndex.m in Sources */,
 				520F333218FC88FD00932E4B /* UIImage+TestColorImages.m in Sources */,
 				52C21E23190017C90041CC87 /* LevelSearchQueryTests.m in Sources */,
 			);
@@ -490,25 +430,12 @@
 				529573EC1902E16400FAE59B /* LevelSearchSetupTests.m in Sources */,
 				529573ED1902E16400FAE59B /* Person.m in Sources */,
 				529573EE1902E16400FAE59B /* LevelSearchIndexingTests.m in Sources */,
-				529573EF1902E16400FAE59B /* LSIndex.m in Sources */,
 				529573F11902E16400FAE59B /* LevelSearchQueryTests.m in Sources */,
+				5274A0BD190604F6003FFFD4 /* LSIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		52C10F221904D472009ED2A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LevelSearchResources;
-			targetProxy = 52C10F211904D472009ED2A2 /* PBXContainerItemProxy */;
-		};
-		52C10F241904D477009ED2A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LevelSearchResources;
-			targetProxy = 52C10F231904D477009ED2A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		520F332218FC887C00932E4B /* InfoPlist.strings */ = {

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "524E71A61901CE1F009D0D98"
-               BuildableName = "LevelSearchBenchmarking.app"
-               BlueprintName = "LevelSearchBenchmarking"
+               BuildableName = "benchmarking.app"
+               BlueprintName = "benchmarking"
                ReferencedContainer = "container:LevelSearchBenchmarking.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "524E71A61901CE1F009D0D98"
-            BuildableName = "LevelSearchBenchmarking.app"
-            BlueprintName = "LevelSearchBenchmarking"
+            BuildableName = "benchmarking.app"
+            BlueprintName = "benchmarking"
             ReferencedContainer = "container:LevelSearchBenchmarking.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "524E71A61901CE1F009D0D98"
-            BuildableName = "LevelSearchBenchmarking.app"
-            BlueprintName = "LevelSearchBenchmarking"
+            BuildableName = "benchmarking.app"
+            BlueprintName = "benchmarking"
             ReferencedContainer = "container:LevelSearchBenchmarking.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "524E71A61901CE1F009D0D98"
-            BuildableName = "LevelSearchBenchmarking.app"
-            BlueprintName = "LevelSearchBenchmarking"
+            BuildableName = "benchmarking.app"
+            BlueprintName = "benchmarking"
             ReferencedContainer = "container:LevelSearchBenchmarking.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

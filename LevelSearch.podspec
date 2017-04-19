@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.resource_bundles = { 'LevelSearchAssets' => 'Assets/*.txt' }
   s.public_header_files = 'Classes/*.h'
   s.frameworks = 'Foundation', 'CoreData'
-  s.dependency 'Objective-LevelDB', '~> 2.0.7'
+  s.dependency 'Objective-LevelDB', '~> 2.1.5'
   s.dependency 'MessagePack', '~> 1.0.0'
 
 end
